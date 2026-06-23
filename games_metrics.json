@@ -1,15 +1,15 @@
 {
-    "last_updated": "2026-06-23T15:47:12.010271",
+    "last_updated": "2026-06-23T18:58:58.411451",
     "metrics": {
-        "total_active_free_games": 187,
+        "total_active_free_games": 185,
         "total_upcoming_promotions": 2,
-        "total_indexed_web_search_links": 39,
-        "total_records": 228
+        "total_indexed_web_search_links": 47,
+        "total_records": 234
     },
     "platform_distribution": {
         "Amazon Luna": 95,
         "Epic Games": 4,
-        "Itch.io": 10,
+        "Itch.io": 8,
         "PC": 43,
         "PC, Android, iOS": 1,
         "PC, DRM-Free": 3,
