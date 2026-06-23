@@ -1,12 +1,13 @@
 {
-    "last_updated": "2026-06-23T14:45:47.664410",
+    "last_updated": "2026-06-23T15:47:12.010271",
     "metrics": {
-        "total_active_free_games": 92,
+        "total_active_free_games": 187,
         "total_upcoming_promotions": 2,
-        "total_indexed_web_search_links": 18,
-        "total_records": 112
+        "total_indexed_web_search_links": 39,
+        "total_records": 228
     },
     "platform_distribution": {
+        "Amazon Luna": 95,
         "Epic Games": 4,
         "Itch.io": 10,
         "PC": 43,
@@ -24,6 +25,7 @@
     "sources_scraped": {
         "epic_games_api": "OK",
         "gamerpower_api": "OK",
+        "amazon_luna_api": "OK",
         "google_bing_search": "OK"
     }
 }

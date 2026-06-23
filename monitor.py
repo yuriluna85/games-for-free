@@ -212,7 +212,7 @@ def search_serper(query):
 
 def enrich_game_requirements_and_translation(game, req_cache):
     # 1. Translation
-    if game.get('platform') != 'Epic Games':
+    if game.get('platform') not in ['Epic Games', 'Amazon Luna']:
         game['title'] = translate_to_pt(game['title'])
         game['description'] = translate_to_pt(game['description'])
     else:
@@ -488,6 +488,148 @@ def fetch_url_json(url):
         print(f"Error fetching URL {url}: {e}", file=sys.stderr)
         return None
 
+# Helper to extract correct store slug from Epic Games product elements
+def extract_epic_slug(el):
+    # 1. Try to get pageSlug from catalogNs mappings (usually the most accurate)
+    mappings = el.get('catalogNs', {}).get('mappings', [])
+    if mappings:
+        for m in mappings:
+            page_slug = m.get('pageSlug')
+            if page_slug:
+                return page_slug
+                
+    # 2. Try productSlug
+    prod_slug = el.get('productSlug')
+    if prod_slug:
+        if prod_slug.endswith('/home'):
+            prod_slug = prod_slug[:-5]
+        return prod_slug
+        
+    # 3. Try urlSlug (if it is not a 32-character hexadecimal hash)
+    url_slug = el.get('urlSlug')
+    if url_slug:
+        if re.match(r'^[a-fA-F0-9]{32}$', url_slug):
+            pass
+        else:
+            if url_slug.endswith('/home'):
+                url_slug = url_slug[:-5]
+            return url_slug
+            
+    return None
+
+# Fetch from Amazon Luna (Included with Prime)
+def get_luna_games():
+    print("Fetching Amazon Luna Included with Prime games...")
+    target_url = "https://proxy-prod.eu-west-1.tempo.digital.a2z.com/getPage"
+    headers = {
+        "Content-Type": "text/plain;charset=UTF-8",
+        "Origin": "https://luna.amazon.com",
+        "Referer": "https://luna.amazon.com/",
+        "x-amz-locale": "en_US",
+        "x-amz-platform": "web",
+        "x-amz-device-type": "browser",
+        "x-amz-marketplace-id": "ATVPDKIKX0DER",
+        "Accept-Language": "en-US,en;q=0.9",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    }
+
+    body_dict = {
+        "timeout": 10000,
+        "searchContext": {
+            "query": "included_with_prime",
+            "sort": "TITLE_A_TO_Z",
+            "filtersList": []
+        },
+        "featureScheme": "WEB_V1",
+        "pageContext": {
+            "pageType": "multistate_browse_results",
+            "pageId": "default"
+        },
+        "clientContext": {
+            "browserMetadata": {
+                "browserClientRole": "browser",
+                "browserType": "Chrome",
+                "browserVersion": "141.0.0.0",
+                "deviceModel": "unknown",
+                "deviceType": "unknown",
+                "osName": "Windows",
+                "osVersion": "11"
+            }
+        },
+        "inputContext": {
+            "gamepadTypes": []
+        },
+        "dynamicFeatures": []
+    }
+    
+    body_data = json.dumps(body_dict).encode("utf-8")
+    
+    # Try direct request first (usually faster and bypasses proxy timeouts for internal AWS domains)
+    response_text = None
+    try:
+        req = urllib.request.Request(target_url, data=body_data, headers=headers, method="POST")
+        with urllib.request.urlopen(req, timeout=15) as response:
+            response_text = response.read().decode('utf-8')
+            print("Successfully fetched Luna catalog directly.")
+    except Exception as e:
+        print(f"Direct request to Amazon Luna failed: {e}. Trying via ScraperAPI...", file=sys.stderr)
+        # Fallback to ScraperAPI if key is available
+        scraper_key = os.getenv("SCRAPERAPI_KEY")
+        if scraper_key:
+            try:
+                encoded_url = urllib.parse.quote(target_url)
+                scraper_url = f"http://api.scraperapi.com?api_key={scraper_key}&url={encoded_url}"
+                req_scraper = urllib.request.Request(scraper_url, data=body_data, headers=headers, method="POST")
+                with urllib.request.urlopen(req_scraper, timeout=20) as response:
+                    response_text = response.read().decode('utf-8')
+                    print("Successfully fetched Luna catalog via ScraperAPI.")
+            except Exception as ex:
+                print(f"Fallback request to Amazon Luna via ScraperAPI also failed: {ex}", file=sys.stderr)
+        else:
+            print("SCRAPERAPI_KEY não configurada. Fallback via ScraperAPI indisponível.", file=sys.stderr)
+
+    games = []
+    if not response_text:
+        return games
+        
+    try:
+        res_data = json.loads(response_text)
+        widgets = res_data.get('pageMemberGroups', {}).get('mainContent', {}).get('widgets', [])
+        for widget_container in widgets:
+            game_widgets = widget_container.get('widgets', [])
+            for w in game_widgets:
+                if w.get('type') == 'GAME_TILE':
+                    p_str = w.get('presentationData')
+                    if p_str:
+                        try:
+                            p_data = json.loads(p_str) if isinstance(p_str, str) else p_str
+                            title = p_data.get('title')
+                            if title:
+                                asin = p_data.get('hoverDetails', {}).get('asin')
+                                product_url = p_data.get('hoverDetails', {}).get('productUrl')
+                                if not product_url:
+                                    product_url = f"https://luna.amazon.com/detail/{asin}" if asin else "https://luna.amazon.com/claims/home"
+                                    
+                                description = f"Jogo disponível no catálogo de nuvem do Amazon Luna (Incluído com o Amazon Prime)."
+                                image_url = p_data.get('imagePortrait') or p_data.get('imageLandscape')
+                                
+                                games.append({
+                                    'title': title,
+                                    'description': description,
+                                    'image': image_url,
+                                    'url': product_url,
+                                    'original_price': 'Incluído no Prime',
+                                    'platform': 'Amazon Luna',
+                                    'end_date': 'Rotação Mensal',
+                                    'type': 'Jogar na Nuvem'
+                                })
+                        except Exception as ex:
+                            print(f"Erro ao parsear dados do jogo Luna: {ex}", file=sys.stderr)
+    except Exception as e:
+        print(f"Erro ao parsear JSON do Amazon Luna: {e}", file=sys.stderr)
+        
+    return games
+
 # Fetch from Epic Games Store
 def get_epic_games():
     url = "https://store-site-backend-static.ak.epicgames.com/freeGamesPromotions?locale=pt-BR&country=BR&allowCountries=BR"
@@ -518,13 +660,7 @@ def get_epic_games():
                 image_url = key_images[0].get('url')
             
             # Construct product URL
-            # Epic Games product slug or urlSlug
-            slug = el.get('productSlug') or el.get('urlSlug')
-            if not slug and el.get('catalogNs', {}).get('mappings'):
-                mappings = el['catalogNs']['mappings']
-                if mappings:
-                    slug = mappings[0].get('pageSlug')
-            
+            slug = extract_epic_slug(el)
             product_url = f"https://store.epicgames.com/pt-BR/p/{slug}" if slug else "https://store.epicgames.com/pt-BR/free-games"
             
             original_price = "Grátis"
@@ -1545,6 +1681,10 @@ def get_platform_icon(platform):
         return 'fa-brands fa-playstation'
     elif 'xbox' in p:
         return 'fa-brands fa-xbox'
+    elif 'luna' in p:
+        return 'fa-solid fa-cloud'
+    elif 'amazon' in p:
+        return 'fa-brands fa-amazon'
     else:
         return 'fa-solid fa-gamepad'
 
@@ -1617,6 +1757,7 @@ def generate_csv_and_metrics(current_games, upcoming_games, web_search_links):
             "sources_scraped": {
                 "epic_games_api": "OK",
                 "gamerpower_api": "OK",
+                "amazon_luna_api": "OK",
                 "google_bing_search": "OK" if len(web_search_links) > 0 else "Sem novos links"
             }
         }
@@ -1645,8 +1786,12 @@ def main():
     other_games = get_gamerpower_giveaways(existing_titles)
     print(f"Found {len(other_games)} other giveaways after de-duplication.")
     
+    # 2.5 Fetch from Amazon Luna (Included with Prime)
+    luna_games = get_luna_games()
+    print(f"Found {len(luna_games)} Amazon Luna games.")
+    
     # 3. Combine active games
-    all_current = epic_current + other_games
+    all_current = epic_current + other_games + luna_games
     
     # Load requirements cache
     req_cache = load_requirements_cache()
