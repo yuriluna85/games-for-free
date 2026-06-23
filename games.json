@@ -1,6 +1,84 @@
 {
     "search_links": [
         {
+            "title": "Lista de Jogos Grátis (Steam, Epic Games, Uplay, Origin e ...",
+            "url": "https://www.nerdmaldito.com/2020/04/lista-de-jogos-gratis.html",
+            "source": "Google",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Prime Video: The 100 - Season 1",
+            "url": "https://www.primevideo.com/detail/0F70VSAT4PZ2S2441ATTHJFKDX",
+            "source": "Google/Bing",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Watch The 100 | Netflix",
+            "url": "https://www2.stage.netflix.com/na/title/70283264",
+            "source": "Google/Bing",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "The 100 - watch tv show streaming online - JustWatch",
+            "url": "https://www.justwatch.com/us/tv-show/the-100",
+            "source": "Google/Bing",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "The 100 (TV Series 2014–2020) - IMDb",
+            "url": "https://www.imdb.com/title/tt2661044",
+            "source": "Google/Bing",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Watch The 100 Season 1 Free | Pluto TV",
+            "url": "https://pluto.tv/us/on-demand/series/69c2fcbb2a202dc93bc0dfc7/season/1",
+            "source": "Google/Bing",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Watch The 100 for Free Online | Pluto TV",
+            "url": "https://pluto.tv/us/on-demand/series/69c2fcbb2a202dc93bc0dfc7",
+            "source": "Google/Bing",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Obtén un juego gratis cada semana | Epic Games Store",
+            "url": "https://www.epicgames.com/freegames",
+            "source": "Google/Bing",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Autenticação de dois fatores obrigatória ao solicitar jogos ...",
+            "url": "https://store.epicgames.com/news/two-factor-authentication-required-when-claiming-free-games",
+            "source": "Google",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Como faço para obter mais informações sobre os jogos ...",
+            "url": "https://www.epicgames.com/help/billing-and-payment-c-202300000001642/epic-games-store-c-202300000001747/como-faco-para-obter-mais-informacoes-sobre-os-jogos-gratis-semanais-da-epic-games-store-a202300000016075",
+            "source": "Google",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Erro \"no momento, não é mais possível baixar jogos grátis ...",
+            "url": "https://www.epicgames.com/help/epic-games-store-c-202300000001639/error-messages-c-202300000001736/erro-no-momento-nao-e-mais-possivel-baixar-jogos-gratis-com-a-sua-conta-a202300000009976",
+            "source": "Google",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Steam Curator: Jogos gratis brasil",
+            "url": "https://store.steampowered.com/curator/6874381-Jogos-gratis-brasil",
+            "source": "Google",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Análise do ano de 2024 da Epic Games Store",
+            "url": "https://store.epicgames.com/news/epic-games-store-2024-year-in-review",
+            "source": "Serper (Google)",
+            "discovered_at": "23/06/2026"
+        },
+        {
             "title": "Os melhores jogos gratuitos para PC e consolas - Instant-Gaming.com",
             "url": "https://www.instant-gaming.com/pt/explorar/generos/free-to-play",
             "source": "Serper (Google)",
@@ -221,19 +299,7 @@
             "url": "https://store.epicgames.com/en-US/Free-games",
             "source": "Google/Bing",
             "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Download A Free PC Game Every Week - Epic Games Store",
-            "url": "https://store.epicgames.com/free-games",
-            "source": "Google/Bing",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Free To Play Games - Steam",
-            "url": "https://store.steampowered.com/genre/Free%20to%20Play",
-            "source": "Google/Bing",
-            "discovered_at": "23/06/2026"
         }
     ],
-    "last_update": "2026-06-23T17:00:11.831883"
+    "last_update": "2026-06-23T20:26:21.264728"
 }
