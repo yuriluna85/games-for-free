@@ -1,6 +1,18 @@
 {
     "search_links": [
         {
+            "title": "Steam Search",
+            "url": "https://store.steampowered.com/search",
+            "source": "Google/Bing",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "The Witcher and more – discover exciting free games on GOG ...",
+            "url": "https://www.gog.com/en/news/the_witcher_and_more_discover_exciting_free_games_on_gogcom",
+            "source": "Google/Bing",
+            "discovered_at": "23/06/2026"
+        },
+        {
             "title": "Jogos Gratuitos para Jogar - Steam",
             "url": "https://store.steampowered.com/genre/Free%20to%20Play/In",
             "source": "Google/Bing",
@@ -97,5 +109,5 @@
             "discovered_at": "23/06/2026"
         }
     ],
-    "last_update": "2026-06-23T14:02:53.462204"
+    "last_update": "2026-06-23T14:45:47.627975"
 }

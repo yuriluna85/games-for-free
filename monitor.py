@@ -3,8 +3,10 @@ import urllib.parse
 import json
 import os
 import sys
+import re
 from datetime import datetime
 from bs4 import BeautifulSoup
+import csv
 
 # Configure standard encoding for outputs
 sys.stdout.reconfigure(encoding='utf-8')
@@ -12,135 +14,342 @@ sys.stdout.reconfigure(encoding='utf-8')
 # Target path for output
 OUTPUT_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "index.html")
+CACHE_FILE = os.path.join(OUTPUT_DIR, "requirements_cache.json")
+
+# Persistent cache for system requirements and translations
+def load_requirements_cache():
+    if os.path.exists(CACHE_FILE):
+        try:
+            with open(CACHE_FILE, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {}
+
+def save_requirements_cache(cache):
+    try:
+        with open(CACHE_FILE, 'w', encoding='utf-8') as f:
+            json.dump(cache, f, indent=4, ensure_ascii=False)
+    except Exception as e:
+        print(f"Erro ao salvar cache: {e}", file=sys.stderr)
+
+# Helper to fetch HTML/content, routing through ScraperAPI if SCRAPERAPI_KEY is available
+def fetch_html(url, timeout=15):
+    scraper_key = os.getenv("SCRAPERAPI_KEY")
+    final_url = url
+    if scraper_key:
+        encoded_url = urllib.parse.quote(url)
+        final_url = f"http://api.scraperapi.com?api_key={scraper_key}&url={encoded_url}"
+        print(f"ScraperAPI: Roteando requisição para {url}")
+        
+    req = urllib.request.Request(
+        final_url,
+        headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as response:
+            return response.read()
+    except Exception as e:
+        print(f"Erro ao acessar {url} via ScraperAPI/direto: {e}", file=sys.stderr)
+        if scraper_key:
+            print(f"Tentando acesso direto alternativo para {url}...", file=sys.stderr)
+            try:
+                req_direct = urllib.request.Request(
+                    url,
+                    headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
+                )
+                with urllib.request.urlopen(req_direct, timeout=timeout) as response:
+                    return response.read()
+            except Exception as ex:
+                print(f"Acesso direto também falhou para {url}: {ex}", file=sys.stderr)
+        raise e
+
+# Load environment variables from .env file if it exists
+def load_env_file():
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    paths = [
+        os.path.join(script_dir, ".env"),
+        os.path.join(os.getcwd(), ".env")
+    ]
+    for p in paths:
+        if os.path.exists(p):
+            try:
+                with open(p, "r", encoding="utf-8") as f:
+                    for line in f:
+                        line = line.strip()
+                        if line and not line.startswith("#") and "=" in line:
+                            parts = line.split("=", 1)
+                            key = parts[0].strip()
+                            value = parts[1].strip().strip('"').strip("'")
+                            os.environ[key] = value
+                print(f"Carregadas variáveis de ambiente de: {p}")
+                return
+            except Exception as e:
+                print(f"Erro ao ler arquivo .env: {e}", file=sys.stderr)
+
+TRANSLATION_CACHE = {}
+
+def translate_to_pt(text):
+    if not text:
+        return ""
+    text = text.strip()
+    if not any(c.isalpha() for c in text):
+        return text
+        
+    if text in TRANSLATION_CACHE:
+        return TRANSLATION_CACHE[text]
+        
+    encoded_text = urllib.parse.quote(text)
+    url = f"https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=pt-BR&dt=t&q={encoded_text}"
+    
+    req = urllib.request.Request(
+        url,
+        headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=10) as response:
+            res = json.loads(response.read().decode('utf-8'))
+            translated_parts = []
+            for part in res[0]:
+                if part[0]:
+                    translated_parts.append(part[0])
+            translated = "".join(translated_parts)
+            TRANSLATION_CACHE[text] = translated
+            return translated
+    except Exception as e:
+        print(f"Erro no Google Translate: {e}. Tentando MyMemory...", file=sys.stderr)
+        try:
+            url_mymemory = f"https://api.mymemory.translated.net/get?q={encoded_text}&langpair=en|pt-BR"
+            req_mm = urllib.request.Request(url_mymemory, headers={'User-Agent': 'Mozilla/5.0'})
+            with urllib.request.urlopen(req_mm, timeout=10) as response:
+                res = json.loads(response.read().decode('utf-8'))
+                translated = res.get('matches', [{}])[0].get('translation', text)
+                TRANSLATION_CACHE[text] = translated
+                return translated
+        except Exception:
+            pass
+        return text
+
+def is_text_english(text):
+    text_lower = text.lower()
+    en_words = [' the ', ' and ', ' of ', ' with ', ' for ', ' is ', ' on ', ' that ']
+    pt_words = [' o ', ' a ', ' e ', ' com ', ' para ', ' é ', ' no ', ' na ', ' que ']
+    en_count = sum(text_lower.count(w) for w in en_words)
+    pt_count = sum(text_lower.count(w) for w in pt_words)
+    return en_count > pt_count
+
+def resolve_redirect(url):
+    print(f"Resolvendo redirecionamento para: {url}...")
+    req = urllib.request.Request(
+        url,
+        headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'},
+        method='HEAD'
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=10) as response:
+            return response.geturl()
+    except Exception:
+        try:
+            req_get = urllib.request.Request(
+                url,
+                headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
+            )
+            with urllib.request.urlopen(req_get, timeout=10) as response:
+                return response.geturl()
+        except Exception as ex:
+            print(f"Erro ao resolver redirecionamento: {ex}", file=sys.stderr)
+            return url
+
+def get_steam_requirements(app_id):
+    print(f"Buscando requisitos do Steam para o App ID: {app_id}...")
+    url = f"https://store.steampowered.com/api/appdetails?appids={app_id}&l=portuguese"
+    try:
+        html = fetch_html(url, timeout=10)
+        data = json.loads(html.decode('utf-8'))
+        app_data = data.get(str(app_id), {})
+        if app_data.get('success'):
+            pc_req = app_data.get('data', {}).get('pc_requirements', {})
+            minimum_html = ""
+            if isinstance(pc_req, dict):
+                minimum_html = pc_req.get('minimum', '')
+            if minimum_html:
+                soup = BeautifulSoup(minimum_html, 'html.parser')
+                clean_text = soup.get_text('\n')
+                lines = [line.strip() for line in clean_text.split('\n') if line.strip()]
+                return "\n".join(lines)
+    except Exception as e:
+        print(f"Erro ao buscar requisitos do Steam para {app_id}: {e}", file=sys.stderr)
+    return None
+
+def search_serper(query):
+    api_key = os.getenv("SERPER_API_KEY")
+    if not api_key:
+        return []
+    
+    print(f"Buscando no Serper (Google) por: '{query}'...")
+    url = "https://google.serper.dev/search"
+    headers = {
+        'X-API-KEY': api_key,
+        'Content-Type': 'application/json'
+    }
+    data = json.dumps({"q": query, "num": 10}).encode('utf-8')
+    req = urllib.request.Request(url, data=data, headers=headers, method='POST')
+    
+    links = []
+    try:
+        with urllib.request.urlopen(req, timeout=15) as response:
+            res_data = json.loads(response.read().decode('utf-8'))
+            organic = res_data.get('organic', [])
+            for item in organic:
+                title = item.get('title')
+                link = item.get('link')
+                if title and link:
+                    links.append({'title': title.strip(), 'url': link, 'source': 'Serper (Google)'})
+    except Exception as e:
+        print(f"Erro ao buscar no Serper: {e}", file=sys.stderr)
+        
+    return links
+
+def enrich_game_requirements_and_translation(game, req_cache):
+    # 1. Translation
+    if game.get('platform') != 'Epic Games':
+        game['title'] = translate_to_pt(game['title'])
+        game['description'] = translate_to_pt(game['description'])
+    else:
+        desc = game.get('description', '')
+        if desc and is_text_english(desc):
+            game['description'] = translate_to_pt(desc)
+            
+    # 2. Resolve Steam App ID and Requirements
+    url = game.get('url', '')
+    resolved_url = url
+    
+    # Check cache first for resolved URL
+    if url in req_cache and 'resolved_url' in req_cache[url]:
+        resolved_url = req_cache[url]['resolved_url']
+    elif 'gamerpower.com/open/' in url:
+        resolved_url = resolve_redirect(url)
+        req_cache[url] = req_cache.get(url, {})
+        req_cache[url]['resolved_url'] = resolved_url
+        
+    # Check if resolved URL is Steam
+    app_id = None
+    steam_match = re.search(r'store\.steampowered\.com/app/(\d+)', resolved_url)
+    if steam_match:
+        app_id = steam_match.group(1)
+        
+    if app_id:
+        reqs = None
+        if url in req_cache and 'requirements' in req_cache[url]:
+            reqs = req_cache[url]['requirements']
+        elif app_id in req_cache:
+            reqs = req_cache[app_id]
+        else:
+            reqs = get_steam_requirements(app_id)
+            req_cache[url] = req_cache.get(url, {})
+            req_cache[url]['requirements'] = reqs
+            req_cache[app_id] = reqs
+            
+        if reqs:
+            game['requirements'] = reqs
 
 # Google search scraping
 def search_google(query):
     print(f"Buscando no Google por: '{query}'...")
     encoded_query = urllib.parse.quote_plus(query)
     url = f"https://www.google.com/search?q={encoded_query}&num=10"
-    
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-    }
-    
-    req = urllib.request.Request(url, headers=headers)
     links = []
     
     try:
-        with urllib.request.urlopen(req, timeout=15) as response:
-            html = response.read()
-            soup = BeautifulSoup(html, 'html.parser')
-            
-            # Select <a> containing <h3> (modern desktop layout)
-            for a_tag in soup.find_all('a'):
-                href = a_tag.get('href', '')
-                h3 = a_tag.find('h3')
-                if h3 and href.startswith('http') and not any(x in href for x in ['google.com', 'youtube.com']):
-                    title = h3.get_text()
-                    if title:
-                        links.append({'title': title.strip(), 'url': href, 'source': 'Google'})
+        html = fetch_html(url, timeout=15)
+        soup = BeautifulSoup(html, 'html.parser')
+        
+        # Select <a> containing <h3> (modern desktop layout)
+        for a_tag in soup.find_all('a'):
+            href = a_tag.get('href', '')
+            h3 = a_tag.find('h3')
+            if h3 and href.startswith('http') and not any(x in href for x in ['google.com', 'youtube.com']):
+                title = h3.get_text()
+                if title:
+                    links.append({'title': title.strip(), 'url': href, 'source': 'Google'})
+                    
+        # Select /url?q= (simple desktop/mobile layout fallback)
+        for a_tag in soup.find_all('a'):
+            href = a_tag.get('href', '')
+            if href.startswith('/url?q='):
+                actual_url = href.split('/url?q=')[1].split('&')[0]
+                actual_url = urllib.parse.unquote(actual_url)
+                if actual_url.startswith('http') and not any(x in actual_url for x in ['google.com', 'youtube.com', 'gstatic.com']):
+                    h3 = a_tag.find('h3')
+                    title = h3.get_text() if h3 else a_tag.get_text()
+                    if title and len(title.strip()) > 3:
+                        links.append({'title': title.strip(), 'url': actual_url, 'source': 'Google'})
                         
-            # Select /url?q= (simple desktop/mobile layout fallback)
-            for a_tag in soup.find_all('a'):
-                href = a_tag.get('href', '')
-                if href.startswith('/url?q='):
-                    actual_url = href.split('/url?q=')[1].split('&')[0]
-                    actual_url = urllib.parse.unquote(actual_url)
-                    if actual_url.startswith('http') and not any(x in actual_url for x in ['google.com', 'youtube.com', 'gstatic.com']):
-                        h3 = a_tag.find('h3')
-                        title = h3.get_text() if h3 else a_tag.get_text()
-                        if title and len(title.strip()) > 3:
-                            links.append({'title': title.strip(), 'url': actual_url, 'source': 'Google'})
-                            
     except Exception as e:
         print(f"Erro ao buscar no Google: {e}", file=sys.stderr)
         
     return links
 
-# Bing search scraping
 def search_bing(query):
     print(f"Buscando no Bing por: '{query}'...")
     encoded_query = urllib.parse.quote_plus(query)
     url = f"https://www.bing.com/search?q={encoded_query}"
-    
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-    }
-    
-    req = urllib.request.Request(url, headers=headers)
     links = []
     
     try:
-        with urllib.request.urlopen(req, timeout=15) as response:
-            html = response.read()
-            soup = BeautifulSoup(html, 'html.parser')
-            
-            for li in soup.find_all('li', class_='b_algo'):
-                h2 = li.find('h2')
-                if h2:
-                    a_tag = h2.find('a')
-                    if a_tag and a_tag.get('href'):
-                        href = a_tag['href']
-                        title = a_tag.get_text()
-                        if href.startswith('http') and not any(x in href for x in ['bing.com', 'microsoft.com', 'msn.com']):
-                            links.append({'title': title.strip(), 'url': href, 'source': 'Bing'})
-                            
+        html = fetch_html(url, timeout=15)
+        soup = BeautifulSoup(html, 'html.parser')
+        
+        for li in soup.find_all('li', class_='b_algo'):
+            h2 = li.find('h2')
+            if h2:
+                a_tag = h2.find('a')
+                if a_tag and a_tag.get('href'):
+                    href = a_tag['href']
+                    title = a_tag.get_text()
+                    if href.startswith('http') and not any(x in href for x in ['bing.com', 'microsoft.com', 'msn.com']):
+                        links.append({'title': title.strip(), 'url': href, 'source': 'Bing'})
+                        
     except Exception as e:
         print(f"Erro ao buscar no Bing: {e}", file=sys.stderr)
         
     return links
 
-# DuckDuckGo HTML Search (Highly reliable fallback/source for Bing/Google index)
 def search_ddg(query):
     print(f"Buscando no DuckDuckGo (Bing/Web) por: '{query}'...")
     encoded_query = urllib.parse.quote_plus(query)
     url = f"https://html.duckduckgo.com/html/?q={encoded_query}"
-    
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-    }
-    
-    req = urllib.request.Request(url, headers=headers)
     links = []
     
     try:
-        with urllib.request.urlopen(req, timeout=15) as response:
-            html = response.read()
-            soup = BeautifulSoup(html, 'html.parser')
-            
-            for result_div in soup.find_all('div', class_='result__body'):
-                link_elem = result_div.find('a', class_='result__link')
-                if link_elem and link_elem.get('href'):
-                    href = link_elem['href']
-                    
-                    if '/l/?' in href:
-                        parsed = urllib.parse.urlparse(href)
-                        params = urllib.parse.parse_qs(parsed.query)
-                        if 'uddg' in params:
-                            href = params['uddg'][0]
-                            
-                    if 'duckduckgo.com' in href or 'bing.com/aclick' in href:
-                        continue
+        html = fetch_html(url, timeout=15)
+        soup = BeautifulSoup(html, 'html.parser')
+        
+        for result_div in soup.find_all('div', class_='result__body'):
+            link_elem = result_div.find('a', class_='result__link')
+            if link_elem and link_elem.get('href'):
+                href = link_elem['href']
+                
+                if '/l/?' in href:
+                    parsed = urllib.parse.urlparse(href)
+                    params = urllib.parse.parse_qs(parsed.query)
+                    if 'uddg' in params:
+                        href = params['uddg'][0]
                         
-                    title = link_elem.get_text().strip()
-                    # Tag as Bing/Google index
-                    links.append({'title': title, 'url': href, 'source': 'Google/Bing'})
+                if 'duckduckgo.com' in href or 'bing.com/aclick' in href:
+                    continue
+                    
+                title = link_elem.get_text().strip()
+                links.append({'title': title, 'url': href, 'source': 'Google/Bing'})
     except Exception as e:
         print(f"Erro ao buscar no DuckDuckGo: {e}", file=sys.stderr)
         
     return links
 
-# Yahoo Search Scraping (Highly reliable alternative search provider)
 def search_yahoo(query):
     print(f"Buscando no Yahoo (Bing/Web) por: '{query}'...")
     encoded_query = urllib.parse.quote_plus(query)
     url = f"https://search.yahoo.com/search?q={encoded_query}"
-    
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-    }
-    
-    req = urllib.request.Request(url, headers=headers)
     links = []
     
     def clean_yahoo_url(raw_url):
@@ -153,22 +362,21 @@ def search_yahoo(query):
         return raw_url
         
     try:
-        with urllib.request.urlopen(req, timeout=15) as response:
-            html = response.read()
-            soup = BeautifulSoup(html, 'html.parser')
-            
-            for h3 in soup.find_all('h3'):
-                classes = h3.get('class', [])
-                if classes and 'title' in classes:
-                    a_tag = h3.find_parent('a')
-                    if not a_tag:
-                        a_tag = h3.find('a')
-                        
-                    if a_tag and a_tag.get('href'):
-                        raw_href = a_tag['href']
-                        clean_href = clean_yahoo_url(raw_href)
-                        title = h3.get_text().strip()
-                        links.append({'title': title, 'url': clean_href, 'source': 'Google/Bing'})
+        html = fetch_html(url, timeout=15)
+        soup = BeautifulSoup(html, 'html.parser')
+        
+        for h3 in soup.find_all('h3'):
+            classes = h3.get('class', [])
+            if classes and 'title' in classes:
+                a_tag = h3.find_parent('a')
+                if not a_tag:
+                    a_tag = h3.find('a')
+                    
+                if a_tag and a_tag.get('href'):
+                    raw_href = a_tag['href']
+                    clean_href = clean_yahoo_url(raw_href)
+                    title = h3.get_text().strip()
+                    links.append({'title': title, 'url': clean_href, 'source': 'Google/Bing'})
     except Exception as e:
         print(f"Erro ao buscar no Yahoo: {e}", file=sys.stderr)
         
@@ -202,12 +410,19 @@ def index_web_search():
         "jogos gratis pc hoje"
     ]
     
+    # Load env variables (including SERPER_API_KEY)
+    load_env_file()
+    
     all_links = []
     for q in queries:
-        # Try primary engines
+        # Try Serper first if key is present
+        serper_links = search_serper(q)
+        if serper_links:
+            all_links.extend(serper_links)
+            
+        # Also run scrapers as fallback/supplement
         all_links.extend(search_google(q))
         all_links.extend(search_bing(q))
-        # Fallback/alternative engines (highly reliable)
         all_links.extend(search_ddg(q))
         all_links.extend(search_yahoo(q))
         
@@ -1002,6 +1217,62 @@ def generate_html(current_games, upcoming_games, web_search_links):
             .controls {{ flex-direction: column; align-items: stretch; }}
             .search-box {{ min-width: 100%; }}
         }}
+
+        /* Collapsible Requirements styling */
+        .requirements-details {{
+            margin-top: 1rem;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 0.8rem;
+        }}
+
+        .requirements-summary {{
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-secondary);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            outline: none;
+            user-select: none;
+            transition: color 0.2s;
+        }}
+
+        .requirements-summary:hover {{
+            color: var(--text-primary);
+        }}
+
+        .requirements-summary::-webkit-details-marker {{
+            display: none;
+        }}
+
+        .requirements-summary::after {{
+            content: '\\f107'; /* Chevron down */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            margin-left: auto;
+            font-size: 0.8rem;
+            transition: transform 0.2s ease;
+        }}
+
+        .requirements-details[open] .requirements-summary::after {{
+            transform: rotate(180deg);
+        }}
+
+        .requirements-content {{
+            margin-top: 0.6rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 0.8rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            white-space: pre-line;
+            max-height: 200px;
+            overflow-y: auto;
+        }}
     </style>
 </head>
 <body>
@@ -1055,6 +1326,15 @@ def generate_html(current_games, upcoming_games, web_search_links):
             
             image_url = game['image'] or 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=600&auto=format&fit=crop'
             
+            reqs_html = ""
+            if game.get('requirements'):
+                reqs_html = f"""
+                            <details class="requirements-details">
+                                <summary class="requirements-summary"><i class="fa-solid fa-microchip"></i> Requisitos Mínimos</summary>
+                                <div class="requirements-content">{game['requirements']}</div>
+                            </details>
+                """
+
             html_content += f"""
                     <div class="card" data-platform="{game['platform'].lower()}" data-title="{game['title'].lower()}">
                         <div class="image-container">
@@ -1075,7 +1355,8 @@ def generate_html(current_games, upcoming_games, web_search_links):
                                     <i class="fa-solid fa-clock"></i> <span>{game['end_date']}</span>
                                 </div>
                             </div>
-                            <a href="{game['url']}" target="_blank" class="action-button">
+                            {reqs_html}
+                            <a href="{game['url']}" target="_blank" class="action-button" style="margin-top: 1rem;">
                                 <i class="fa-solid fa-download"></i> Resgatar Jogo
                             </a>
                         </div>
@@ -1144,6 +1425,15 @@ def generate_html(current_games, upcoming_games, web_search_links):
                 
             image_url = game['image'] or 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=600&auto=format&fit=crop'
             
+            reqs_html = ""
+            if game.get('requirements'):
+                reqs_html = f"""
+                            <details class="requirements-details">
+                                <summary class="requirements-summary"><i class="fa-solid fa-microchip"></i> Requisitos Mínimos</summary>
+                                <div class="requirements-content">{game['requirements']}</div>
+                            </details>
+                """
+
             html_content += f"""
                     <div class="card" data-platform="{game['platform'].lower()}" data-title="{game['title'].lower()}">
                         <div class="image-container">
@@ -1161,7 +1451,8 @@ def generate_html(current_games, upcoming_games, web_search_links):
                                     <span><i class="fa-solid fa-calendar-play"></i> Inicia: {game['start_date']}</span>
                                 </div>
                             </div>
-                            <button class="action-button upcoming" disabled>
+                            {reqs_html}
+                            <button class="action-button upcoming" disabled style="margin-top: 1rem;">
                                 <i class="fa-solid fa-hourglass-start"></i> Indisponível ainda
                             </button>
                         </div>
@@ -1257,8 +1548,89 @@ def get_platform_icon(platform):
     else:
         return 'fa-solid fa-gamepad'
 
+# Generate CSV and JSON metrics
+def generate_csv_and_metrics(current_games, upcoming_games, web_search_links):
+    # 1. Generate CSV
+    csv_file = os.path.join(OUTPUT_DIR, "games_data.csv")
+    print(f"Gerando arquivo CSV em: {csv_file}...")
+    try:
+        with open(csv_file, mode='w', encoding='utf-8', newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow(['Source', 'Platform', 'Title', 'Type', 'Original Price', 'Start/Discovery Date', 'End Date', 'URL'])
+            
+            for g in current_games:
+                writer.writerow([
+                    'API (Ativo)',
+                    g.get('platform', 'N/A'),
+                    g.get('title', 'N/A'),
+                    g.get('type', 'Jogo'),
+                    g.get('original_price', 'Grátis'),
+                    'Disponível',
+                    g.get('end_date', 'N/A'),
+                    g.get('url', 'N/A')
+                ])
+                
+            for g in upcoming_games:
+                writer.writerow([
+                    'API (Agendado)',
+                    g.get('platform', 'N/A'),
+                    g.get('title', 'N/A'),
+                    g.get('type', 'Jogo'),
+                    g.get('original_price', 'Grátis'),
+                    g.get('start_date', 'N/A'),
+                    g.get('end_date', 'N/A'),
+                    g.get('url', 'N/A')
+                ])
+                
+            for l in web_search_links:
+                writer.writerow([
+                    f"Web Search ({l.get('source', 'Google/Bing')})",
+                    'Múltiplas',
+                    l.get('title', 'N/A'),
+                    'Portal / Oferta',
+                    'Grátis / Desconto',
+                    l.get('discovered_at', 'N/A'),
+                    'Enquanto durar o estoque',
+                    l.get('url', 'N/A')
+                ])
+    except Exception as e:
+        print(f"Erro ao salvar CSV: {e}", file=sys.stderr)
+
+    # 2. Generate JSON Metrics
+    metrics_file = os.path.join(OUTPUT_DIR, "games_metrics.json")
+    print(f"Gerando métricas em: {metrics_file}...")
+    try:
+        platforms = {}
+        for g in current_games:
+            p = g.get('platform', 'Outros')
+            platforms[p] = platforms.get(p, 0) + 1
+            
+        metrics = {
+            "last_updated": datetime.now().isoformat(),
+            "metrics": {
+                "total_active_free_games": len(current_games),
+                "total_upcoming_promotions": len(upcoming_games),
+                "total_indexed_web_search_links": len(web_search_links),
+                "total_records": len(current_games) + len(upcoming_games) + len(web_search_links)
+            },
+            "platform_distribution": platforms,
+            "sources_scraped": {
+                "epic_games_api": "OK",
+                "gamerpower_api": "OK",
+                "google_bing_search": "OK" if len(web_search_links) > 0 else "Sem novos links"
+            }
+        }
+        
+        with open(metrics_file, mode='w', encoding='utf-8') as f:
+            json.dump(metrics, f, indent=4, ensure_ascii=False)
+    except Exception as e:
+        print(f"Erro ao salvar métricas JSON: {e}", file=sys.stderr)
+
 def main():
     print("Starting Free Games Monitor...")
+    
+    # Load environment variables
+    load_env_file()
     
     # 1. Fetch from Epic Games Store
     print("Fetching Epic Games Store promotions...")
@@ -1276,6 +1648,22 @@ def main():
     # 3. Combine active games
     all_current = epic_current + other_games
     
+    # Load requirements cache
+    req_cache = load_requirements_cache()
+    
+    # Enrich current games with translation and requirements
+    print("Traduzindo e buscando requisitos para os jogos atuais...")
+    for game in all_current:
+        enrich_game_requirements_and_translation(game, req_cache)
+        
+    # Enrich upcoming games
+    print("Traduzindo e buscando requisitos para os jogos futuros...")
+    for game in epic_upcoming:
+        enrich_game_requirements_and_translation(game, req_cache)
+        
+    # Save requirements cache back to file
+    save_requirements_cache(req_cache)
+    
     # Sort games by platform and then by title
     all_current.sort(key=lambda x: (x['platform'], x['title']))
     epic_upcoming.sort(key=lambda x: x['title'])
@@ -1287,6 +1675,10 @@ def main():
     
     # 5. Generate HTML
     generate_html(all_current, epic_upcoming, web_search_links)
+    
+    # 6. Generate CSV and JSON Metrics
+    generate_csv_and_metrics(all_current, epic_upcoming, web_search_links)
+    
     print("Free Games Monitor execution completed.")
 
 if __name__ == "__main__":

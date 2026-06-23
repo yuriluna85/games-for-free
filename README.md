@@ -17,6 +17,8 @@ O projeto segue a estrutura padrão de repositórios do GitHub com automação v
 ├── requirements.txt        # Dependências de bibliotecas Python
 ├── monitor.py              # Script principal do scraper e indexador
 ├── games.json              # Banco de dados JSON com histórico dos links indexados
+├── games_data.csv          # Arquivo CSV estruturado contendo todos os jogos e links capturados
+├── games_metrics.json      # Arquivo JSON com estatísticas e métricas de execução
 ├── index.html              # Dashboard estático gerado automaticamente
 └── agendar_tarefa.ps1      # Script PowerShell para agendar execução local no Windows
 ```

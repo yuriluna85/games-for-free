@@ -1,0 +1,29 @@
+{
+    "last_updated": "2026-06-23T14:45:47.664410",
+    "metrics": {
+        "total_active_free_games": 92,
+        "total_upcoming_promotions": 2,
+        "total_indexed_web_search_links": 18,
+        "total_records": 112
+    },
+    "platform_distribution": {
+        "Epic Games": 4,
+        "Itch.io": 10,
+        "PC": 43,
+        "PC, Android, iOS": 1,
+        "PC, DRM-Free": 3,
+        "PC, Playstation 4, Xbox One": 3,
+        "PC, Playstation 5, Android, iOS": 1,
+        "PC, Playstation 5, Playstation 4": 1,
+        "PC, Playstation 5, Xbox One": 1,
+        "PC, Playstation 5, Xbox Series X|S": 1,
+        "PC, Playstation 5, Xbox Series X|S, Playstation 4, Xbox One": 2,
+        "PC, Playstation 5, Xbox Series X|S, Playstation 4, Xbox One, Android, iOS": 1,
+        "Steam": 21
+    },
+    "sources_scraped": {
+        "epic_games_api": "OK",
+        "gamerpower_api": "OK",
+        "google_bing_search": "OK"
+    }
+}
