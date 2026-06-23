@@ -1,0 +1,1293 @@
+import urllib.request
+import urllib.parse
+import json
+import os
+import sys
+from datetime import datetime
+from bs4 import BeautifulSoup
+
+# Configure standard encoding for outputs
+sys.stdout.reconfigure(encoding='utf-8')
+
+# Target path for output
+OUTPUT_DIR = os.path.dirname(os.path.abspath(__file__))
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, "index.html")
+
+# Google search scraping
+def search_google(query):
+    print(f"Buscando no Google por: '{query}'...")
+    encoded_query = urllib.parse.quote_plus(query)
+    url = f"https://www.google.com/search?q={encoded_query}&num=10"
+    
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+    }
+    
+    req = urllib.request.Request(url, headers=headers)
+    links = []
+    
+    try:
+        with urllib.request.urlopen(req, timeout=15) as response:
+            html = response.read()
+            soup = BeautifulSoup(html, 'html.parser')
+            
+            # Select <a> containing <h3> (modern desktop layout)
+            for a_tag in soup.find_all('a'):
+                href = a_tag.get('href', '')
+                h3 = a_tag.find('h3')
+                if h3 and href.startswith('http') and not any(x in href for x in ['google.com', 'youtube.com']):
+                    title = h3.get_text()
+                    if title:
+                        links.append({'title': title.strip(), 'url': href, 'source': 'Google'})
+                        
+            # Select /url?q= (simple desktop/mobile layout fallback)
+            for a_tag in soup.find_all('a'):
+                href = a_tag.get('href', '')
+                if href.startswith('/url?q='):
+                    actual_url = href.split('/url?q=')[1].split('&')[0]
+                    actual_url = urllib.parse.unquote(actual_url)
+                    if actual_url.startswith('http') and not any(x in actual_url for x in ['google.com', 'youtube.com', 'gstatic.com']):
+                        h3 = a_tag.find('h3')
+                        title = h3.get_text() if h3 else a_tag.get_text()
+                        if title and len(title.strip()) > 3:
+                            links.append({'title': title.strip(), 'url': actual_url, 'source': 'Google'})
+                            
+    except Exception as e:
+        print(f"Erro ao buscar no Google: {e}", file=sys.stderr)
+        
+    return links
+
+# Bing search scraping
+def search_bing(query):
+    print(f"Buscando no Bing por: '{query}'...")
+    encoded_query = urllib.parse.quote_plus(query)
+    url = f"https://www.bing.com/search?q={encoded_query}"
+    
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+    }
+    
+    req = urllib.request.Request(url, headers=headers)
+    links = []
+    
+    try:
+        with urllib.request.urlopen(req, timeout=15) as response:
+            html = response.read()
+            soup = BeautifulSoup(html, 'html.parser')
+            
+            for li in soup.find_all('li', class_='b_algo'):
+                h2 = li.find('h2')
+                if h2:
+                    a_tag = h2.find('a')
+                    if a_tag and a_tag.get('href'):
+                        href = a_tag['href']
+                        title = a_tag.get_text()
+                        if href.startswith('http') and not any(x in href for x in ['bing.com', 'microsoft.com', 'msn.com']):
+                            links.append({'title': title.strip(), 'url': href, 'source': 'Bing'})
+                            
+    except Exception as e:
+        print(f"Erro ao buscar no Bing: {e}", file=sys.stderr)
+        
+    return links
+
+# DuckDuckGo HTML Search (Highly reliable fallback/source for Bing/Google index)
+def search_ddg(query):
+    print(f"Buscando no DuckDuckGo (Bing/Web) por: '{query}'...")
+    encoded_query = urllib.parse.quote_plus(query)
+    url = f"https://html.duckduckgo.com/html/?q={encoded_query}"
+    
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+    }
+    
+    req = urllib.request.Request(url, headers=headers)
+    links = []
+    
+    try:
+        with urllib.request.urlopen(req, timeout=15) as response:
+            html = response.read()
+            soup = BeautifulSoup(html, 'html.parser')
+            
+            for result_div in soup.find_all('div', class_='result__body'):
+                link_elem = result_div.find('a', class_='result__link')
+                if link_elem and link_elem.get('href'):
+                    href = link_elem['href']
+                    
+                    if '/l/?' in href:
+                        parsed = urllib.parse.urlparse(href)
+                        params = urllib.parse.parse_qs(parsed.query)
+                        if 'uddg' in params:
+                            href = params['uddg'][0]
+                            
+                    if 'duckduckgo.com' in href or 'bing.com/aclick' in href:
+                        continue
+                        
+                    title = link_elem.get_text().strip()
+                    # Tag as Bing/Google index
+                    links.append({'title': title, 'url': href, 'source': 'Google/Bing'})
+    except Exception as e:
+        print(f"Erro ao buscar no DuckDuckGo: {e}", file=sys.stderr)
+        
+    return links
+
+# Yahoo Search Scraping (Highly reliable alternative search provider)
+def search_yahoo(query):
+    print(f"Buscando no Yahoo (Bing/Web) por: '{query}'...")
+    encoded_query = urllib.parse.quote_plus(query)
+    url = f"https://search.yahoo.com/search?q={encoded_query}"
+    
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+    }
+    
+    req = urllib.request.Request(url, headers=headers)
+    links = []
+    
+    def clean_yahoo_url(raw_url):
+        if 'RU=' in raw_url:
+            try:
+                part = raw_url.split('RU=')[1].split('/')[0]
+                return urllib.parse.unquote(part)
+            except Exception:
+                pass
+        return raw_url
+        
+    try:
+        with urllib.request.urlopen(req, timeout=15) as response:
+            html = response.read()
+            soup = BeautifulSoup(html, 'html.parser')
+            
+            for h3 in soup.find_all('h3'):
+                classes = h3.get('class', [])
+                if classes and 'title' in classes:
+                    a_tag = h3.find_parent('a')
+                    if not a_tag:
+                        a_tag = h3.find('a')
+                        
+                    if a_tag and a_tag.get('href'):
+                        raw_href = a_tag['href']
+                        clean_href = clean_yahoo_url(raw_href)
+                        title = h3.get_text().strip()
+                        links.append({'title': title, 'url': clean_href, 'source': 'Google/Bing'})
+    except Exception as e:
+        print(f"Erro ao buscar no Yahoo: {e}", file=sys.stderr)
+        
+    return links
+
+# Load indexed links history
+def load_history():
+    history_file = os.path.join(OUTPUT_DIR, "games.json")
+    if os.path.exists(history_file):
+        try:
+            with open(history_file, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {"search_links": []}
+
+# Save indexed links history
+def save_history(history):
+    history_file = os.path.join(OUTPUT_DIR, "games.json")
+    try:
+        with open(history_file, "w", encoding="utf-8") as f:
+            json.dump(history, f, indent=4, ensure_ascii=False)
+    except Exception as e:
+        print(f"Erro ao salvar histórico de jogos: {e}", file=sys.stderr)
+
+# Run indexing web search
+def index_web_search():
+    queries = [
+        "\"jogos gratis\" PC site:steampowered.com OR site:epicgames.com OR site:gog.com",
+        "site:store.steampowered.com/app/ \"100% off\" OR \"free to keep\"",
+        "jogos gratis pc hoje"
+    ]
+    
+    all_links = []
+    for q in queries:
+        # Try primary engines
+        all_links.extend(search_google(q))
+        all_links.extend(search_bing(q))
+        # Fallback/alternative engines (highly reliable)
+        all_links.extend(search_ddg(q))
+        all_links.extend(search_yahoo(q))
+        
+    unique_links = {}
+    today_str = datetime.now().strftime("%d/%m/%Y")
+    
+    for item in all_links:
+        url = item['url']
+        if "?" in url:
+            url = url.split("?")[0]
+        url = url.strip().rstrip('/')
+            
+        domain = urllib.parse.urlparse(url).netloc.lower()
+        if any(x in domain for x in ['google', 'bing', 'microsoft', 'youtube', 'facebook', 'twitter', 'instagram', 'github', 'wikipedia', 'duckduckgo', 'yahoo']):
+            continue
+            
+        title = item['title'].replace(" - Google Search", "").replace(" - Bing", "").strip()
+        if len(title) < 5 or title.lower() in ["shopping", "imagens", "vídeos", "notícias"]:
+            continue
+            
+        if url not in unique_links:
+            unique_links[url] = {
+                'title': title,
+                'url': url,
+                'source': item['source'],
+                'discovered_at': today_str
+            }
+            
+    return list(unique_links.values())
+
+# Update indexed history and return the list
+def update_search_history(new_links):
+    history = load_history()
+    existing_links = history.get('search_links', [])
+    existing_urls = {item['url']: item for item in existing_links}
+    
+    added_count = 0
+    for link in new_links:
+        url = link['url']
+        if url not in existing_urls:
+            existing_links.insert(0, link)
+            added_count += 1
+            
+    existing_links = existing_links[:50]
+    history['search_links'] = existing_links
+    history['last_update'] = datetime.now().isoformat()
+    
+    save_history(history)
+    print(f"Indexação Web: Adicionados {added_count} novos links. Total no índice: {len(existing_links)}.")
+    return existing_links
+
+
+# HTTP Request helper with User-Agent
+def fetch_url_json(url):
+    req = urllib.request.Request(
+        url, 
+        headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=15) as response:
+            return json.loads(response.read().decode('utf-8'))
+    except Exception as e:
+        print(f"Error fetching URL {url}: {e}", file=sys.stderr)
+        return None
+
+# Fetch from Epic Games Store
+def get_epic_games():
+    url = "https://store-site-backend-static.ak.epicgames.com/freeGamesPromotions?locale=pt-BR&country=BR&allowCountries=BR"
+    data = fetch_url_json(url)
+    if not data:
+        return [], []
+    
+    current_free = []
+    upcoming_free = []
+    
+    try:
+        elements = data['data']['Catalog']['searchStore']['elements']
+        for el in elements:
+            title = el.get('title')
+            # Check if there is any promotions object
+            promotions = el.get('promotions')
+            if not promotions:
+                continue
+                
+            # Find image
+            image_url = None
+            key_images = el.get('keyImages', [])
+            for img in key_images:
+                if img.get('type') in ['Thumbnail', 'DieselStoreFrontWide', 'OfferImageWide']:
+                    image_url = img.get('url')
+                    break
+            if not image_url and key_images:
+                image_url = key_images[0].get('url')
+            
+            # Construct product URL
+            # Epic Games product slug or urlSlug
+            slug = el.get('productSlug') or el.get('urlSlug')
+            if not slug and el.get('catalogNs', {}).get('mappings'):
+                mappings = el['catalogNs']['mappings']
+                if mappings:
+                    slug = mappings[0].get('pageSlug')
+            
+            product_url = f"https://store.epicgames.com/pt-BR/p/{slug}" if slug else "https://store.epicgames.com/pt-BR/free-games"
+            
+            original_price = "Grátis"
+            price_info = el.get('price', {}).get('totalPrice', {})
+            if price_info:
+                fmt_original = price_info.get('fmtPrice', {}).get('originalPrice')
+                if fmt_original and fmt_original != "0":
+                    original_price = fmt_original
+
+            # Verify promotional offers
+            promo_offers = promotions.get('promotionalOffers', [])
+            upcoming_offers = promotions.get('upcomingPromotionalOffers', [])
+            
+            # Helper to check if discount is 100% (free)
+            def is_free_offer(offer):
+                discount_setting = offer.get('discountSetting', {})
+                # Some are PERCENTAGE 0 (meaning 100% off, paying 0) or discountValue 0
+                return discount_setting.get('discountType') == 'PERCENTAGE' and discount_setting.get('discountPercentage') == 0
+
+            # Process active promotions
+            is_active = False
+            for promo in promo_offers:
+                for offer in promo.get('promotionalOffers', []):
+                    if is_free_offer(offer):
+                        start_str = offer.get('startDate')
+                        end_str = offer.get('endDate')
+                        # Parse dates (UTC)
+                        start_date = datetime.strptime(start_str[:19], "%Y-%m-%dT%H:%M:%S")
+                        end_date = datetime.strptime(end_str[:19], "%Y-%m-%dT%H:%M:%S")
+                        now = datetime.utcnow()
+                        
+                        if start_date <= now <= end_date:
+                            is_active = True
+                            current_free.append({
+                                'title': title,
+                                'description': el.get('description', 'Sem descrição disponível.'),
+                                'image': image_url,
+                                'url': product_url,
+                                'original_price': original_price,
+                                'platform': 'Epic Games',
+                                'end_date': end_date.strftime("%d/%m/%Y às %H:%M (UTC)"),
+                                'type': 'Jogo'
+                            })
+                            break
+                if is_active:
+                    break
+            
+            # Process upcoming promotions if not already active
+            if not is_active:
+                for promo in upcoming_offers:
+                    for offer in promo.get('promotionalOffers', []):
+                        if is_free_offer(offer):
+                            start_str = offer.get('startDate')
+                            end_str = offer.get('endDate')
+                            start_date = datetime.strptime(start_str[:19], "%Y-%m-%dT%H:%M:%S")
+                            end_date = datetime.strptime(end_str[:19], "%Y-%m-%dT%H:%M:%S")
+                            
+                            upcoming_free.append({
+                                'title': title,
+                                'description': el.get('description', 'Sem descrição disponível.'),
+                                'image': image_url,
+                                'url': product_url,
+                                'original_price': original_price,
+                                'platform': 'Epic Games',
+                                'start_date': start_date.strftime("%d/%m/%Y às %H:%M (UTC)"),
+                                'end_date': end_date.strftime("%d/%m/%Y às %H:%M (UTC)"),
+                                'type': 'Jogo'
+                            })
+                            break
+    except Exception as e:
+        print(f"Error parsing Epic Games JSON: {e}", file=sys.stderr)
+        
+    return current_free, upcoming_free
+
+# Fetch from GamerPower API
+def get_gamerpower_giveaways(existing_titles):
+    url = "https://www.gamerpower.com/api/giveaways?platform=pc"
+    data = fetch_url_json(url)
+    if not data:
+        return []
+    
+    giveaways = []
+    try:
+        for item in data:
+            title = item.get('title')
+            # Clean title for duplicate matching
+            clean_title = title.lower().replace("giveaway", "").replace("free", "").strip()
+            
+            # Skip if already found in Epic Games to avoid duplicates
+            is_dup = False
+            for existing in existing_titles:
+                if existing.lower() in clean_title or clean_title in existing.lower():
+                    is_dup = True
+                    break
+            if is_dup:
+                continue
+                
+            platform = item.get('platforms', 'PC')
+            # Map platform names to cleaner tags
+            if 'epic' in platform.lower():
+                platform_tag = 'Epic Games'
+            elif 'steam' in platform.lower():
+                platform_tag = 'Steam'
+            elif 'gog' in platform.lower():
+                platform_tag = 'GOG'
+            elif 'itch' in platform.lower():
+                platform_tag = 'Itch.io'
+            elif 'ubisoft' in platform.lower() or 'uplay' in platform.lower():
+                platform_tag = 'Ubisoft'
+            else:
+                platform_tag = platform
+                
+            worth = item.get('worth', 'N/A')
+            giveaway_type = 'Jogo'
+            if item.get('type') != 'Game':
+                giveaway_type = 'DLC / Extra'
+                
+            end_date = item.get('end_date')
+            if not end_date or end_date == 'N/A':
+                end_date = "Enquanto durarem os estoques"
+            
+            giveaways.append({
+                'title': title,
+                'description': item.get('description', 'Sem descrição disponível.'),
+                'image': item.get('image') or item.get('thumbnail'),
+                'url': item.get('open_giveaway_url'),
+                'original_price': worth,
+                'platform': platform_tag,
+                'end_date': end_date,
+                'type': giveaway_type
+            })
+    except Exception as e:
+        print(f"Error parsing GamerPower JSON: {e}", file=sys.stderr)
+        
+    return giveaways
+
+# Generate static HTML file
+def generate_html(current_games, upcoming_games, web_search_links):
+    now_str = datetime.now().strftime("%d/%m/%Y às %H:%M:%S")
+    
+    html_content = f"""<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor de Jogos Grátis</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        :root {{
+            --bg-color: #0f111a;
+            --card-bg: rgba(30, 33, 50, 0.4);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --accent-primary: #7c4dff;
+            --accent-secondary: #00e5ff;
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            
+            --steam-gradient: linear-gradient(135deg, #171a21 0%, #1b2838 100%);
+            --epic-gradient: linear-gradient(135deg, #2a2a2a 0%, #121212 100%);
+            --gog-gradient: linear-gradient(135deg, #2b0c3d 0%, #1c0628 100%);
+            --itch-gradient: linear-gradient(135deg, #ff2449 0%, #b8001f 100%);
+            --generic-gradient: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+        }}
+
+        * {{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }}
+
+        body {{
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Outfit', sans-serif;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(124, 77, 255, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(0, 229, 255, 0.1) 0px, transparent 50%);
+            background-attachment: fixed;
+            padding: 2rem 1rem;
+        }}
+
+        .container {{
+            max-width: 1200px;
+            margin: 0 auto;
+        }}
+
+        header {{
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }}
+
+        h1 {{
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--text-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.05em;
+        }}
+
+        .subtitle {{
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }}
+
+        .last-update {{
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+        }}
+
+        .last-update i {{
+            color: var(--accent-secondary);
+        }}
+
+        /* Control Panel */
+        .controls {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 1rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+            margin-bottom: 2.5rem;
+        }}
+
+        .filter-buttons {{
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }}
+
+        .filter-btn {{
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }}
+
+        .filter-btn:hover {{
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+        }}
+
+        .filter-btn.active {{
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 15px rgba(124, 77, 255, 0.4);
+        }}
+
+        .search-box {{
+            position: relative;
+            min-width: 280px;
+        }}
+
+        .search-box i {{
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }}
+
+        .search-input {{
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.6rem 1rem 0.6rem 2.5rem;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.2s ease;
+        }}
+
+        .search-input:focus {{
+            border-color: var(--accent-secondary);
+            background: rgba(255, 255, 255, 0.07);
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.15);
+        }}
+
+        /* Sections */
+        .section-title {{
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }}
+
+        .section-title i {{
+            color: var(--accent-primary);
+        }}
+
+        .grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }}
+
+        /* Game Card */
+        .card {{
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }}
+
+        .card::before {{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: transparent;
+            transition: background 0.3s;
+        }}
+
+        .card:hover {{
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.15);
+        }}
+
+        .card:hover::before {{
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+        }}
+
+        .image-container {{
+            position: relative;
+            width: 100%;
+            height: 180px;
+            background: #161925;
+            overflow: hidden;
+        }}
+
+        .image-container img {{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }}
+
+        .card:hover .image-container img {{
+            transform: scale(1.05);
+        }}
+
+        .platform-badge {{
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: #fff;
+        }}
+
+        .platform-badge.steam {{ background: var(--steam-gradient); }}
+        .platform-badge.epic-games {{ background: var(--epic-gradient); }}
+        .platform-badge.gog {{ background: var(--gog-gradient); }}
+        .platform-badge.itch-io {{ background: var(--itch-gradient); }}
+        .platform-badge.others {{ background: var(--generic-gradient); }}
+
+        .type-badge {{
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            background: rgba(15, 17, 26, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            backdrop-filter: blur(5px);
+        }}
+
+        .content {{
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }}
+
+        .title {{
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+            min-height: 2.6rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }}
+
+        .description {{
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 4rem;
+        }}
+
+        .meta-info {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+            margin-bottom: 1.2rem;
+            font-size: 0.85rem;
+        }}
+
+        .original-price {{
+            text-decoration: line-through;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }}
+
+        .price-badge {{
+            background: rgba(0, 229, 255, 0.12);
+            color: var(--accent-secondary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 700;
+        }}
+
+        .duration {{
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }}
+
+        .action-button {{
+            width: 100%;
+            background: linear-gradient(135deg, var(--accent-primary) 0%, #512da8 100%);
+            color: #fff;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 15px rgba(124, 77, 255, 0.2);
+        }}
+
+        .action-button:hover {{
+            background: linear-gradient(135deg, #9575cd 0%, var(--accent-primary) 100%);
+            box-shadow: 0 6px 20px rgba(124, 77, 255, 0.4);
+            transform: translateY(-1px);
+        }}
+
+        .action-button.upcoming {{
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            cursor: not-allowed;
+            box-shadow: none;
+        }}
+
+        .action-button.upcoming:hover {{
+            transform: none;
+            box-shadow: none;
+        }}
+
+        /* Empty State */
+        .empty-state {{
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 4rem 2rem;
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px dashed var(--border-color);
+            border-radius: 16px;
+        }}
+
+        .empty-state i {{
+            font-size: 3rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }}
+
+        .empty-state p {{
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }}
+
+        /* Footer */
+        footer {{
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }}
+
+        footer a {{
+            color: var(--accent-secondary);
+            text-decoration: none;
+            font-weight: 600;
+        }}
+
+        footer a:hover {{
+            text-decoration: underline;
+        }}
+
+        /* Web Search Links Section */
+        .web-links-list {{
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }}
+
+        @media (min-width: 768px) {{
+            .web-links-list {{
+                grid-template-columns: 1fr 1fr;
+            }}
+        }}
+
+        .web-link-card {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }}
+
+        .web-link-card::before {{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            opacity: 0.8;
+        }}
+
+        .web-link-card:hover {{
+            transform: translateY(-2px);
+            border-color: rgba(0, 229, 255, 0.3);
+            background: rgba(30, 33, 50, 0.6);
+            box-shadow: 0 10px 20px -10px rgba(0, 229, 255, 0.15);
+        }}
+
+        .web-link-details {{
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            padding-right: 1rem;
+            flex: 1;
+        }}
+
+        .web-link-title {{
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }}
+
+        .web-link-meta {{
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }}
+
+        .web-link-meta span {{
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }}
+
+        .web-link-meta span i {{
+            color: var(--accent-secondary);
+        }}
+
+        .web-link-meta .source-badge {{
+            background: rgba(124, 77, 255, 0.15);
+            color: #d1c4e9;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(124, 77, 255, 0.3);
+        }}
+
+        .web-link-meta .source-badge.bing {{
+            background: rgba(0, 229, 255, 0.1);
+            color: #b2ebf2;
+            border-color: rgba(0, 229, 255, 0.2);
+        }}
+
+        .web-link-btn {{
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            white-space: nowrap;
+        }}
+
+        .web-link-btn:hover {{
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            border-color: transparent;
+            color: #0f111a;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+        }}
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {{
+            h1 {{ font-size: 2.2rem; }}
+            .controls {{ flex-direction: column; align-items: stretch; }}
+            .search-box {{ min-width: 100%; }}
+        }}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1><i class="fa-solid fa-gamepad"></i> Monitor de Jogos Grátis</h1>
+            <p class="subtitle">Encontre e resgate as melhores ofertas de jogos gratuitos da atualidade</p>
+            <div class="last-update">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                Última atualização: <span>{now_str}</span>
+            </div>
+        </header>
+
+        <div class="controls">
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterPlatform('all')">Todos</button>
+                <button class="filter-btn" onclick="filterPlatform('steam')"><i class="fa-brands fa-steam"></i> Steam</button>
+                <button class="filter-btn" onclick="filterPlatform('epic games')"><i class="fa-solid fa-circle"></i> Epic Games</button>
+                <button class="filter-btn" onclick="filterPlatform('gog')"><i class="fa-solid fa-g"></i> GOG</button>
+                <button class="filter-btn" onclick="filterPlatform('others')">Outros</button>
+            </div>
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" class="search-input" id="search-input" placeholder="Pesquisar jogo..." oninput="filterSearch()">
+            </div>
+        </div>
+
+        <main>
+            <!-- JOGOS DISPONÍVEIS AGORA -->
+            <section>
+                <h2 class="section-title"><i class="fa-solid fa-fire"></i> Disponíveis Agora</h2>
+                <div class="grid" id="active-grid">
+        """
+        
+    if not current_games:
+        html_content += """
+                    <div class="empty-state">
+                        <i class="fa-solid fa-face-frown"></i>
+                        <p>Nenhum jogo gratuito disponível no momento. Volte mais tarde!</p>
+                    </div>
+        """
+    else:
+        for game in current_games:
+            platform_class = game['platform'].lower().replace(" ", "-")
+            if platform_class not in ['steam', 'epic-games', 'gog', 'itch-io']:
+                platform_class = 'others'
+                
+            original_price = game['original_price']
+            price_display = f'<span class="original-price">{original_price}</span> <span class="price-badge">Grátis</span>'
+            
+            image_url = game['image'] or 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=600&auto=format&fit=crop'
+            
+            html_content += f"""
+                    <div class="card" data-platform="{game['platform'].lower()}" data-title="{game['title'].lower()}">
+                        <div class="image-container">
+                            <img src="{image_url}" alt="{game['title']}">
+                            <div class="platform-badge {platform_class}">
+                                <i class="{get_platform_icon(game['platform'])}"></i> {game['platform']}
+                            </div>
+                            <div class="type-badge">{game['type']}</div>
+                        </div>
+                        <div class="content">
+                            <h3 class="title">{game['title']}</h3>
+                            <p class="description">{game['description']}</p>
+                            <div class="meta-info">
+                                <div class="price">
+                                    {price_display}
+                                </div>
+                                <div class="duration" title="Disponível até">
+                                    <i class="fa-solid fa-clock"></i> <span>{game['end_date']}</span>
+                                </div>
+                            </div>
+                            <a href="{game['url']}" target="_blank" class="action-button">
+                                <i class="fa-solid fa-download"></i> Resgatar Jogo
+                            </a>
+                        </div>
+                    </div>
+            """
+            
+    html_content += """
+                </div>
+            </section>
+
+            <!-- LINKS INDEXADOS VIA WEB SEARCH -->
+            <section>
+                <h2 class="section-title"><i class="fa-solid fa-globe"></i> Links Indexados da Web (Google & Bing)</h2>
+                <div class="web-links-list">
+    """
+    
+    if not web_search_links:
+        html_content += """
+                    <div class="empty-state" style="grid-column: 1 / -1;">
+                        <i class="fa-solid fa-circle-notch fa-spin"></i>
+                        <p>Nenhum link indexado por busca na web ainda. Aguardando a próxima execução das 13:01.</p>
+                    </div>
+        """
+    else:
+        for link in web_search_links:
+            source_class = "bing" if link['source'].lower() == 'bing' else "google"
+            html_content += f"""
+                    <div class="web-link-card">
+                        <div class="web-link-details">
+                            <div class="web-link-title" title="{link['title']}">{link['title']}</div>
+                            <div class="web-link-meta">
+                                <span class="source-badge {source_class}">
+                                    <i class="fa-solid fa-magnifying-glass"></i> {link['source']}
+                                </span>
+                                <span><i class="fa-solid fa-calendar-days"></i> Indexado: {link['discovered_at']}</span>
+                            </div>
+                        </div>
+                        <a href="{link['url']}" target="_blank" class="web-link-btn">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Acessar
+                        </a>
+                    </div>
+            """
+            
+    html_content += """
+                </div>
+            </section>
+
+            <!-- PRÓXIMOS JOGOS (EXCLUSIVOS EPIC) -->
+            <section>
+                <h2 class="section-title"><i class="fa-solid fa-calendar-days"></i> Em Breve (Próximos)</h2>
+                <div class="grid" id="upcoming-grid">
+    """
+    
+    if not upcoming_games:
+        html_content += """
+                    <div class="empty-state">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <p>Nenhuma promoção agendada para os próximos dias.</p>
+                    </div>
+        """
+    else:
+        for game in upcoming_games:
+            platform_class = game['platform'].lower().replace(" ", "-")
+            if platform_class not in ['steam', 'epic-games', 'gog', 'itch-io']:
+                platform_class = 'others'
+                
+            image_url = game['image'] or 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=600&auto=format&fit=crop'
+            
+            html_content += f"""
+                    <div class="card" data-platform="{game['platform'].lower()}" data-title="{game['title'].lower()}">
+                        <div class="image-container">
+                            <img src="{image_url}" alt="{game['title']}">
+                            <div class="platform-badge {platform_class}">
+                                <i class="{get_platform_icon(game['platform'])}"></i> {game['platform']}
+                            </div>
+                            <div class="type-badge">{game['type']}</div>
+                        </div>
+                        <div class="content">
+                            <h3 class="title">{game['title']}</h3>
+                            <p class="description">{game['description']}</p>
+                            <div class="meta-info" style="margin-bottom: 1.5rem;">
+                                <div class="duration" style="width: 100%; justify-content: space-between;">
+                                    <span><i class="fa-solid fa-calendar-play"></i> Inicia: {game['start_date']}</span>
+                                </div>
+                            </div>
+                            <button class="action-button upcoming" disabled>
+                                <i class="fa-solid fa-hourglass-start"></i> Indisponível ainda
+                            </button>
+                        </div>
+                    </div>
+            """
+            
+    html_content += """
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Criado automaticamente por seu Assistente do Repositório GitHub. Código de código aberto.</p>
+            <p>Os links redirecionam para as lojas oficiais de cada plataforma. Visite e resgate diretamente.</p>
+        </footer>
+    </div>
+
+    <script>
+        let currentFilter = 'all';
+
+        function filterPlatform(platform) {
+            currentFilter = platform;
+            
+            // Update active button state
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            const clickedBtn = Array.from(buttons).find(btn => 
+                btn.textContent.toLowerCase().includes(platform) || 
+                (platform === 'all' && btn.textContent.toLowerCase() === 'todos') ||
+                (platform === 'others' && btn.textContent.toLowerCase() === 'outros')
+            );
+            if (clickedBtn) clickedBtn.classList.add('active');
+
+            applyFilters();
+        }
+
+        function filterSearch() {
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const searchQuery = document.getElementById('search-input').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                const cardPlatform = card.getAttribute('data-platform');
+                const cardTitle = card.getAttribute('data-title');
+                
+                let matchesPlatform = false;
+                if (currentFilter === 'all') {
+                    matchesPlatform = true;
+                } else if (currentFilter === 'others') {
+                    matchesPlatform = !['steam', 'epic games', 'gog'].includes(cardPlatform);
+                } else {
+                    matchesPlatform = cardPlatform === currentFilter;
+                }
+
+                const matchesSearch = cardTitle.includes(searchQuery);
+
+                if (matchesPlatform && matchesSearch) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+"""
+    
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        f.write(html_content)
+    print(f"Successfully generated HTML Dashboard at: {OUTPUT_FILE}")
+
+# Get FontAwesome/Bootstrap platform icons
+def get_platform_icon(platform):
+    p = platform.lower()
+    if 'steam' in p:
+        return 'fa-brands fa-steam'
+    elif 'epic' in p:
+        return 'fa-solid fa-circle'
+    elif 'gog' in p:
+        return 'fa-solid fa-g'
+    elif 'itch' in p:
+        return 'fa-brands fa-itch-io'
+    elif 'playstation' in p:
+        return 'fa-brands fa-playstation'
+    elif 'xbox' in p:
+        return 'fa-brands fa-xbox'
+    else:
+        return 'fa-solid fa-gamepad'
+
+def main():
+    print("Starting Free Games Monitor...")
+    
+    # 1. Fetch from Epic Games Store
+    print("Fetching Epic Games Store promotions...")
+    epic_current, epic_upcoming = get_epic_games()
+    print(f"Found {len(epic_current)} active and {len(epic_upcoming)} upcoming Epic games.")
+    
+    # 2. Fetch from GamerPower (GOG, Steam, itch.io, etc.)
+    # Exclude games we already found on Epic
+    existing_titles = [g['title'] for g in epic_current] + [g['title'] for g in epic_upcoming]
+    
+    print("Fetching other PC giveaways from GamerPower...")
+    other_games = get_gamerpower_giveaways(existing_titles)
+    print(f"Found {len(other_games)} other giveaways after de-duplication.")
+    
+    # 3. Combine active games
+    all_current = epic_current + other_games
+    
+    # Sort games by platform and then by title
+    all_current.sort(key=lambda x: (x['platform'], x['title']))
+    epic_upcoming.sort(key=lambda x: x['title'])
+    
+    # 4. Web Search Indexation (Google & Bing)
+    print("Running Google & Bing search indexation...")
+    new_web_links = index_web_search()
+    web_search_links = update_search_history(new_web_links)
+    
+    # 5. Generate HTML
+    generate_html(all_current, epic_upcoming, web_search_links)
+    print("Free Games Monitor execution completed.")
+
+if __name__ == "__main__":
+    main()
