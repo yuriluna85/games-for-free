@@ -1,10 +1,10 @@
 {
-    "last_updated": "2026-06-24T11:45:47.403097",
+    "last_updated": "2026-06-24T17:47:54.577340",
     "metrics": {
         "total_active_free_games": 185,
         "total_upcoming_promotions": 2,
-        "total_indexed_web_search_links": 40,
-        "total_records": 227
+        "total_indexed_web_search_links": 44,
+        "total_records": 231
     },
     "platform_distribution": {
         "Amazon Luna": 95,

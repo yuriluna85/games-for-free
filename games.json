@@ -1,6 +1,30 @@
 {
     "search_links": [
         {
+            "title": "Car Mechanic Simulator 2018 on Steam",
+            "url": "https://store.steampowered.com/app/645630/Car_Mechanic_Simulator_2018",
+            "source": "Serper (Google)",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "House Flipper on Steam",
+            "url": "https://store.steampowered.com/app/613100/House_Flipper",
+            "source": "Serper (Google)",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "Megapromoção da Epic Games | Economize em jogos para PC",
+            "url": "https://store.epicgames.com/sales-and-specials/mega-sale",
+            "source": "Serper (Google)",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "Como baixar jogos para PC - Epic Games Store",
+            "url": "https://store.epicgames.com/news/how-to-download-pc-games",
+            "source": "Serper (Google)",
+            "discovered_at": "24/06/2026"
+        },
+        {
             "title": "Steam's Free-to-Keep Promotion Has 5* Upcoming 100% Free ...",
             "url": "https://gamerant.com/steam-free-games-coming-soon-list-june-2026",
             "source": "Google/Bing",
@@ -241,5 +265,5 @@
             "discovered_at": "23/06/2026"
         }
     ],
-    "last_update": "2026-06-24T11:45:47.375112"
+    "last_update": "2026-06-24T17:47:54.574247"
 }
