@@ -965,10 +965,37 @@ def generate_html(current_games, upcoming_games, web_search_links):
             transition: all 0.2s ease;
         }}
 
-        .search-input:focus {{
+        .type-select {{
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.55rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 600;
+            font-size: 0.9rem;
+            outline: none;
+            transition: all 0.2s ease;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.8rem center;
+            background-size: 1em;
+            padding-right: 2.2rem;
+        }}
+
+        .type-select:focus {{
             border-color: var(--accent-secondary);
-            background: rgba(255, 255, 255, 0.07);
+            background-color: rgba(255, 255, 255, 0.08);
             box-shadow: 0 0 10px rgba(0, 229, 255, 0.15);
+        }}
+
+        .type-select option {{
+            background: #1e2132;
+            color: var(--text-primary);
         }}
 
         /* Sections */
@@ -1431,9 +1458,17 @@ def generate_html(current_games, upcoming_games, web_search_links):
                 <button class="filter-btn" onclick="filterPlatform('gog')"><i class="fa-solid fa-g"></i> GOG</button>
                 <button class="filter-btn" onclick="filterPlatform('others')">Outros</button>
             </div>
-            <div class="search-box">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" class="search-input" id="search-input" placeholder="Pesquisar jogo..." oninput="filterSearch()">
+            <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; flex-grow: 1; justify-content: flex-end;">
+                <select class="type-select" id="type-select" onchange="filterType()">
+                    <option value="all">Todos os Tipos</option>
+                    <option value="jogo">Apenas Jogos</option>
+                    <option value="dlc">Apenas DLCs & Extras</option>
+                    <option value="nuvem">Apenas Cloud (Luna)</option>
+                </select>
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" class="search-input" id="search-input" placeholder="Pesquisar jogo..." oninput="filterSearch()">
+                </div>
             </div>
         </div>
 
@@ -1472,7 +1507,7 @@ def generate_html(current_games, upcoming_games, web_search_links):
                 """
 
             html_content += f"""
-                    <div class="card" data-platform="{game['platform'].lower()}" data-title="{game['title'].lower()}">
+                    <div class="card" data-platform="{game['platform'].lower()}" data-title="{game['title'].lower()}" data-type="{game.get('type', 'Jogo').lower()}">
                         <div class="image-container">
                             <img src="{image_url}" alt="{game['title']}">
                             <div class="platform-badge {platform_class}">
@@ -1571,7 +1606,7 @@ def generate_html(current_games, upcoming_games, web_search_links):
                 """
 
             html_content += f"""
-                    <div class="card" data-platform="{game['platform'].lower()}" data-title="{game['title'].lower()}">
+                    <div class="card" data-platform="{game['platform'].lower()}" data-title="{game['title'].lower()}" data-type="{game.get('type', 'Jogo').lower()}">
                         <div class="image-container">
                             <img src="{image_url}" alt="{game['title']}">
                             <div class="platform-badge {platform_class}">
@@ -1608,6 +1643,7 @@ def generate_html(current_games, upcoming_games, web_search_links):
 
     <script>
         let currentFilter = 'all';
+        let currentTypeFilter = 'all';
 
         function filterPlatform(platform) {
             currentFilter = platform;
@@ -1627,6 +1663,11 @@ def generate_html(current_games, upcoming_games, web_search_links):
             applyFilters();
         }
 
+        function filterType() {
+            currentTypeFilter = document.getElementById('type-select').value;
+            applyFilters();
+        }
+
         function filterSearch() {
             applyFilters();
         }
@@ -1638,6 +1679,7 @@ def generate_html(current_games, upcoming_games, web_search_links):
             cards.forEach(card => {
                 const cardPlatform = card.getAttribute('data-platform');
                 const cardTitle = card.getAttribute('data-title');
+                const cardType = card.getAttribute('data-type') || 'jogo';
                 
                 let matchesPlatform = false;
                 if (currentFilter === 'all') {
@@ -1648,9 +1690,20 @@ def generate_html(current_games, upcoming_games, web_search_links):
                     matchesPlatform = cardPlatform === currentFilter;
                 }
 
+                let matchesType = false;
+                if (currentTypeFilter === 'all') {
+                    matchesType = true;
+                } else if (currentTypeFilter === 'jogo') {
+                    matchesType = cardType.includes('jogo');
+                } else if (currentTypeFilter === 'dlc') {
+                    matchesType = cardType.includes('dlc') || cardType.includes('extra');
+                } else if (currentTypeFilter === 'nuvem') {
+                    matchesType = cardType.includes('nuvem') || cardType.includes('cloud') || cardType.includes('jogar na nuvem');
+                }
+
                 const matchesSearch = cardTitle.includes(searchQuery);
 
-                if (matchesPlatform && matchesSearch) {
+                if (matchesPlatform && matchesType && matchesSearch) {
                     card.style.display = 'flex';
                 } else {
                     card.style.display = 'none';
