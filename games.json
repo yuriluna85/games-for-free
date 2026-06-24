@@ -1,6 +1,48 @@
 {
     "search_links": [
         {
+            "title": "Steam Curator: Jogos gratis brasil",
+            "url": "https://store.steampowered.com/curator/6874381-Jogos-gratis-brasil",
+            "source": "Serper (Google)",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "Megapromoção da Epic Games | Economize em jogos para PC",
+            "url": "https://store.epicgames.com/sales-and-specials/mega-sale",
+            "source": "Serper (Google)",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "Como baixar jogos para PC - Epic Games Store",
+            "url": "https://store.epicgames.com/news/how-to-download-pc-games",
+            "source": "Serper (Google)",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "Car Mechanic Simulator 2018 on Steam",
+            "url": "https://store.steampowered.com/app/645630/Car_Mechanic_Simulator_2018",
+            "source": "Serper (Google)",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "House Flipper on Steam",
+            "url": "https://store.steampowered.com/app/613100/House_Flipper",
+            "source": "Serper (Google)",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "Steamで100% OFF：Just Move:Clean City Messy Battle",
+            "url": "https://store.steampowered.com/app/3414900/_",
+            "source": "Serper (Google)",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "Análise do ano de 2022 da Epic Games Store",
+            "url": "https://store.epicgames.com/news/epic-games-store-2022-year-in-review",
+            "source": "Serper (Google)",
+            "discovered_at": "24/06/2026"
+        },
+        {
             "title": "Los mejores videojuegos, sin DRM. | GOG.COM",
             "url": "https://www.gog.com/es/games",
             "source": "Google/Bing",
@@ -259,5 +301,5 @@
             "discovered_at": "23/06/2026"
         }
     ],
-    "last_update": "2026-06-24T17:51:05.571259"
+    "last_update": "2026-06-24T18:36:41.425728"
 }

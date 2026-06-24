@@ -138,5 +138,45 @@
     "platform": "Prime Gaming (Amazon)",
     "end_date": "Verifique no site",
     "type": "Jogo"
+  },
+  {
+    "title": "Space Grunts: Chrono Shard",
+    "description": "Jogo disponível para resgate no Prime Gaming. IMPORTANTE: É imprescindível ser assinante do Amazon Prime para resgatar e jogar.",
+    "image": "https://images.unsplash.com/photo-1612287230202-1bf1d85d1bdf?q=80&w=600&auto=format&fit=crop",
+    "url": "https://luna.amazon.com/claims/home",
+    "original_price": "Incluído no Prime",
+    "platform": "Prime Gaming (Epic)",
+    "end_date": "A partir de 25/06/2026",
+    "type": "Jogo"
+  },
+  {
+    "title": "Please Touch the Artwork",
+    "description": "Jogo disponível para resgate no Prime Gaming. IMPORTANTE: É imprescindível ser assinante do Amazon Prime para resgatar e jogar.",
+    "image": "https://images.unsplash.com/photo-1612287230202-1bf1d85d1bdf?q=80&w=600&auto=format&fit=crop",
+    "url": "https://luna.amazon.com/claims/home",
+    "original_price": "Incluído no Prime",
+    "platform": "Prime Gaming (Legacy)",
+    "end_date": "A partir de 25/06/2026",
+    "type": "Jogo"
+  },
+  {
+    "title": "Terraforming Mars",
+    "description": "Jogo disponível para resgate no Prime Gaming. IMPORTANTE: É imprescindível ser assinante do Amazon Prime para resgatar e jogar.",
+    "image": "https://images.unsplash.com/photo-1612287230202-1bf1d85d1bdf?q=80&w=600&auto=format&fit=crop",
+    "url": "https://luna.amazon.com/claims/home",
+    "original_price": "Incluído no Prime",
+    "platform": "Prime Gaming (Amazon)",
+    "end_date": "A partir de 25/06/2026",
+    "type": "Jogo"
+  },
+  {
+    "title": "Lost Eidolons: Veil of the Witch",
+    "description": "Jogo disponível para resgate no Prime Gaming. IMPORTANTE: É imprescindível ser assinante do Amazon Prime para resgatar e jogar.",
+    "image": "https://images.unsplash.com/photo-1612287230202-1bf1d85d1bdf?q=80&w=600&auto=format&fit=crop",
+    "url": "https://luna.amazon.com/claims/home",
+    "original_price": "Incluído no Prime",
+    "platform": "Prime Gaming (Amazon)",
+    "end_date": "A partir de 25/06/2026",
+    "type": "Jogo"
   }
 ]

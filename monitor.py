@@ -21,10 +21,16 @@ def load_requirements_cache():
     if os.path.exists(CACHE_FILE):
         try:
             with open(CACHE_FILE, 'r', encoding='utf-8') as f:
-                return json.load(f)
+                cache = json.load(f)
+                if isinstance(cache, dict):
+                    keys_to_delete = [k for k, v in cache.items() if k.startswith("luna_url_") and v is None]
+                    for k in keys_to_delete:
+                        del cache[k]
+                return cache
         except Exception:
             pass
     return {}
+
 
 def save_requirements_cache(cache):
     try:
@@ -132,11 +138,43 @@ def translate_to_pt(text):
 
 def is_text_english(text):
     text_lower = text.lower()
-    en_words = [' the ', ' and ', ' of ', ' with ', ' for ', ' is ', ' on ', ' that ']
-    pt_words = [' o ', ' a ', ' e ', ' com ', ' para ', ' é ', ' no ', ' na ', ' que ']
-    en_count = sum(text_lower.count(w) for w in en_words)
-    pt_count = sum(text_lower.count(w) for w in pt_words)
+    words = re.findall(r'\b\w+\b', text_lower)
+    en_words = {'the', 'and', 'of', 'with', 'for', 'is', 'on', 'that'}
+    pt_words = {'o', 'a', 'e', 'com', 'para', 'é', 'no', 'na', 'que'}
+    en_count = sum(1 for w in words if w in en_words)
+    pt_count = sum(1 for w in words if w in pt_words)
     return en_count > pt_count
+
+def is_text_portuguese(text):
+    if not text:
+        return False
+    text_lower = text.lower()
+    
+    # If it contains Japanese, Chinese or Korean characters, it's definitely not Portuguese
+    if re.search(r'[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uac00-\ud7af]', text):
+        return False
+        
+    # Check if it's English
+    if is_text_english(text):
+        return False
+        
+    # Check for strict Spanish words to filter out Spanish pages
+    strict_es = ['el', 'y', 'del', 'los', 'las', 'más', 'gratis', 'juego', 'juegos', 'hoy', 'canjear', 'descarga', 'promoción', 'promociones']
+    words = re.findall(r'\b\w+\b', text_lower)
+    if any(w in words for w in strict_es):
+        return False
+        
+    pt_words = ['o', 'a', 'e', 'do', 'da', 'de', 'para', 'com', 'em', 'um', 'uma', 'os', 'as', 'dos', 'das', 'no', 'na', 'nos', 'nas', 'ou', 'se', 'por', 'mais', 'grátis', 'gratuitos', 'jogo', 'jogos', 'hoje', 'baixe', 'desconto', 'oferta', 'ofertas', 'promoção', 'promoções', 'resgatar', 'seu', 'sua', 'seus', 'suas']
+    pt_count = sum(1 for w in words if w in pt_words)
+    
+    if pt_count > 0:
+        return True
+        
+    if any(c in text_lower for c in 'ãõçáéíóúâêôãõ'):
+        return True
+        
+    return False
+
 
 def resolve_redirect(url):
     print(f"Resolvendo redirecionamento para: {url}...")
@@ -211,14 +249,10 @@ def search_serper(query):
     return links
 
 def enrich_game_requirements_and_translation(game, req_cache):
-    # 1. Translation
-    if game.get('platform') not in ['Epic Games', 'Amazon Luna']:
-        game['title'] = translate_to_pt(game['title'])
-        game['description'] = translate_to_pt(game['description'])
-    else:
-        desc = game.get('description', '')
-        if desc and is_text_english(desc):
-            game['description'] = translate_to_pt(desc)
+    # 1. Translation (Do NOT translate game titles. Only translate descriptions if in English)
+    desc = game.get('description', '')
+    if desc and is_text_english(desc):
+        game['description'] = translate_to_pt(desc)
             
     # 2. Resolve Steam App ID and Requirements
     url = game.get('url', '')
@@ -252,6 +286,46 @@ def enrich_game_requirements_and_translation(game, req_cache):
             
         if reqs:
             game['requirements'] = reqs
+
+    # 3. Resolve specific Amazon Luna claims URL for Prime Gaming games
+    if 'prime gaming' in game.get('platform', '').lower():
+        title = game.get('title')
+        cache_key = f"luna_url_{title.lower()}"
+        
+        # Check cache first for resolved claim URL
+        if cache_key in req_cache:
+            specific_url = req_cache[cache_key]
+            if specific_url:
+                game['url'] = specific_url
+        else:
+            print(f"Buscando link específico da Amazon Luna para: '{title}'...")
+            specific_url = None
+            
+            # Search Serper with exact quotes first
+            results = search_serper(f'site:luna.amazon.com/claims "{title}"')
+            for r in results:
+                link = r.get('url', '')
+                if 'luna.amazon.com/claims/' in link and '/dp/' in link:
+                    specific_url = link
+                    break
+                    
+            # Search without quotes if not found
+            if not specific_url:
+                results = search_serper(f'site:luna.amazon.com/claims {title}')
+                for r in results:
+                    link = r.get('url', '')
+                    if 'luna.amazon.com/claims/' in link and '/dp/' in link:
+                        specific_url = link
+                        break
+                        
+            if specific_url:
+                print(f"  Link específico encontrado: {specific_url}")
+                game['url'] = specific_url
+                req_cache[cache_key] = specific_url
+            else:
+                print(f"  Link específico não encontrado. Mantendo URL padrão.")
+                req_cache[cache_key] = None
+
 
 # Google search scraping
 def search_google(query):
@@ -443,7 +517,15 @@ def index_web_search():
         if len(title) < 5 or title.lower() in ["shopping", "imagens", "vídeos", "notícias"]:
             continue
             
+        # Filter: keep priority domains (Steam, Epic, GOG, Amazon) regardless of title language;
+        # For all other domains, keep only if the title is in Portuguese.
+        is_priority_domain = any(x in domain for x in ['steampowered.com', 'steamcommunity.com', 'epicgames.com', 'gog.com', 'amazon.com', 'luna.amazon.com'])
+        if not is_priority_domain:
+            if not is_text_portuguese(title):
+                continue
+                
         if url not in unique_links:
+
             unique_links[url] = {
                 'title': title,
                 'url': url,
@@ -522,6 +604,13 @@ def get_luna_games():
     print("Fetching Amazon Prime Gaming claimable games...")
     games = []
     
+    # Exclusion list for games geoblocked or not available in Brazil
+    EXCLUDED_GAMES = [
+        "nordic storm solitaire",
+        "pro basketball manager 2026"
+    ]
+    excluded_lower = [x.lower() for x in EXCLUDED_GAMES]
+    
     # 1. Load from local prime_games.json if exists (for manual additions/overrides)
     local_file = os.path.join(OUTPUT_DIR, "prime_games.json")
     if os.path.exists(local_file):
@@ -529,8 +618,13 @@ def get_luna_games():
             with open(local_file, "r", encoding="utf-8") as f:
                 manual_games = json.load(f)
                 if isinstance(manual_games, list):
-                    print(f"Loaded {len(manual_games)} manual Prime Gaming games from local file.")
-                    games.extend(manual_games)
+                    clean_manual = []
+                    for g in manual_games:
+                        title_lower = g.get('title', '').lower()
+                        if not any(ex in title_lower for ex in excluded_lower):
+                            clean_manual.append(g)
+                    print(f"Loaded {len(clean_manual)} manual Prime Gaming games from local file (filtered).")
+                    games.extend(clean_manual)
         except Exception as e:
             print(f"Erro ao ler prime_games.json: {e}", file=sys.stderr)
             
@@ -574,6 +668,12 @@ def get_luna_games():
                 if name.lower().startswith('and '):
                     name = name[4:].strip()
                 platform = platform.strip()
+                
+                # Check exclusion list
+                name_lower = name.lower()
+                if any(ex in name_lower for ex in excluded_lower):
+                    print(f"  [Geoblock Filter] Omitido jogo geobloqueado no Brasil: '{name}'")
+                    continue
                 
                 # Normalize platform names
                 p_lower = platform.lower()
@@ -750,6 +850,15 @@ def get_gamerpower_giveaways(existing_titles):
                 platform_tag = 'Ubisoft'
             else:
                 platform_tag = platform
+                
+            # Platform filtering: keep only priority or Portuguese-supported portals
+            platform_lower = platform_tag.lower()
+            is_priority = any(p in platform_lower for p in ['steam', 'epic', 'gog', 'amazon', 'prime gaming'])
+            is_pt_platform = any(p in platform_lower for p in ['ubisoft', 'uplay', 'ea', 'origin', 'xbox', 'playstation', 'nintendo'])
+            
+            if not (is_priority or is_pt_platform):
+                continue
+
                 
             worth = item.get('worth', 'N/A')
             giveaway_type = 'Jogo'
