@@ -1,6 +1,42 @@
 {
     "search_links": [
         {
+            "title": "Lista de Jogos Grátis (Steam, Epic Games, Uplay, Origin e ...",
+            "url": "https://www.nerdmaldito.com/2020/04/lista-de-jogos-gratis.html",
+            "source": "Google",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "Bunny Guys! on Steam",
+            "url": "https://store.steampowered.com/app/2218460/Bunny_Guys",
+            "source": "Serper (Google)",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "Car Mechanic Simulator 2018 on Steam",
+            "url": "https://store.steampowered.com/app/645630/Car_Mechanic_Simulator_2018",
+            "source": "Serper (Google)",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "House Flipper on Steam",
+            "url": "https://store.steampowered.com/app/613100/House_Flipper",
+            "source": "Serper (Google)",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "Free To Play Games - Steam",
+            "url": "https://store.steampowered.com/genre/Free%20to%20Play/%22",
+            "source": "Google/Bing",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "Análise do ano de 2022 da Epic Games Store",
+            "url": "https://store.epicgames.com/news/epic-games-store-2022-year-in-review",
+            "source": "Serper (Google)",
+            "discovered_at": "24/06/2026"
+        },
+        {
             "title": "Steam's Free-to-Keep Promotion Has 5* Upcoming 100% Free ...",
             "url": "https://gamerant.com/steam-free-games-coming-soon-list-june-2026",
             "source": "Google/Bing",
@@ -241,5 +277,5 @@
             "discovered_at": "23/06/2026"
         }
     ],
-    "last_update": "2026-06-24T10:33:42.719675"
+    "last_update": "2026-06-24T14:11:18.807242"
 }
