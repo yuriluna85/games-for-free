@@ -1,27 +1,21 @@
 {
     "search_links": [
         {
-            "title": "Car Mechanic Simulator 2018 on Steam",
-            "url": "https://store.steampowered.com/app/645630/Car_Mechanic_Simulator_2018",
-            "source": "Serper (Google)",
+            "title": "Los mejores videojuegos, sin DRM. | GOG.COM",
+            "url": "https://www.gog.com/es/games",
+            "source": "Google/Bing",
             "discovered_at": "24/06/2026"
         },
         {
-            "title": "House Flipper on Steam",
-            "url": "https://store.steampowered.com/app/613100/House_Flipper",
-            "source": "Serper (Google)",
+            "title": "Obtén un juego gratis cada semana | Epic Games Store",
+            "url": "https://www.epicgames.com/freegames",
+            "source": "Google/Bing",
             "discovered_at": "24/06/2026"
         },
         {
-            "title": "Megapromoção da Epic Games | Economize em jogos para PC",
-            "url": "https://store.epicgames.com/sales-and-specials/mega-sale",
-            "source": "Serper (Google)",
-            "discovered_at": "24/06/2026"
-        },
-        {
-            "title": "Como baixar jogos para PC - Epic Games Store",
-            "url": "https://store.epicgames.com/news/how-to-download-pc-games",
-            "source": "Serper (Google)",
+            "title": "The Backrooms Game FREE Edition on Steam",
+            "url": "https://store.steampowered.com/app/1111210/The_Backrooms_Game_FREE_Edition",
+            "source": "Google/Bing",
             "discovered_at": "24/06/2026"
         },
         {
@@ -265,5 +259,5 @@
             "discovered_at": "23/06/2026"
         }
     ],
-    "last_update": "2026-06-24T17:47:54.574247"
+    "last_update": "2026-06-24T17:51:05.571259"
 }

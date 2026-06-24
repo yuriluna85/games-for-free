@@ -4,7 +4,7 @@ import json
 import os
 import sys
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 import csv
 
@@ -517,116 +517,94 @@ def extract_epic_slug(el):
             
     return None
 
-# Fetch from Amazon Luna (Included with Prime)
+# Fetch from Amazon Prime Gaming Claims (via Reddit RSS & local JSON)
 def get_luna_games():
-    print("Fetching Amazon Luna Included with Prime games...")
-    target_url = "https://proxy-prod.eu-west-1.tempo.digital.a2z.com/getPage"
-    headers = {
-        "Content-Type": "text/plain;charset=UTF-8",
-        "Origin": "https://luna.amazon.com",
-        "Referer": "https://luna.amazon.com/",
-        "x-amz-locale": "en_US",
-        "x-amz-platform": "web",
-        "x-amz-device-type": "browser",
-        "x-amz-marketplace-id": "ATVPDKIKX0DER",
-        "Accept-Language": "en-US,en;q=0.9",
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-    }
-
-    body_dict = {
-        "timeout": 10000,
-        "searchContext": {
-            "query": "included_with_prime",
-            "sort": "TITLE_A_TO_Z",
-            "filtersList": []
-        },
-        "featureScheme": "WEB_V1",
-        "pageContext": {
-            "pageType": "multistate_browse_results",
-            "pageId": "default"
-        },
-        "clientContext": {
-            "browserMetadata": {
-                "browserClientRole": "browser",
-                "browserType": "Chrome",
-                "browserVersion": "141.0.0.0",
-                "deviceModel": "unknown",
-                "deviceType": "unknown",
-                "osName": "Windows",
-                "osVersion": "11"
-            }
-        },
-        "inputContext": {
-            "gamepadTypes": []
-        },
-        "dynamicFeatures": []
-    }
-    
-    body_data = json.dumps(body_dict).encode("utf-8")
-    
-    # Try direct request first (usually faster and bypasses proxy timeouts for internal AWS domains)
-    response_text = None
-    try:
-        req = urllib.request.Request(target_url, data=body_data, headers=headers, method="POST")
-        with urllib.request.urlopen(req, timeout=15) as response:
-            response_text = response.read().decode('utf-8')
-            print("Successfully fetched Luna catalog directly.")
-    except Exception as e:
-        print(f"Direct request to Amazon Luna failed: {e}. Trying via ScraperAPI...", file=sys.stderr)
-        # Fallback to ScraperAPI if key is available
-        scraper_key = os.getenv("SCRAPERAPI_KEY")
-        if scraper_key:
-            try:
-                encoded_url = urllib.parse.quote(target_url)
-                scraper_url = f"http://api.scraperapi.com?api_key={scraper_key}&url={encoded_url}"
-                req_scraper = urllib.request.Request(scraper_url, data=body_data, headers=headers, method="POST")
-                with urllib.request.urlopen(req_scraper, timeout=20) as response:
-                    response_text = response.read().decode('utf-8')
-                    print("Successfully fetched Luna catalog via ScraperAPI.")
-            except Exception as ex:
-                print(f"Fallback request to Amazon Luna via ScraperAPI also failed: {ex}", file=sys.stderr)
-        else:
-            print("SCRAPERAPI_KEY não configurada. Fallback via ScraperAPI indisponível.", file=sys.stderr)
-
+    print("Fetching Amazon Prime Gaming claimable games...")
     games = []
-    if not response_text:
-        return games
-        
+    
+    # 1. Load from local prime_games.json if exists (for manual additions/overrides)
+    local_file = os.path.join(OUTPUT_DIR, "prime_games.json")
+    if os.path.exists(local_file):
+        try:
+            with open(local_file, "r", encoding="utf-8") as f:
+                manual_games = json.load(f)
+                if isinstance(manual_games, list):
+                    print(f"Loaded {len(manual_games)} manual Prime Gaming games from local file.")
+                    games.extend(manual_games)
+        except Exception as e:
+            print(f"Erro ao ler prime_games.json: {e}", file=sys.stderr)
+            
+    # 2. Fetch from Reddit RSS feed (r/FreeGameFindings)
+    url = "https://www.reddit.com/r/FreeGameFindings/search.rss?q=complimentary+with+Amazon+Prime&restrict_sr=on&sort=new&t=all"
+    req = urllib.request.Request(url, headers={'User-Agent': 'FreeGamesMonitorBot/1.0'})
+    reddit_count = 0
     try:
-        res_data = json.loads(response_text)
-        widgets = res_data.get('pageMemberGroups', {}).get('mainContent', {}).get('widgets', [])
-        for widget_container in widgets:
-            game_widgets = widget_container.get('widgets', [])
-            for w in game_widgets:
-                if w.get('type') == 'GAME_TILE':
-                    p_str = w.get('presentationData')
-                    if p_str:
-                        try:
-                            p_data = json.loads(p_str) if isinstance(p_str, str) else p_str
-                            title = p_data.get('title')
-                            if title:
-                                asin = p_data.get('hoverDetails', {}).get('asin')
-                                product_url = p_data.get('hoverDetails', {}).get('productUrl')
-                                if not product_url:
-                                    product_url = f"https://luna.amazon.com/detail/{asin}" if asin else "https://luna.amazon.com/claims/home"
-                                    
-                                description = f"Jogo disponível no catálogo de nuvem do Amazon Luna (Incluído com o Amazon Prime)."
-                                image_url = p_data.get('imagePortrait') or p_data.get('imageLandscape')
-                                
-                                games.append({
-                                    'title': title,
-                                    'description': description,
-                                    'image': image_url,
-                                    'url': product_url,
-                                    'original_price': 'Incluído no Prime',
-                                    'platform': 'Amazon Luna',
-                                    'end_date': 'Rotação Mensal',
-                                    'type': 'Jogar na Nuvem'
-                                })
-                        except Exception as ex:
-                            print(f"Erro ao parsear dados do jogo Luna: {ex}", file=sys.stderr)
+        with urllib.request.urlopen(req, timeout=10) as r:
+            xml_data = r.read()
+        import xml.etree.ElementTree as ET
+        root = ET.fromstring(xml_data)
+        ns = {'atom': 'http://www.w3.org/2005/Atom'}
+        entries = root.findall('.//atom:entry', ns)
+        
+        now = datetime.now()
+        thirty_days_ago = now - timedelta(days=30)
+        
+        # Track seen titles to avoid duplicates within Reddit or manual list
+        seen_titles = {g['title'].lower() for g in games}
+        
+        for entry in entries:
+            title = entry.find('atom:title', ns).text
+            updated_str = entry.find('atom:updated', ns).text
+            try:
+                # First 10 chars is YYYY-MM-DD
+                updated_date = datetime.strptime(updated_str[:10], "%Y-%m-%d")
+            except Exception:
+                updated_date = now
+                
+            if updated_date < thirty_days_ago:
+                continue
+                
+            # Parse games from the title
+            clean_title = re.sub(r'^\[PSA\]\s*', '', title, flags=re.IGNORECASE)
+            clean_title = re.sub(r'\s+(is|are)\s+complimentary\s+with\s+Amazon\s+Prime.*$', '', clean_title, flags=re.IGNORECASE)
+            matches = re.findall(r'([^,]+?)\s*\(([^)]+)\)', clean_title)
+            
+            for name, platform in matches:
+                name = name.strip()
+                if name.lower().startswith('and '):
+                    name = name[4:].strip()
+                platform = platform.strip()
+                
+                # Normalize platform names
+                p_lower = platform.lower()
+                if 'gog' in p_lower:
+                    plat_display = 'Prime Gaming (GOG)'
+                elif 'epic' in p_lower or 'egs' in p_lower:
+                    plat_display = 'Prime Gaming (Epic)'
+                elif 'amazon' in p_lower:
+                    plat_display = 'Prime Gaming (Amazon)'
+                elif 'legacy' in p_lower:
+                    plat_display = 'Prime Gaming (Legacy)'
+                else:
+                    plat_display = f'Prime Gaming ({platform})'
+                    
+                title_lower = name.lower()
+                if title_lower not in seen_titles:
+                    seen_titles.add(title_lower)
+                    games.append({
+                        'title': name,
+                        'description': "Jogo disponível para resgate no Prime Gaming. IMPORTANTE: É imprescindível ser assinante do Amazon Prime para resgatar e jogar.",
+                        'image': 'https://images.unsplash.com/photo-1612287230202-1bf1d85d1bdf?q=80&w=600&auto=format&fit=crop',
+                        'url': 'https://luna.amazon.com/claims/home',
+                        'original_price': 'Incluído no Prime',
+                        'platform': plat_display,
+                        'end_date': 'Verifique no site',
+                        'type': 'Jogo'
+                    })
+                    reddit_count += 1
+        print(f"Parsed {reddit_count} claimable Prime Gaming games from Reddit.")
     except Exception as e:
-        print(f"Erro ao parsear JSON do Amazon Luna: {e}", file=sys.stderr)
+        print(f"Erro ao buscar resgates do Prime no Reddit: {e}", file=sys.stderr)
         
     return games
 
@@ -1461,9 +1439,8 @@ def generate_html(current_games, upcoming_games, web_search_links):
             <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; flex-grow: 1; justify-content: flex-end;">
                 <select class="type-select" id="type-select" onchange="filterType()">
                     <option value="all">Todos os Tipos</option>
-                    <option value="jogo">Apenas Jogos</option>
+                    <option value="jogo" selected>Apenas Jogos</option>
                     <option value="dlc">Apenas DLCs & Extras</option>
-                    <option value="nuvem">Apenas Cloud (Luna)</option>
                 </select>
                 <div class="search-box">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -1636,13 +1613,13 @@ def generate_html(current_games, upcoming_games, web_search_links):
         </main>
 
         <footer>
-            <p>Criado por <a href="https://github.com/yuriluna" target="_blank">Yuri Almeida</a> | <a href="https://github.com/yuriluna/monitor-jogos-gratis" target="_blank"><i class="fa-brands fa-github"></i> Repositório do Projeto</a> | 2026</p>
+            <p>Criado por <a href="https://github.com/yuriluna85" target="_blank">Yuri Almeida</a> | <a href="https://github.com/yuriluna85/games-for-free" target="_blank"><i class="fa-brands fa-github"></i> Repositório do Projeto</a> | 2026</p>
         </footer>
     </div>
 
     <script>
         let currentFilter = 'all';
-        let currentTypeFilter = 'all';
+        let currentTypeFilter = 'jogo';
 
         function filterPlatform(platform) {
             currentFilter = platform;
@@ -1709,6 +1686,9 @@ def generate_html(current_games, upcoming_games, web_search_links):
                 }
             });
         }
+
+        // Aplicar filtros inicialmente ao carregar a página
+        applyFilters();
     </script>
 </body>
 </html>
@@ -1735,7 +1715,7 @@ def get_platform_icon(platform):
         return 'fa-brands fa-xbox'
     elif 'luna' in p:
         return 'fa-solid fa-cloud'
-    elif 'amazon' in p:
+    elif 'amazon' in p or 'prime' in p:
         return 'fa-brands fa-amazon'
     else:
         return 'fa-solid fa-gamepad'
@@ -1838,9 +1818,9 @@ def main():
     other_games = get_gamerpower_giveaways(existing_titles)
     print(f"Found {len(other_games)} other giveaways after de-duplication.")
     
-    # 2.5 Fetch from Amazon Luna (Included with Prime)
+    # 2.5 Fetch from Amazon Prime Gaming Claims
     luna_games = get_luna_games()
-    print(f"Found {len(luna_games)} Amazon Luna games.")
+    print(f"Found {len(luna_games)} Prime Gaming claimable games.")
     
     # 3. Combine active games
     all_current = epic_current + other_games + luna_games

@@ -1,13 +1,12 @@
 {
-    "last_updated": "2026-06-24T17:47:54.577340",
+    "last_updated": "2026-06-24T17:51:05.606523",
     "metrics": {
-        "total_active_free_games": 185,
+        "total_active_free_games": 104,
         "total_upcoming_promotions": 2,
-        "total_indexed_web_search_links": 44,
-        "total_records": 231
+        "total_indexed_web_search_links": 43,
+        "total_records": 149
     },
     "platform_distribution": {
-        "Amazon Luna": 95,
         "Epic Games": 4,
         "Itch.io": 8,
         "PC": 43,
@@ -20,6 +19,10 @@
         "PC, Playstation 5, Xbox Series X|S": 1,
         "PC, Playstation 5, Xbox Series X|S, Playstation 4, Xbox One": 2,
         "PC, Playstation 5, Xbox Series X|S, Playstation 4, Xbox One, Android, iOS": 1,
+        "Prime Gaming (Amazon)": 1,
+        "Prime Gaming (Epic)": 3,
+        "Prime Gaming (GOG)": 9,
+        "Prime Gaming (Legacy)": 1,
         "Steam": 21
     },
     "sources_scraped": {
