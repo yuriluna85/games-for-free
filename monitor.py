@@ -1636,8 +1636,7 @@ def generate_html(current_games, upcoming_games, web_search_links):
         </main>
 
         <footer>
-            <p>Criado automaticamente por seu Assistente do Repositório GitHub. Código de código aberto.</p>
-            <p>Os links redirecionam para as lojas oficiais de cada plataforma. Visite e resgate diretamente.</p>
+            <p>Criado por <a href="https://github.com/yuriluna" target="_blank">Yuri Almeida</a> | <a href="https://github.com/yuriluna/monitor-jogos-gratis" target="_blank"><i class="fa-brands fa-github"></i> Repositório do Projeto</a> | 2026</p>
         </footer>
     </div>
 
