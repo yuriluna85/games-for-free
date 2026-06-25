@@ -1,6 +1,30 @@
 {
     "search_links": [
         {
+            "title": "Jogos Grátis - Site Oficial da EA",
+            "url": "https://www.ea.com/pt-br/games/library/freetoplay",
+            "source": "Google/Bing",
+            "discovered_at": "25/06/2026"
+        },
+        {
+            "title": "5 jogos grátis para curtir o fim de semana no PC, consoles e mobile ...",
+            "url": "https://www.tecmundo.com.br/voxel/504369-5-jogos-gratis-para-curtir-o-fim-de-semana-no-pc-consoles-e-mobile-23.htm",
+            "source": "Serper (Google)",
+            "discovered_at": "25/06/2026"
+        },
+        {
+            "title": "A maior loja oficial de jogos da América Latina - Nuuvem",
+            "url": "https://www.nuuvem.com/br-pt/catalog/platforms/pc/price/free/sort/bestselling/sort-mode/desc",
+            "source": "Serper (Google)",
+            "discovered_at": "25/06/2026"
+        },
+        {
+            "title": "Bunny Guys! on Steam",
+            "url": "https://store.steampowered.com/app/2218460/Bunny_Guys",
+            "source": "Serper (Google)",
+            "discovered_at": "25/06/2026"
+        },
+        {
             "title": "Steam Curator: Jogos gratis brasil",
             "url": "https://store.steampowered.com/curator/6874381-Jogos-gratis-brasil",
             "source": "Serper (Google)",
@@ -275,31 +299,7 @@
             "url": "https://www.gog.com/en/games/free",
             "source": "Google/Bing",
             "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Free Games Collection - GOG.com",
-            "url": "https://www.gog.com/en/partner/free_games",
-            "source": "Google/Bing",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Download A Free PC Game Every Week - Epic Games Store",
-            "url": "https://store.epicgames.com/en-US/Free-games",
-            "source": "Google/Bing",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Download A Free PC Game Every Week - Epic Games Store",
-            "url": "https://store.epicgames.com/free-games",
-            "source": "Google/Bing",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Free To Play Games - Steam",
-            "url": "https://store.steampowered.com/genre/Free%20to%20Play",
-            "source": "Google/Bing",
-            "discovered_at": "23/06/2026"
         }
     ],
-    "last_update": "2026-06-24T18:36:41.425728"
+    "last_update": "2026-06-25T18:02:12.319056"
 }
