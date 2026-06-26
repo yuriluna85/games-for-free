@@ -1,6 +1,24 @@
 {
     "search_links": [
         {
+            "title": "Descarrega um jogo de PC gratuito todas as semanas - Epic Games",
+            "url": "https://store.epicgames.com/free-games",
+            "source": "Serper (Google)",
+            "discovered_at": "26/06/2026"
+        },
+        {
+            "title": "Steamで100% OFF：Warhammer 40,000: Gladius - Relics of War",
+            "url": "https://store.steampowered.com/app/489630/Warhammer_40000_Gladius__Relics_of_War",
+            "source": "Serper (Google)",
+            "discovered_at": "26/06/2026"
+        },
+        {
+            "title": "Jogos Grátis para Jogar - Steam",
+            "url": "https://store.steampowered.com/genre/Free%20to%20Play",
+            "source": "Serper (Google)",
+            "discovered_at": "26/06/2026"
+        },
+        {
             "title": "Jogos Grátis - Site Oficial da EA",
             "url": "https://www.ea.com/pt-br/games/library/freetoplay",
             "source": "Google/Bing",
@@ -281,25 +299,7 @@
             "url": "https://store.steampowered.com/news/search",
             "source": "Google/Bing",
             "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Free To Keep - Free Games, Every Day!",
-            "url": "https://freetokeep.gg",
-            "source": "Google/Bing",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Top Free to Play PC Games – Epic Games Store",
-            "url": "https://store.epicgames.com/collection/top-free-to-play",
-            "source": "Google/Bing",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Best Video games, DRM-free | GOG.COM",
-            "url": "https://www.gog.com/en/games/free",
-            "source": "Google/Bing",
-            "discovered_at": "23/06/2026"
         }
     ],
-    "last_update": "2026-06-25T18:02:12.319056"
+    "last_update": "2026-06-26T17:29:28.243596"
 }
