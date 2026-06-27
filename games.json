@@ -1,6 +1,18 @@
 {
     "search_links": [
         {
+            "title": "Save 65% on Along the Edge on Steam",
+            "url": "https://store.steampowered.com/app/504390/Along_the_Edge",
+            "source": "Serper (Google)",
+            "discovered_at": "27/06/2026"
+        },
+        {
+            "title": "Os melhores jogos grátis para PC – Epic Games Store",
+            "url": "https://store.epicgames.com/collection/top-free-to-play",
+            "source": "Serper (Google)",
+            "discovered_at": "27/06/2026"
+        },
+        {
             "title": "Descarrega um jogo de PC gratuito todas as semanas - Epic Games",
             "url": "https://store.epicgames.com/free-games",
             "source": "Serper (Google)",
@@ -287,19 +299,7 @@
             "url": "https://freetokeep.gg/steam",
             "source": "Google/Bing",
             "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "100% Orange Juice on Steam",
-            "url": "https://store.steampowered.com/app/282800/100_Orange_Juice",
-            "source": "Google/Bing",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "\"free to keep steam games\"",
-            "url": "https://store.steampowered.com/news/search",
-            "source": "Google/Bing",
-            "discovered_at": "23/06/2026"
         }
     ],
-    "last_update": "2026-06-26T17:29:28.243596"
+    "last_update": "2026-06-27T16:56:28.789273"
 }

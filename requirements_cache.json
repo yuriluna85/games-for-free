@@ -299,5 +299,10 @@
     "luna_url_space grunts: chrono shard": "https://luna.amazon.com/claims/space-grunts-chrono-shard-epic/dp/amzn1.pg.item.dbfe54c6-6298-46ec-808d-49d3915b9734",
     "luna_url_please touch the artwork": "https://luna.amazon.com/claims/please-touch-the-artwork-legacy/dp/amzn1.pg.item.a0412a54-5c63-4afb-b444-2fbbd937c9da?ingress=amzn&ref_=SM_PleaseTouchtheArtwork_S01_FGWP_CRWN",
     "luna_url_terraforming mars": "https://luna.amazon.com/claims/terraforming-mars-aga/dp/amzn1.pg.item.805ab02d-bcd9-4d95-81ad-6c495def553e",
-    "luna_url_lost eidolons: veil of the witch": "https://luna.amazon.com/claims/lost-eidolons-veil-of-the-witch-aga/dp/amzn1.pg.item.6a617cd8-36cc-4652-bea1-d073b1fb89e5"
+    "luna_url_lost eidolons: veil of the witch": "https://luna.amazon.com/claims/lost-eidolons-veil-of-the-witch-aga/dp/amzn1.pg.item.6a617cd8-36cc-4652-bea1-d073b1fb89e5",
+    "https://www.gamerpower.com/open/popgoes-arcade-steam-giveaway": {
+        "resolved_url": "https://store.steampowered.com/app/1986840/POPGOES_Arcade/",
+        "requirements": "Mínimos:\nSistema Operativo *:\nWindows Vista or later\nProcessador:\nDual Core 2.0 GHz\nMemória:\n2 GB de RAM\nPlaca gráfica:\nMinimum 512 MB card\nDirectX:\nVersão 9.0\nEspaço no disco:\nRequer 200 MB de espaço livre"
+    },
+    "1986840": "Mínimos:\nSistema Operativo *:\nWindows Vista or later\nProcessador:\nDual Core 2.0 GHz\nMemória:\n2 GB de RAM\nPlaca gráfica:\nMinimum 512 MB card\nDirectX:\nVersão 9.0\nEspaço no disco:\nRequer 200 MB de espaço livre"
 }
