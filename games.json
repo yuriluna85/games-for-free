@@ -1,6 +1,36 @@
 {
     "search_links": [
         {
+            "title": "Save 75% on 100% Orange Juice on Steam",
+            "url": "https://store.steampowered.com/app/282800/100_Orange_Juice",
+            "source": "Google/Bing",
+            "discovered_at": "28/06/2026"
+        },
+        {
+            "title": "Free Games Collection - GOG.com",
+            "url": "https://www.gog.com/en/partner/free_games",
+            "source": "Google/Bing",
+            "discovered_at": "28/06/2026"
+        },
+        {
+            "title": "Best Video games from category: Free, DRM-free | GOG.COM",
+            "url": "https://www.gog.com/en/games/free",
+            "source": "Google/Bing",
+            "discovered_at": "28/06/2026"
+        },
+        {
+            "title": "Welcome to GOG.com | best PC games DRM-free",
+            "url": "https://www.gog.com",
+            "source": "Google/Bing",
+            "discovered_at": "28/06/2026"
+        },
+        {
+            "title": "Download A Free PC Game Every Week - Epic Games Store",
+            "url": "https://store.epicgames.com/en-US/Free-games",
+            "source": "Google/Bing",
+            "discovered_at": "28/06/2026"
+        },
+        {
             "title": "Save 65% on Along the Edge on Steam",
             "url": "https://store.steampowered.com/app/504390/Along_the_Edge",
             "source": "Serper (Google)",
@@ -269,37 +299,7 @@
             "url": "https://store.ubisoft.com/ofertas/free-pc-games",
             "source": "Google/Bing",
             "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Poki - Jogos Online Grátis - Jogue Agora!",
-            "url": "https://poki.com/br",
-            "source": "Google/Bing",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Steam Has 5 Games You Can Claim Right Now Completely Free of ...",
-            "url": "https://gamerant.com/steam-free-keep-games-may-2026",
-            "source": "Google/Bing",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Steam’s Free-to-Keep Offer is Back: 8 PC Games You Can Own ...",
-            "url": "https://www.allkeyshop.com/blog/steams-free-to-keep-offer-is-back-8-pc-games-you-can-own-forever-but-not-for-long-news-n",
-            "source": "Google/Bing",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Free To Keep - Steam Community :: Group",
-            "url": "https://steamcommunity.com/groups/freetokeep",
-            "source": "Google/Bing",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Steam Games · Free To Keep",
-            "url": "https://freetokeep.gg/steam",
-            "source": "Google/Bing",
-            "discovered_at": "23/06/2026"
         }
     ],
-    "last_update": "2026-06-27T16:56:28.789273"
+    "last_update": "2026-06-28T16:57:39.347872"
 }
