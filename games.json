@@ -1,6 +1,24 @@
 {
     "search_links": [
         {
+            "title": "Baixe jogos grátis para Windows: FPS, estratégia, RPGs - Uptodown",
+            "url": "https://br.uptodown.com/windows/games",
+            "source": "Serper (Google)",
+            "discovered_at": "29/06/2026"
+        },
+        {
+            "title": "Steamで100% OFF：World of Warships — Marblehead Lima",
+            "url": "https://store.steampowered.com/app/934690/World_of_Warships__Marblehead_Lima",
+            "source": "Serper (Google)",
+            "discovered_at": "29/06/2026"
+        },
+        {
+            "title": "Epic Games Store | Baixe e jogue jogos para PC, mods, DLCs e ...",
+            "url": "https://store.epicgames.com/es-ES",
+            "source": "Serper (Google)",
+            "discovered_at": "29/06/2026"
+        },
+        {
             "title": "Save 75% on 100% Orange Juice on Steam",
             "url": "https://store.steampowered.com/app/282800/100_Orange_Juice",
             "source": "Google/Bing",
@@ -281,25 +299,7 @@
             "url": "https://store.steampowered.com/search",
             "source": "Google/Bing",
             "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "The Witcher and more – discover exciting free games on GOG ...",
-            "url": "https://www.gog.com/en/news/the_witcher_and_more_discover_exciting_free_games_on_gogcom",
-            "source": "Google/Bing",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Jogos Gratuitos para Jogar - Steam",
-            "url": "https://store.steampowered.com/genre/Free%20to%20Play/In",
-            "source": "Google/Bing",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Free to Play PC Games | Ubisoft Store",
-            "url": "https://store.ubisoft.com/ofertas/free-pc-games",
-            "source": "Google/Bing",
-            "discovered_at": "23/06/2026"
         }
     ],
-    "last_update": "2026-06-28T16:57:39.347872"
+    "last_update": "2026-06-29T18:03:30.529783"
 }
