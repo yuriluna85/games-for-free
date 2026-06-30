@@ -1,6 +1,30 @@
 {
     "search_links": [
         {
+            "title": "Poki - Jogos Online Grátis - Jogue Agora!",
+            "url": "https://poki.com/br",
+            "source": "Google/Bing",
+            "discovered_at": "30/06/2026"
+        },
+        {
+            "title": "Jogos Gratuitos para Jogar - Steam",
+            "url": "https://store.steampowered.com/genre/Free%20to%20Play/In",
+            "source": "Google/Bing",
+            "discovered_at": "30/06/2026"
+        },
+        {
+            "title": "\"free to keep steam games\"",
+            "url": "https://store.steampowered.com/news/search",
+            "source": "Google/Bing",
+            "discovered_at": "30/06/2026"
+        },
+        {
+            "title": "Remothered: Tormented Fathers on Steam",
+            "url": "https://store.steampowered.com/app/633360/Remothered_Tormented_Fathers",
+            "source": "Serper (Google)",
+            "discovered_at": "30/06/2026"
+        },
+        {
             "title": "Baixe jogos grátis para Windows: FPS, estratégia, RPGs - Uptodown",
             "url": "https://br.uptodown.com/windows/games",
             "source": "Serper (Google)",
@@ -275,31 +299,7 @@
             "url": "https://store.epicgames.com/news/epic-games-store-2025-year-in-review",
             "source": "Serper (Google)",
             "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Como faço para resgatar jogos grátis na EGS para dispositivos ...",
-            "url": "https://www.epicgames.com/help/pt-BR/c-202300000001639/c-202300000001731/como-faco-para-resgatar-jogos-gratis-na-egs-para-dispositivos-moveis-a202300000016454",
-            "source": "Serper (Google)",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Steam Store",
-            "url": "https://store.steampowered.com",
-            "source": "Serper (Google)",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Epic Games Store | Baixe e jogue jogos para PC, mods, DLCs e ...",
-            "url": "https://store.epicgames.com",
-            "source": "Serper (Google)",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Steam Search",
-            "url": "https://store.steampowered.com/search",
-            "source": "Google/Bing",
-            "discovered_at": "23/06/2026"
         }
     ],
-    "last_update": "2026-06-29T18:03:30.529783"
+    "last_update": "2026-06-30T17:46:50.226886"
 }
