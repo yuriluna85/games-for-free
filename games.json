@@ -1,6 +1,36 @@
 {
     "search_links": [
         {
+            "title": "Free To Keep - Steam Community :: Group",
+            "url": "https://steamcommunity.com/groups/freetokeep",
+            "source": "Google/Bing",
+            "discovered_at": "02/07/2026"
+        },
+        {
+            "title": "Steam Search",
+            "url": "https://store.steampowered.com/search",
+            "source": "Google/Bing",
+            "discovered_at": "02/07/2026"
+        },
+        {
+            "title": "Steam Curator: Recanto dos Jogos Leves",
+            "url": "https://store.steampowered.com/curator/36950778-Recanto-dos-Jogos-Leves/lists",
+            "source": "Serper (Google)",
+            "discovered_at": "02/07/2026"
+        },
+        {
+            "title": "Baixe nossos Jogos de Aventura - Epic Games",
+            "url": "https://store.epicgames.com/c/adventure-games",
+            "source": "Serper (Google)",
+            "discovered_at": "02/07/2026"
+        },
+        {
+            "title": "Só Jogos Gratis - Steam Curator",
+            "url": "https://store.steampowered.com/curator/31501281-S%C3%B3-Jogos-Gratis",
+            "source": "Serper (Google)",
+            "discovered_at": "02/07/2026"
+        },
+        {
             "title": "15 jogos grátis para PC que todo gamer precisa baixar - TechTudo",
             "url": "https://www.techtudo.com.br/listas/2024/09/15-jogos-gratis-para-pc-que-todo-gamer-precisa-baixar-edjogos.ghtml",
             "source": "Serper (Google)",
@@ -269,37 +299,7 @@
             "url": "https://store.steampowered.com/app/1053710/The_Red_Lantern",
             "source": "Serper (Google)",
             "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Wild Terra 2: New Lands on Steam",
-            "url": "https://store.steampowered.com/app/1134700/Wild_Terra_2_New_Lands",
-            "source": "Serper (Google)",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Nocturnal on Steam",
-            "url": "https://store.steampowered.com/app/1634080/Nocturnal",
-            "source": "Serper (Google)",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Steamで100% OFF：LivingForest",
-            "url": "https://store.steampowered.com/app/3027490",
-            "source": "Serper (Google)",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Save 100% on Tell Me Why on Steam",
-            "url": "https://store.steampowered.com/app/1180660/Tell_Me_Why",
-            "source": "Serper (Google)",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Juegos gratuitos para PC más jugados - Epic Games Store",
-            "url": "https://store.epicgames.com/collection/most-played-free-to-play",
-            "source": "Google/Bing",
-            "discovered_at": "23/06/2026"
         }
     ],
-    "last_update": "2026-07-01T17:46:30.172781"
+    "last_update": "2026-07-02T17:25:50.932626"
 }
