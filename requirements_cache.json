@@ -305,7 +305,10 @@
         "requirements": "Mínimos:\nSistema Operativo *:\nWindows Vista or later\nProcessador:\nDual Core 2.0 GHz\nMemória:\n2 GB de RAM\nPlaca gráfica:\nMinimum 512 MB card\nDirectX:\nVersão 9.0\nEspaço no disco:\nRequer 200 MB de espaço livre"
     },
     "1986840": "Mínimos:\nSistema Operativo *:\nWindows Vista or later\nProcessador:\nDual Core 2.0 GHz\nMemória:\n2 GB de RAM\nPlaca gráfica:\nMinimum 512 MB card\nDirectX:\nVersão 9.0\nEspaço no disco:\nRequer 200 MB de espaço livre",
-    "luna_url_cyclones": null,
-    "luna_url_lonestar": null,
-    "luna_url_symphony of war: the nephilim saga": null
+    "https://www.gamerpower.com/open/nexus-the-jupiter-incident-gog-giveaway": {
+        "resolved_url": "https://www.gog.com/en/game/nexus_the_jupiter_incident"
+    },
+    "luna_url_cyclones": "https://luna.amazon.com/claims/cyclones-gog/dp/amzn1.pg.item.34a07e29-18da-495f-9673-266fd4722390?ingress=amzn&ref_=SM_CyClones_S01_FGWP_CRWN",
+    "luna_url_lonestar": "https://luna.amazon.com/claims/lonestar-epic/dp/amzn1.pg.item.6c65c488-c2bc-4715-b90a-d364dd587581?ingress=amzn&ref_=SM_LONESTAR_S01_FGWP_CRWN",
+    "luna_url_symphony of war: the nephilim saga": "https://luna.amazon.com/claims/symphony-of-war-the-nephilim-saga-epic/dp/amzn1.pg.item.db94348f-9423-423e-a707-aed5ebf07c0c"
 }
