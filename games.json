@@ -1,6 +1,30 @@
 {
     "search_links": [
         {
+            "title": "Steamで100% OFF：Moonrise Fall",
+            "url": "https://store.steampowered.com/app/1035110/Moonrise_Fall",
+            "source": "Serper (Google)",
+            "discovered_at": "05/07/2026"
+        },
+        {
+            "title": "Steamで100% OFF：Eets",
+            "url": "https://store.steampowered.com/app/6100/Eets",
+            "source": "Serper (Google)",
+            "discovered_at": "05/07/2026"
+        },
+        {
+            "title": "Steamで100% OFF：The Red Lantern",
+            "url": "https://store.steampowered.com/app/1053710/The_Red_Lantern",
+            "source": "Serper (Google)",
+            "discovered_at": "05/07/2026"
+        },
+        {
+            "title": "Melhores jogos de corridas para PC - Epic Games",
+            "url": "https://store.epicgames.com/news/best-racing-games-for-pc-epic-games",
+            "source": "Serper (Google)",
+            "discovered_at": "05/07/2026"
+        },
+        {
             "title": "Cinco jogos para PC de graça na Steam hoje – resgate agora!",
             "url": "https://www.adrenaline.com.br/games/pc-games/cinco-jogos-para-pc-de-graca-na-steam-hoje-resgate-agora",
             "source": "Serper (Google)",
@@ -275,31 +299,7 @@
             "url": "https://gamerant.com/steam-free-games-coming-soon-list-june-2026",
             "source": "Google/Bing",
             "discovered_at": "24/06/2026"
-        },
-        {
-            "title": "Os melhores jogos gratuitos para PC e consolas - Instant-Gaming.com",
-            "url": "https://www.instant-gaming.com/pt/explorar/generos/free-to-play",
-            "source": "Serper (Google)",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Jogos de PC para download - Electronic Arts",
-            "url": "https://www.ea.com/pt-br/games/library/pc-download",
-            "source": "Serper (Google)",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Jogos Online Grátis | Jogue Agora na CrazyGames!",
-            "url": "https://www.crazygames.com/br",
-            "source": "Serper (Google)",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Melhores jogos grátis da Steam? Começando agora no PC gaming",
-            "url": "https://www.reddit.com/r/ShouldIbuythisgame/comments/1k7mua5/best_free_steam_games_just_getting_into_pc_gaming",
-            "source": "Serper (Google)",
-            "discovered_at": "23/06/2026"
         }
     ],
-    "last_update": "2026-07-04T16:53:00.210850"
+    "last_update": "2026-07-05T16:53:56.717538"
 }
