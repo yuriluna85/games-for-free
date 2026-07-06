@@ -1,6 +1,30 @@
 {
     "search_links": [
         {
+            "title": "Jogos de PC para download - Electronic Arts",
+            "url": "https://www.ea.com/pt-br/games/library/pc-download",
+            "source": "Serper (Google)",
+            "discovered_at": "06/07/2026"
+        },
+        {
+            "title": "Jogos Online Grátis | Jogue Agora na CrazyGames!",
+            "url": "https://www.crazygames.com/br",
+            "source": "Serper (Google)",
+            "discovered_at": "06/07/2026"
+        },
+        {
+            "title": "Melhores jogos grátis da Steam? Começando agora no PC gaming",
+            "url": "https://www.reddit.com/r/ShouldIbuythisgame/comments/1k7mua5/best_free_steam_games_just_getting_into_pc_gaming",
+            "source": "Serper (Google)",
+            "discovered_at": "06/07/2026"
+        },
+        {
+            "title": "Epic Games Store | Baixe e jogue jogos para PC, mods, DLCs e ...",
+            "url": "https://store.epicgames.com/nl",
+            "source": "Serper (Google)",
+            "discovered_at": "06/07/2026"
+        },
+        {
             "title": "Steamで100% OFF：Moonrise Fall",
             "url": "https://store.steampowered.com/app/1035110/Moonrise_Fall",
             "source": "Serper (Google)",
@@ -275,31 +299,7 @@
             "url": "https://store.epicgames.com/news/epic-games-store-2022-year-in-review",
             "source": "Serper (Google)",
             "discovered_at": "24/06/2026"
-        },
-        {
-            "title": "Los mejores videojuegos, sin DRM. | GOG.COM",
-            "url": "https://www.gog.com/es/games",
-            "source": "Google/Bing",
-            "discovered_at": "24/06/2026"
-        },
-        {
-            "title": "Obtén un juego gratis cada semana | Epic Games Store",
-            "url": "https://www.epicgames.com/freegames",
-            "source": "Google/Bing",
-            "discovered_at": "24/06/2026"
-        },
-        {
-            "title": "The Backrooms Game FREE Edition on Steam",
-            "url": "https://store.steampowered.com/app/1111210/The_Backrooms_Game_FREE_Edition",
-            "source": "Google/Bing",
-            "discovered_at": "24/06/2026"
-        },
-        {
-            "title": "Steam's Free-to-Keep Promotion Has 5* Upcoming 100% Free ...",
-            "url": "https://gamerant.com/steam-free-games-coming-soon-list-june-2026",
-            "source": "Google/Bing",
-            "discovered_at": "24/06/2026"
         }
     ],
-    "last_update": "2026-07-05T16:53:56.717538"
+    "last_update": "2026-07-06T18:04:32.020508"
 }
