@@ -1,6 +1,18 @@
 {
     "search_links": [
         {
+            "title": "Lista de Jogos Grátis (Steam, Epic Games, Uplay, Origin e ...",
+            "url": "https://www.nerdmaldito.com/2020/04/lista-de-jogos-gratis.html",
+            "source": "Google/Bing",
+            "discovered_at": "07/07/2026"
+        },
+        {
+            "title": "6 jogos estão grátis agora; veja como resgatar cada um - VZone",
+            "url": "https://vzone.gg/noticia/jogos-gratis-agora",
+            "source": "Serper (Google)",
+            "discovered_at": "07/07/2026"
+        },
+        {
             "title": "Jogos de PC para download - Electronic Arts",
             "url": "https://www.ea.com/pt-br/games/library/pc-download",
             "source": "Serper (Google)",
@@ -287,19 +299,7 @@
             "url": "https://store.steampowered.com/app/613100/House_Flipper",
             "source": "Serper (Google)",
             "discovered_at": "24/06/2026"
-        },
-        {
-            "title": "Steamで100% OFF：Just Move:Clean City Messy Battle",
-            "url": "https://store.steampowered.com/app/3414900/_",
-            "source": "Serper (Google)",
-            "discovered_at": "24/06/2026"
-        },
-        {
-            "title": "Análise do ano de 2022 da Epic Games Store",
-            "url": "https://store.epicgames.com/news/epic-games-store-2022-year-in-review",
-            "source": "Serper (Google)",
-            "discovered_at": "24/06/2026"
         }
     ],
-    "last_update": "2026-07-06T18:04:32.020508"
+    "last_update": "2026-07-07T17:50:58.476558"
 }
