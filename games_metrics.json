@@ -1,8 +1,8 @@
 {
-    "last_updated": "2026-07-07T17:50:58.478451",
+    "last_updated": "2026-07-08T17:18:25.186799",
     "metrics": {
-        "total_active_free_games": 55,
-        "total_upcoming_promotions": 2,
+        "total_active_free_games": 54,
+        "total_upcoming_promotions": 3,
         "total_indexed_web_search_links": 50,
         "total_records": 107
     },
@@ -13,7 +13,6 @@
         "PC, Playstation 5, Android, iOS": 1,
         "PC, Playstation 5, Playstation 4": 1,
         "PC, Playstation 5, Xbox One": 1,
-        "PC, Playstation 5, Xbox Series X|S": 1,
         "PC, Playstation 5, Xbox Series X|S, Playstation 4, Xbox One": 2,
         "PC, Playstation 5, Xbox Series X|S, Playstation 4, Xbox One, Android, iOS": 1,
         "Prime Gaming (Amazon)": 2,

@@ -1,6 +1,12 @@
 {
     "search_links": [
         {
+            "title": "Tem algum bom jogo grátis no PC?",
+            "url": "https://www.reddit.com/r/pcmasterrace/comments/1fhfiwn/are_there_any_good_free_games_on_pc",
+            "source": "Serper (Google)",
+            "discovered_at": "08/07/2026"
+        },
+        {
             "title": "Lista de Jogos Grátis (Steam, Epic Games, Uplay, Origin e ...",
             "url": "https://www.nerdmaldito.com/2020/04/lista-de-jogos-gratis.html",
             "source": "Google/Bing",
@@ -293,13 +299,7 @@
             "url": "https://store.steampowered.com/app/645630/Car_Mechanic_Simulator_2018",
             "source": "Serper (Google)",
             "discovered_at": "24/06/2026"
-        },
-        {
-            "title": "House Flipper on Steam",
-            "url": "https://store.steampowered.com/app/613100/House_Flipper",
-            "source": "Serper (Google)",
-            "discovered_at": "24/06/2026"
         }
     ],
-    "last_update": "2026-07-07T17:50:58.476558"
+    "last_update": "2026-07-08T17:18:25.184733"
 }
