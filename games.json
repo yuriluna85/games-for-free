@@ -1,6 +1,30 @@
 {
     "search_links": [
         {
+            "title": "Free To Play Games - Steam",
+            "url": "https://store.steampowered.com/tags/fr/Free-to-play",
+            "source": "Serper (Google)",
+            "discovered_at": "09/07/2026"
+        },
+        {
+            "title": "Save 85% on Wild Terra 2: New Lands on Steam",
+            "url": "https://store.steampowered.com/app/1134700/Wild_Terra_2_New_Lands",
+            "source": "Serper (Google)",
+            "discovered_at": "09/07/2026"
+        },
+        {
+            "title": "House Flipper on Steam",
+            "url": "https://store.steampowered.com/app/613100/House_Flipper",
+            "source": "Serper (Google)",
+            "discovered_at": "09/07/2026"
+        },
+        {
+            "title": "Os jogos de PC perfeitos para jogar durante as festas de fim de ano",
+            "url": "https://store.epicgames.com/news/the-perfect-pc-games-to-play-over-the-winter-holiday-break",
+            "source": "Serper (Google)",
+            "discovered_at": "09/07/2026"
+        },
+        {
             "title": "Tem algum bom jogo grátis no PC?",
             "url": "https://www.reddit.com/r/pcmasterrace/comments/1fhfiwn/are_there_any_good_free_games_on_pc",
             "source": "Serper (Google)",
@@ -275,31 +299,7 @@
             "url": "https://store.steampowered.com/app/2218460/Bunny_Guys",
             "source": "Serper (Google)",
             "discovered_at": "25/06/2026"
-        },
-        {
-            "title": "Steam Curator: Jogos gratis brasil",
-            "url": "https://store.steampowered.com/curator/6874381-Jogos-gratis-brasil",
-            "source": "Serper (Google)",
-            "discovered_at": "24/06/2026"
-        },
-        {
-            "title": "Megapromoção da Epic Games | Economize em jogos para PC",
-            "url": "https://store.epicgames.com/sales-and-specials/mega-sale",
-            "source": "Serper (Google)",
-            "discovered_at": "24/06/2026"
-        },
-        {
-            "title": "Como baixar jogos para PC - Epic Games Store",
-            "url": "https://store.epicgames.com/news/how-to-download-pc-games",
-            "source": "Serper (Google)",
-            "discovered_at": "24/06/2026"
-        },
-        {
-            "title": "Car Mechanic Simulator 2018 on Steam",
-            "url": "https://store.steampowered.com/app/645630/Car_Mechanic_Simulator_2018",
-            "source": "Serper (Google)",
-            "discovered_at": "24/06/2026"
         }
     ],
-    "last_update": "2026-07-08T17:18:25.184733"
+    "last_update": "2026-07-09T17:46:50.462586"
 }
