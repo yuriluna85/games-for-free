@@ -1,6 +1,30 @@
 {
     "search_links": [
         {
+            "title": "Bundle Crysis Remastered Trilogy",
+            "url": "https://store.epicgames.com/bundles/crysis-remastered-trilogy",
+            "source": "Serper (Google)",
+            "discovered_at": "10/07/2026"
+        },
+        {
+            "title": "Car Mechanic Simulator 2018 on Steam",
+            "url": "https://store.steampowered.com/app/645630/Car_Mechanic_Simulator_2018",
+            "source": "Serper (Google)",
+            "discovered_at": "10/07/2026"
+        },
+        {
+            "title": "Como baixar jogos para PC - Epic Games Store",
+            "url": "https://store.epicgames.com/news/how-to-download-pc-games",
+            "source": "Serper (Google)",
+            "discovered_at": "10/07/2026"
+        },
+        {
+            "title": "Megapromoção da Epic Games | Economize em jogos para PC",
+            "url": "https://store.epicgames.com/sales-and-specials/mega-sale",
+            "source": "Serper (Google)",
+            "discovered_at": "10/07/2026"
+        },
+        {
             "title": "Free To Play Games - Steam",
             "url": "https://store.steampowered.com/tags/fr/Free-to-play",
             "source": "Serper (Google)",
@@ -275,31 +299,7 @@
             "url": "https://store.steampowered.com/genre/Free%20to%20Play",
             "source": "Serper (Google)",
             "discovered_at": "26/06/2026"
-        },
-        {
-            "title": "Jogos Grátis - Site Oficial da EA",
-            "url": "https://www.ea.com/pt-br/games/library/freetoplay",
-            "source": "Google/Bing",
-            "discovered_at": "25/06/2026"
-        },
-        {
-            "title": "5 jogos grátis para curtir o fim de semana no PC, consoles e mobile ...",
-            "url": "https://www.tecmundo.com.br/voxel/504369-5-jogos-gratis-para-curtir-o-fim-de-semana-no-pc-consoles-e-mobile-23.htm",
-            "source": "Serper (Google)",
-            "discovered_at": "25/06/2026"
-        },
-        {
-            "title": "A maior loja oficial de jogos da América Latina - Nuuvem",
-            "url": "https://www.nuuvem.com/br-pt/catalog/platforms/pc/price/free/sort/bestselling/sort-mode/desc",
-            "source": "Serper (Google)",
-            "discovered_at": "25/06/2026"
-        },
-        {
-            "title": "Bunny Guys! on Steam",
-            "url": "https://store.steampowered.com/app/2218460/Bunny_Guys",
-            "source": "Serper (Google)",
-            "discovered_at": "25/06/2026"
         }
     ],
-    "last_update": "2026-07-09T17:46:50.462586"
+    "last_update": "2026-07-10T17:40:02.411535"
 }
