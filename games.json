@@ -1,6 +1,24 @@
 {
     "search_links": [
         {
+            "title": "Instalar - Epic Games",
+            "url": "https://store.epicgames.com/download/android",
+            "source": "Serper (Google)",
+            "discovered_at": "11/07/2026"
+        },
+        {
+            "title": "Gravity Circuit on Steam",
+            "url": "https://store.steampowered.com/app/858710/Gravity_Circuit",
+            "source": "Serper (Google)",
+            "discovered_at": "11/07/2026"
+        },
+        {
+            "title": "Steam Curator: Jogos gratis brasil",
+            "url": "https://store.steampowered.com/curator/6874381-Jogos-gratis-brasil",
+            "source": "Serper (Google)",
+            "discovered_at": "11/07/2026"
+        },
+        {
             "title": "Bundle Crysis Remastered Trilogy",
             "url": "https://store.epicgames.com/bundles/crysis-remastered-trilogy",
             "source": "Serper (Google)",
@@ -281,25 +299,7 @@
             "url": "https://store.epicgames.com/collection/top-free-to-play",
             "source": "Serper (Google)",
             "discovered_at": "27/06/2026"
-        },
-        {
-            "title": "Descarrega um jogo de PC gratuito todas as semanas - Epic Games",
-            "url": "https://store.epicgames.com/free-games",
-            "source": "Serper (Google)",
-            "discovered_at": "26/06/2026"
-        },
-        {
-            "title": "Steamで100% OFF：Warhammer 40,000: Gladius - Relics of War",
-            "url": "https://store.steampowered.com/app/489630/Warhammer_40000_Gladius__Relics_of_War",
-            "source": "Serper (Google)",
-            "discovered_at": "26/06/2026"
-        },
-        {
-            "title": "Jogos Grátis para Jogar - Steam",
-            "url": "https://store.steampowered.com/genre/Free%20to%20Play",
-            "source": "Serper (Google)",
-            "discovered_at": "26/06/2026"
         }
     ],
-    "last_update": "2026-07-10T17:40:02.411535"
+    "last_update": "2026-07-11T16:42:09.207800"
 }
