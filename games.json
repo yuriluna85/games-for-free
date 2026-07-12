@@ -1,6 +1,42 @@
 {
     "search_links": [
         {
+            "title": "Alguém tem jogos grátis para me recomendar para o meu PC?",
+            "url": "https://www.reddit.com/r/jeuxvideo/comments/1s2femm/quelquun_a_des_jeux_gratuits_a_me_conseiller_pour",
+            "source": "Serper (Google)",
+            "discovered_at": "12/07/2026"
+        },
+        {
+            "title": "Bunny Hurling on Steam",
+            "url": "https://store.steampowered.com/app/3515620/Bunny_Hurling",
+            "source": "Serper (Google)",
+            "discovered_at": "12/07/2026"
+        },
+        {
+            "title": "Home - Epic Games",
+            "url": "https://www.epicgames.com/site/home",
+            "source": "Google/Bing",
+            "discovered_at": "12/07/2026"
+        },
+        {
+            "title": "Los mejores videojuegos, sin DRM. | GOG.COM",
+            "url": "https://www.gog.com/es/games",
+            "source": "Google/Bing",
+            "discovered_at": "12/07/2026"
+        },
+        {
+            "title": "Download A Free PC Game Every Week - Epic Games Store",
+            "url": "https://store.epicgames.com/free-games",
+            "source": "Google/Bing",
+            "discovered_at": "12/07/2026"
+        },
+        {
+            "title": "Jogos Grátis para Jogar - Steam",
+            "url": "https://store.steampowered.com/genre/Free%20to%20Play",
+            "source": "Serper (Google)",
+            "discovered_at": "12/07/2026"
+        },
+        {
             "title": "Instalar - Epic Games",
             "url": "https://store.epicgames.com/download/android",
             "source": "Serper (Google)",
@@ -263,43 +299,7 @@
             "url": "https://store.steampowered.com/app/282800/100_Orange_Juice",
             "source": "Google/Bing",
             "discovered_at": "28/06/2026"
-        },
-        {
-            "title": "Free Games Collection - GOG.com",
-            "url": "https://www.gog.com/en/partner/free_games",
-            "source": "Google/Bing",
-            "discovered_at": "28/06/2026"
-        },
-        {
-            "title": "Best Video games from category: Free, DRM-free | GOG.COM",
-            "url": "https://www.gog.com/en/games/free",
-            "source": "Google/Bing",
-            "discovered_at": "28/06/2026"
-        },
-        {
-            "title": "Welcome to GOG.com | best PC games DRM-free",
-            "url": "https://www.gog.com",
-            "source": "Google/Bing",
-            "discovered_at": "28/06/2026"
-        },
-        {
-            "title": "Download A Free PC Game Every Week - Epic Games Store",
-            "url": "https://store.epicgames.com/en-US/Free-games",
-            "source": "Google/Bing",
-            "discovered_at": "28/06/2026"
-        },
-        {
-            "title": "Save 65% on Along the Edge on Steam",
-            "url": "https://store.steampowered.com/app/504390/Along_the_Edge",
-            "source": "Serper (Google)",
-            "discovered_at": "27/06/2026"
-        },
-        {
-            "title": "Os melhores jogos grátis para PC – Epic Games Store",
-            "url": "https://store.epicgames.com/collection/top-free-to-play",
-            "source": "Serper (Google)",
-            "discovered_at": "27/06/2026"
         }
     ],
-    "last_update": "2026-07-11T16:42:09.207800"
+    "last_update": "2026-07-12T16:45:12.899394"
 }
