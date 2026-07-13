@@ -1,6 +1,30 @@
 {
     "search_links": [
         {
+            "title": "Jogos grátis hoje: Lista atualizada da Steam, Epic Games ...",
+            "url": "https://viciados.net/jogos-gratis-hoje-lista-atualizada-steam-epic-games",
+            "source": "Google/Bing",
+            "discovered_at": "13/07/2026"
+        },
+        {
+            "title": "Free Games Collection - GOG.com",
+            "url": "https://www.gog.com/en/partner/free_games",
+            "source": "Google/Bing",
+            "discovered_at": "13/07/2026"
+        },
+        {
+            "title": "Free To Play Games - Steam",
+            "url": "https://store.steampowered.com/genre/Free%20to%20Play/%22",
+            "source": "Google/Bing",
+            "discovered_at": "13/07/2026"
+        },
+        {
+            "title": "Os melhores jogos grátis para PC",
+            "url": "https://store.epicgames.com/collection/top-free-to-play",
+            "source": "Serper (Google)",
+            "discovered_at": "13/07/2026"
+        },
+        {
             "title": "Alguém tem jogos grátis para me recomendar para o meu PC?",
             "url": "https://www.reddit.com/r/jeuxvideo/comments/1s2femm/quelquun_a_des_jeux_gratuits_a_me_conseiller_pour",
             "source": "Serper (Google)",
@@ -275,31 +299,7 @@
             "url": "https://store.steampowered.com/app/633360/Remothered_Tormented_Fathers",
             "source": "Serper (Google)",
             "discovered_at": "30/06/2026"
-        },
-        {
-            "title": "Baixe jogos grátis para Windows: FPS, estratégia, RPGs - Uptodown",
-            "url": "https://br.uptodown.com/windows/games",
-            "source": "Serper (Google)",
-            "discovered_at": "29/06/2026"
-        },
-        {
-            "title": "Steamで100% OFF：World of Warships — Marblehead Lima",
-            "url": "https://store.steampowered.com/app/934690/World_of_Warships__Marblehead_Lima",
-            "source": "Serper (Google)",
-            "discovered_at": "29/06/2026"
-        },
-        {
-            "title": "Epic Games Store | Baixe e jogue jogos para PC, mods, DLCs e ...",
-            "url": "https://store.epicgames.com/es-ES",
-            "source": "Serper (Google)",
-            "discovered_at": "29/06/2026"
-        },
-        {
-            "title": "Save 75% on 100% Orange Juice on Steam",
-            "url": "https://store.steampowered.com/app/282800/100_Orange_Juice",
-            "source": "Google/Bing",
-            "discovered_at": "28/06/2026"
         }
     ],
-    "last_update": "2026-07-12T16:45:12.899394"
+    "last_update": "2026-07-13T17:47:57.461060"
 }
