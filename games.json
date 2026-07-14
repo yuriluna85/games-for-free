@@ -1,6 +1,18 @@
 {
     "search_links": [
         {
+            "title": "Steamで100% OFF：World of Warships — Marblehead Lima",
+            "url": "https://store.steampowered.com/app/934690/World_of_Warships__Marblehead_Lima",
+            "source": "Serper (Google)",
+            "discovered_at": "14/07/2026"
+        },
+        {
+            "title": "Save 100% on Terrors to Unveil - Day Off on Steam",
+            "url": "https://store.steampowered.com/app/3587490",
+            "source": "Serper (Google)",
+            "discovered_at": "14/07/2026"
+        },
+        {
             "title": "Jogos grátis hoje: Lista atualizada da Steam, Epic Games ...",
             "url": "https://viciados.net/jogos-gratis-hoje-lista-atualizada-steam-epic-games",
             "source": "Google/Bing",
@@ -287,19 +299,7 @@
             "url": "https://store.steampowered.com/genre/Free%20to%20Play/In",
             "source": "Google/Bing",
             "discovered_at": "30/06/2026"
-        },
-        {
-            "title": "\"free to keep steam games\"",
-            "url": "https://store.steampowered.com/news/search",
-            "source": "Google/Bing",
-            "discovered_at": "30/06/2026"
-        },
-        {
-            "title": "Remothered: Tormented Fathers on Steam",
-            "url": "https://store.steampowered.com/app/633360/Remothered_Tormented_Fathers",
-            "source": "Serper (Google)",
-            "discovered_at": "30/06/2026"
         }
     ],
-    "last_update": "2026-07-13T17:47:57.461060"
+    "last_update": "2026-07-14T17:02:12.812124"
 }
