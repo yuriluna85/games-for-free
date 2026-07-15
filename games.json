@@ -1,6 +1,48 @@
 {
     "search_links": [
         {
+            "title": "Jogos Grátis - Site Oficial da EA",
+            "url": "https://www.ea.com/pt-br/games/library/freetoplay",
+            "source": "Google/Bing",
+            "discovered_at": "15/07/2026"
+        },
+        {
+            "title": "Baixe jogos grátis para Windows: FPS, estratégia, RPGs",
+            "url": "https://br.uptodown.com/windows/games",
+            "source": "Serper (Google)",
+            "discovered_at": "15/07/2026"
+        },
+        {
+            "title": "100% Orange Juice on Steam",
+            "url": "https://store.steampowered.com/app/282800/100_Orange_Juice",
+            "source": "Google/Bing",
+            "discovered_at": "15/07/2026"
+        },
+        {
+            "title": "Most Popular Free-to-Play PC Games – Epic Games Store",
+            "url": "https://store.epicgames.com/collection/most-popular-free-to-play",
+            "source": "Google/Bing",
+            "discovered_at": "15/07/2026"
+        },
+        {
+            "title": "Welcome to GOG.com | best PC games DRM-free",
+            "url": "https://www.gog.com/en",
+            "source": "Google/Bing",
+            "discovered_at": "15/07/2026"
+        },
+        {
+            "title": "Best Video games, DRM-free | GOG.COM",
+            "url": "https://www.gog.com/en/games/free",
+            "source": "Google/Bing",
+            "discovered_at": "15/07/2026"
+        },
+        {
+            "title": "Curador Steam: Jogos Grátis BR",
+            "url": "https://store.steampowered.com/curator/6267774-Jogos-Gr%25C3%25A1tis-BR",
+            "source": "Serper (Google)",
+            "discovered_at": "15/07/2026"
+        },
+        {
             "title": "Steamで100% OFF：World of Warships — Marblehead Lima",
             "url": "https://store.steampowered.com/app/934690/World_of_Warships__Marblehead_Lima",
             "source": "Serper (Google)",
@@ -257,49 +299,7 @@
             "url": "https://store.steampowered.com/curator/31501281-S%C3%B3-Jogos-Gratis",
             "source": "Serper (Google)",
             "discovered_at": "02/07/2026"
-        },
-        {
-            "title": "15 jogos grátis para PC que todo gamer precisa baixar - TechTudo",
-            "url": "https://www.techtudo.com.br/listas/2024/09/15-jogos-gratis-para-pc-que-todo-gamer-precisa-baixar-edjogos.ghtml",
-            "source": "Serper (Google)",
-            "discovered_at": "01/07/2026"
-        },
-        {
-            "title": "Steamで100% OFF：Happy's Humble Burger Farm",
-            "url": "https://store.steampowered.com/app/1433340/Happys_Humble_Burger_Farm",
-            "source": "Serper (Google)",
-            "discovered_at": "01/07/2026"
-        },
-        {
-            "title": "Epic Games Store | Baixe e jogue jogos para PC, mods, DLCs e ...",
-            "url": "https://store.epicgames.com/en-US",
-            "source": "Serper (Google)",
-            "discovered_at": "01/07/2026"
-        },
-        {
-            "title": "Steam Store",
-            "url": "https://store.steampowered.com",
-            "source": "Serper (Google)",
-            "discovered_at": "01/07/2026"
-        },
-        {
-            "title": "Epic Games Store | Baixe e jogue jogos para PC, mods, DLCs e ...",
-            "url": "https://store.epicgames.com",
-            "source": "Serper (Google)",
-            "discovered_at": "01/07/2026"
-        },
-        {
-            "title": "Poki - Jogos Online Grátis - Jogue Agora!",
-            "url": "https://poki.com/br",
-            "source": "Google/Bing",
-            "discovered_at": "30/06/2026"
-        },
-        {
-            "title": "Jogos Gratuitos para Jogar - Steam",
-            "url": "https://store.steampowered.com/genre/Free%20to%20Play/In",
-            "source": "Google/Bing",
-            "discovered_at": "30/06/2026"
         }
     ],
-    "last_update": "2026-07-14T17:02:12.812124"
+    "last_update": "2026-07-15T17:04:33.102161"
 }
