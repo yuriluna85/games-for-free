@@ -1,6 +1,42 @@
 {
     "search_links": [
         {
+            "title": "Poki - Jogos Online Grátis - Jogue Agora!",
+            "url": "https://poki.com/br",
+            "source": "Google/Bing",
+            "discovered_at": "16/07/2026"
+        },
+        {
+            "title": "Jogos Gratuitos para Jogar - Steam",
+            "url": "https://store.steampowered.com/genre/Free%20to%20Play/In",
+            "source": "Google/Bing",
+            "discovered_at": "16/07/2026"
+        },
+        {
+            "title": "Jogos Grátis para PC: Top 50 Melhores Que Você Vai Amar",
+            "url": "https://jogoparapc.com.br/jogos-gratis-para-pc",
+            "source": "Serper (Google)",
+            "discovered_at": "16/07/2026"
+        },
+        {
+            "title": "Welcome to GOG.com | best PC games DRM-free",
+            "url": "https://www.gog.com",
+            "source": "Google/Bing",
+            "discovered_at": "16/07/2026"
+        },
+        {
+            "title": "Steam Store",
+            "url": "https://store.steampowered.com",
+            "source": "Serper (Google)",
+            "discovered_at": "16/07/2026"
+        },
+        {
+            "title": "Epic Games Store | Baixe e jogue jogos para PC, mods, DLCs ...",
+            "url": "https://store.epicgames.com",
+            "source": "Serper (Google)",
+            "discovered_at": "16/07/2026"
+        },
+        {
             "title": "Jogos Grátis - Site Oficial da EA",
             "url": "https://www.ea.com/pt-br/games/library/freetoplay",
             "source": "Google/Bing",
@@ -263,43 +299,7 @@
             "url": "https://store.steampowered.com/app/1634080/Nocturnal",
             "source": "Serper (Google)",
             "discovered_at": "04/07/2026"
-        },
-        {
-            "title": "Como faço para resgatar jogos grátis na EGS para dispositivos ...",
-            "url": "https://www.epicgames.com/help/pt-BR/c-202300000001639/c-202300000001731/como-faco-para-resgatar-jogos-gratis-na-egs-para-dispositivos-moveis-a202300000016454",
-            "source": "Serper (Google)",
-            "discovered_at": "04/07/2026"
-        },
-        {
-            "title": "Free To Keep - Steam Community :: Group",
-            "url": "https://steamcommunity.com/groups/freetokeep",
-            "source": "Google/Bing",
-            "discovered_at": "02/07/2026"
-        },
-        {
-            "title": "Steam Search",
-            "url": "https://store.steampowered.com/search",
-            "source": "Google/Bing",
-            "discovered_at": "02/07/2026"
-        },
-        {
-            "title": "Steam Curator: Recanto dos Jogos Leves",
-            "url": "https://store.steampowered.com/curator/36950778-Recanto-dos-Jogos-Leves/lists",
-            "source": "Serper (Google)",
-            "discovered_at": "02/07/2026"
-        },
-        {
-            "title": "Baixe nossos Jogos de Aventura - Epic Games",
-            "url": "https://store.epicgames.com/c/adventure-games",
-            "source": "Serper (Google)",
-            "discovered_at": "02/07/2026"
-        },
-        {
-            "title": "Só Jogos Gratis - Steam Curator",
-            "url": "https://store.steampowered.com/curator/31501281-S%C3%B3-Jogos-Gratis",
-            "source": "Serper (Google)",
-            "discovered_at": "02/07/2026"
         }
     ],
-    "last_update": "2026-07-15T17:04:33.102161"
+    "last_update": "2026-07-16T17:03:18.832511"
 }

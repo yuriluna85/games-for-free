@@ -330,5 +330,13 @@
     },
     "https://www.gamerpower.com/open/the-mound-omen-of-cthulhu-lost-explorers-swords-pack-steam-giveaway": {
         "resolved_url": "https://store.steampowered.com/agecheck/app/4630450/"
-    }
+    },
+    "https://www.gamerpower.com/open/catch-me-steam-giveaway": {
+        "resolved_url": "https://store.steampowered.com/app/1741160/Catch_Me/",
+        "requirements": "Mínimos:\nSistema Operativo *:\nWindows 8 or higher\nProcessador:\nIntel i5 2,4Ghz or higher\nMemória:\n8 GB de RAM\nPlaca gráfica:\nNvidia Gtx760 4gb or higher\nDirectX:\nVersão 10\nRede:\nLigação à Internet de banda larga\nEspaço no disco:\nRequer 3 GB de espaço livre\nPlaca de som:\nSupports Direct X"
+    },
+    "1741160": "Mínimos:\nSistema Operativo *:\nWindows 8 or higher\nProcessador:\nIntel i5 2,4Ghz or higher\nMemória:\n8 GB de RAM\nPlaca gráfica:\nNvidia Gtx760 4gb or higher\nDirectX:\nVersão 10\nRede:\nLigação à Internet de banda larga\nEspaço no disco:\nRequer 3 GB de espaço livre\nPlaca de som:\nSupports Direct X",
+    "luna_url_poly vita": null,
+    "luna_url_framed collection": null,
+    "luna_url_escape academy": null
 }
