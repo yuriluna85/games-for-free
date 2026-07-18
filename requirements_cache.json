@@ -347,5 +347,10 @@
     },
     "luna_url_poly vita": "https://luna.amazon.com/claims/poly-vita-legacy/dp/amzn1.pg.item.54ad3d4e-b323-4092-a8d1-f64e5de67cbc",
     "luna_url_framed collection": "https://luna.amazon.com/claims/framed-collection-gog/dp/amzn1.pg.item.a06a5d0e-0f33-4a10-82e2-8ed97d4a8f03",
-    "luna_url_escape academy": "https://luna.amazon.com/claims/escape-academy-epic/dp/amzn1.pg.item.b1e0afe5-c3f4-464b-8731-e174e110ae2d"
+    "luna_url_escape academy": "https://luna.amazon.com/claims/escape-academy-epic/dp/amzn1.pg.item.b1e0afe5-c3f4-464b-8731-e174e110ae2d",
+    "https://www.gamerpower.com/open/the-life-and-suffering-of-sir-brante-steam-giveaway": {
+        "resolved_url": "https://store.steampowered.com/app/1272160/The_Life_and_Suffering_of_Sir_Brante/",
+        "requirements": "Mínimos:\nSistema Operativo *:\nMicrosoft® Windows® 7\nProcessador:\nPentium® 4 1.5 GHz / Athlon® XP\nMemória:\n1 GB de RAM\nPlaca gráfica:\nDirectX® 9.0c compatible\nDirectX:\nVersão 9.0c\nEspaço no disco:\nRequer 3 GB de espaço livre\nPlaca de som:\nDirectX® 9.0c compatible"
+    },
+    "1272160": "Mínimos:\nSistema Operativo *:\nMicrosoft® Windows® 7\nProcessador:\nPentium® 4 1.5 GHz / Athlon® XP\nMemória:\n1 GB de RAM\nPlaca gráfica:\nDirectX® 9.0c compatible\nDirectX:\nVersão 9.0c\nEspaço no disco:\nRequer 3 GB de espaço livre\nPlaca de som:\nDirectX® 9.0c compatible"
 }
