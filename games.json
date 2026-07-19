@@ -1,6 +1,60 @@
 {
     "search_links": [
         {
+            "title": "Jogos Online Grátis | Jogue Agora na CrazyGames!",
+            "url": "https://www.crazygames.com/br",
+            "source": "Google/Bing",
+            "discovered_at": "19/07/2026"
+        },
+        {
+            "title": "Jogos Gratuitos",
+            "url": "https://www.nuuvem.com/au-pt/promo/free-to-play",
+            "source": "Serper (Google)",
+            "discovered_at": "19/07/2026"
+        },
+        {
+            "title": "Lista de Jogos Grátis (Steam, Epic Games, Uplay, Origin e ...",
+            "url": "https://www.nerdmaldito.com/2020/04/lista-de-jogos-gratis.html",
+            "source": "Serper (Google)",
+            "discovered_at": "19/07/2026"
+        },
+        {
+            "title": "Melhores jogos grátis da Steam? Começando agora no PC ...",
+            "url": "https://www.reddit.com/r/ShouldIbuythisgame/comments/1k7mua5/best_free_steam_games_just_getting_into_pc_gaming",
+            "source": "Serper (Google)",
+            "discovered_at": "19/07/2026"
+        },
+        {
+            "title": "Steamで100% OFF：Tell Me Why",
+            "url": "https://store.steampowered.com/app/1180660/Tell_Me_Why",
+            "source": "Serper (Google)",
+            "discovered_at": "19/07/2026"
+        },
+        {
+            "title": "Steamで100% OFF：Eets",
+            "url": "https://store.steampowered.com/app/6100/Eets",
+            "source": "Serper (Google)",
+            "discovered_at": "19/07/2026"
+        },
+        {
+            "title": "Steamで100% OFF：The Red Lantern",
+            "url": "https://store.steampowered.com/app/1053710/The_Red_Lantern",
+            "source": "Serper (Google)",
+            "discovered_at": "19/07/2026"
+        },
+        {
+            "title": "Como baixar jogos para PC",
+            "url": "https://store.epicgames.com/news/how-to-download-pc-games",
+            "source": "Serper (Google)",
+            "discovered_at": "19/07/2026"
+        },
+        {
+            "title": "Megapromoção da Epic Games | Economize em jogos ...",
+            "url": "https://store.epicgames.com/sales-and-specials/mega-sale",
+            "source": "Serper (Google)",
+            "discovered_at": "19/07/2026"
+        },
+        {
             "title": "Steam Community :: Group :: Free To Keep",
             "url": "https://steamcommunity.com/groups/freetokeep",
             "source": "Google/Bing",
@@ -245,61 +299,7 @@
             "url": "https://store.steampowered.com/app/3515620/Bunny_Hurling",
             "source": "Serper (Google)",
             "discovered_at": "12/07/2026"
-        },
-        {
-            "title": "Home - Epic Games",
-            "url": "https://www.epicgames.com/site/home",
-            "source": "Google/Bing",
-            "discovered_at": "12/07/2026"
-        },
-        {
-            "title": "Los mejores videojuegos, sin DRM. | GOG.COM",
-            "url": "https://www.gog.com/es/games",
-            "source": "Google/Bing",
-            "discovered_at": "12/07/2026"
-        },
-        {
-            "title": "Download A Free PC Game Every Week - Epic Games Store",
-            "url": "https://store.epicgames.com/free-games",
-            "source": "Google/Bing",
-            "discovered_at": "12/07/2026"
-        },
-        {
-            "title": "Jogos Grátis para Jogar - Steam",
-            "url": "https://store.steampowered.com/genre/Free%20to%20Play",
-            "source": "Serper (Google)",
-            "discovered_at": "12/07/2026"
-        },
-        {
-            "title": "Instalar - Epic Games",
-            "url": "https://store.epicgames.com/download/android",
-            "source": "Serper (Google)",
-            "discovered_at": "11/07/2026"
-        },
-        {
-            "title": "Gravity Circuit on Steam",
-            "url": "https://store.steampowered.com/app/858710/Gravity_Circuit",
-            "source": "Serper (Google)",
-            "discovered_at": "11/07/2026"
-        },
-        {
-            "title": "Steam Curator: Jogos gratis brasil",
-            "url": "https://store.steampowered.com/curator/6874381-Jogos-gratis-brasil",
-            "source": "Serper (Google)",
-            "discovered_at": "11/07/2026"
-        },
-        {
-            "title": "Bundle Crysis Remastered Trilogy",
-            "url": "https://store.epicgames.com/bundles/crysis-remastered-trilogy",
-            "source": "Serper (Google)",
-            "discovered_at": "10/07/2026"
-        },
-        {
-            "title": "Car Mechanic Simulator 2018 on Steam",
-            "url": "https://store.steampowered.com/app/645630/Car_Mechanic_Simulator_2018",
-            "source": "Serper (Google)",
-            "discovered_at": "10/07/2026"
         }
     ],
-    "last_update": "2026-07-18T16:43:06.574662"
+    "last_update": "2026-07-19T16:44:11.273225"
 }
