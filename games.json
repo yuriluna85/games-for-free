@@ -1,6 +1,60 @@
 {
     "search_links": [
         {
+            "title": "Poki - Jogos Online Grátis - Jogue Agora!",
+            "url": "https://poki.com/br",
+            "source": "Google/Bing",
+            "discovered_at": "22/07/2026"
+        },
+        {
+            "title": "Jogos Gratuitos para Jogar - Steam",
+            "url": "https://store.steampowered.com/genre/Free%20to%20Play/In",
+            "source": "Google/Bing",
+            "discovered_at": "22/07/2026"
+        },
+        {
+            "title": "Existe algum site que mostra os jogos gratuitos das as lojas de PC?",
+            "url": "https://www.reddit.com/r/gamesEcultura/comments/1uzgpuv/existe_algum_site_que_mostra_os_jogos_gratuitos",
+            "source": "Serper (Google)",
+            "discovered_at": "22/07/2026"
+        },
+        {
+            "title": "Epic Games Store | Baixe e jogue jogos para PC, mods, DLCs e muito ...",
+            "url": "https://store.epicgames.com",
+            "source": "Serper (Google)",
+            "discovered_at": "22/07/2026"
+        },
+        {
+            "title": "Super Stroke The Pants",
+            "url": "https://store.steampowered.com/app/3689930/Super_Stroke_The_Pants",
+            "source": "Serper (Google)",
+            "discovered_at": "22/07/2026"
+        },
+        {
+            "title": "My Night Job",
+            "url": "https://store.steampowered.com/app/437100/My_Night_Job",
+            "source": "Serper (Google)",
+            "discovered_at": "22/07/2026"
+        },
+        {
+            "title": "Best Video games, DRM-free | GOG.COM",
+            "url": "https://www.gog.com/en/games/free",
+            "source": "Google/Bing",
+            "discovered_at": "22/07/2026"
+        },
+        {
+            "title": "GOG.COM",
+            "url": "https://www.gog.com",
+            "source": "Google/Bing",
+            "discovered_at": "22/07/2026"
+        },
+        {
+            "title": "Só Jogos Gratis - Steam Curator",
+            "url": "https://store.steampowered.com/curator/31501281-S%C3%B3-Jogos-Gratis",
+            "source": "Serper (Google)",
+            "discovered_at": "22/07/2026"
+        },
+        {
             "title": "Baixe jogos grátis para Windows: FPS, estratégia, RPGs",
             "url": "https://br.uptodown.com/windows/games",
             "source": "Serper (Google)",
@@ -245,61 +299,7 @@
             "url": "https://store.steampowered.com/app/2860410/NineHells",
             "source": "Serper (Google)",
             "discovered_at": "18/07/2026"
-        },
-        {
-            "title": "Steamで100% OFF：LivingBattle",
-            "url": "https://store.steampowered.com/app/3353830/_",
-            "source": "Serper (Google)",
-            "discovered_at": "18/07/2026"
-        },
-        {
-            "title": "Curadores Steam",
-            "url": "https://store.steampowered.com/curators",
-            "source": "Serper (Google)",
-            "discovered_at": "18/07/2026"
-        },
-        {
-            "title": "Tropicalia: a Brazilian Game trên Steam",
-            "url": "https://store.steampowered.com/app/1375760/Tropicalia_a_Brazilian_Game",
-            "source": "Serper (Google)",
-            "discovered_at": "18/07/2026"
-        },
-        {
-            "title": "POLYGON no Steam",
-            "url": "https://store.steampowered.com/app/1241100/POLYGON",
-            "source": "Serper (Google)",
-            "discovered_at": "18/07/2026"
-        },
-        {
-            "title": "Como faço para resgatar jogos grátis na EGS ...",
-            "url": "https://www.epicgames.com/help/pt-BR/c-202300000001639/c-202300000001731/como-faco-para-resgatar-jogos-gratis-na-egs-para-dispositivos-moveis-a202300000016454",
-            "source": "Serper (Google)",
-            "discovered_at": "18/07/2026"
-        },
-        {
-            "title": "15 jogos grátis para PC que todo gamer precisa baixar",
-            "url": "https://www.techtudo.com.br/listas/2024/09/15-jogos-gratis-para-pc-que-todo-gamer-precisa-baixar-edjogos.ghtml",
-            "source": "Serper (Google)",
-            "discovered_at": "17/07/2026"
-        },
-        {
-            "title": "Steamで100% OFF：Happy's Humble Burger Farm",
-            "url": "https://store.steampowered.com/app/1433340/Happys_Humble_Burger_Farm",
-            "source": "Serper (Google)",
-            "discovered_at": "17/07/2026"
-        },
-        {
-            "title": "The Mound: Omen of Cthulhu – Lost Explorers' Swords Pack",
-            "url": "https://store.steampowered.com/app/4630450/The_Mound_Omen_of_Cthulhu__Lost_Explorers_Swords_Pack",
-            "source": "Serper (Google)",
-            "discovered_at": "17/07/2026"
-        },
-        {
-            "title": "Recanto dos Jogos Leves",
-            "url": "https://store.steampowered.com/curator/36950778-Recanto-dos-Jogos-Leves/lists",
-            "source": "Serper (Google)",
-            "discovered_at": "17/07/2026"
         }
     ],
-    "last_update": "2026-07-21T17:06:20.997817"
+    "last_update": "2026-07-22T17:07:41.106435"
 }
