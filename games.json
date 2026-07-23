@@ -1,6 +1,48 @@
 {
     "search_links": [
         {
+            "title": "Os melhores jogos gratuitos para PC e consolas",
+            "url": "https://www.instant-gaming.com/pt/explorar/generos/free-to-play",
+            "source": "Serper (Google)",
+            "discovered_at": "23/07/2026"
+        },
+        {
+            "title": "15 jogos grátis para PC que todo gamer precisa baixar",
+            "url": "https://www.techtudo.com.br/listas/2024/09/15-jogos-gratis-para-pc-que-todo-gamer-precisa-baixar-edjogos.ghtml",
+            "source": "Serper (Google)",
+            "discovered_at": "23/07/2026"
+        },
+        {
+            "title": "The Mound: Omen of Cthulhu – Lost Explorers' Swords Pack",
+            "url": "https://store.steampowered.com/app/4630450/The_Mound_Omen_of_Cthulhu__Lost_Explorers_Swords_Pack",
+            "source": "Serper (Google)",
+            "discovered_at": "23/07/2026"
+        },
+        {
+            "title": "Curador Steam: Jogos Grátis BR",
+            "url": "https://store.steampowered.com/curator/6267774-Jogos-Gr%25C3%25A1tis-BR",
+            "source": "Serper (Google)",
+            "discovered_at": "23/07/2026"
+        },
+        {
+            "title": "Recanto dos Jogos Leves",
+            "url": "https://store.steampowered.com/curator/36950778-Recanto-dos-Jogos-Leves/lists",
+            "source": "Serper (Google)",
+            "discovered_at": "23/07/2026"
+        },
+        {
+            "title": "Baixe nossos Jogos de Aventura",
+            "url": "https://store.epicgames.com/c/adventure-games",
+            "source": "Serper (Google)",
+            "discovered_at": "23/07/2026"
+        },
+        {
+            "title": "Steam Store",
+            "url": "https://store.steampowered.com",
+            "source": "Serper (Google)",
+            "discovered_at": "23/07/2026"
+        },
+        {
             "title": "Poki - Jogos Online Grátis - Jogue Agora!",
             "url": "https://poki.com/br",
             "source": "Google/Bing",
@@ -257,49 +299,7 @@
             "url": "https://store.steampowered.com/app/46510/Syberia_II",
             "source": "Serper (Google)",
             "discovered_at": "18/07/2026"
-        },
-        {
-            "title": "Warhammer Underworlds - Shadespire Edition (Classic)",
-            "url": "https://store.steampowered.com/app/1022310/Warhammer_Underworlds__Shadespire_Edition",
-            "source": "Serper (Google)",
-            "discovered_at": "18/07/2026"
-        },
-        {
-            "title": "Save 65% on Press Any Button on Steam",
-            "url": "https://store.steampowered.com/app/1448030",
-            "source": "Serper (Google)",
-            "discovered_at": "18/07/2026"
-        },
-        {
-            "title": "Save 50% on IQ Under Construction on Steam",
-            "url": "https://store.steampowered.com/app/3771740",
-            "source": "Serper (Google)",
-            "discovered_at": "18/07/2026"
-        },
-        {
-            "title": "Steamで100% OFF：Uncanny Tales: Cold Road",
-            "url": "https://store.steampowered.com/app/3534240/Uncanny_Tales_Cold_Road",
-            "source": "Serper (Google)",
-            "discovered_at": "18/07/2026"
-        },
-        {
-            "title": "The Life and Suffering of Sir Brante",
-            "url": "https://store.steampowered.com/app/1272160/The_Life_and_Suffering_of_Sir_Brante",
-            "source": "Serper (Google)",
-            "discovered_at": "18/07/2026"
-        },
-        {
-            "title": "Broilers ve službě Steam",
-            "url": "https://store.steampowered.com/app/1562780/Brojlery",
-            "source": "Serper (Google)",
-            "discovered_at": "18/07/2026"
-        },
-        {
-            "title": "Steamで100% OFF：NineHells",
-            "url": "https://store.steampowered.com/app/2860410/NineHells",
-            "source": "Serper (Google)",
-            "discovered_at": "18/07/2026"
         }
     ],
-    "last_update": "2026-07-22T17:07:41.106435"
+    "last_update": "2026-07-23T17:09:49.452083"
 }
