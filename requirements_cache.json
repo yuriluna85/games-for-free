@@ -357,5 +357,10 @@
         "resolved_url": "https://store.steampowered.com/agecheck/app/674750/"
     },
     "luna_url_in sound mind": "https://luna.amazon.com/claims/in-sound-mind-aga/dp/amzn1.pg.item.1a5c5cac-5445-48ba-89f6-91c4e0068399?ingress=amzn&ref_=SM_InSoundMind_S02_FGWP_CRWN",
-    "luna_url_mystic academy: escape room": "https://luna.amazon.com/claims/mystic-academy-escape-room-gog/dp/amzn1.pg.item.61f57a96-121c-443f-8432-652773456072"
+    "luna_url_mystic academy: escape room": "https://luna.amazon.com/claims/mystic-academy-escape-room-gog/dp/amzn1.pg.item.61f57a96-121c-443f-8432-652773456072",
+    "https://www.gamerpower.com/open/dragonsword-awakening-abyssal-direwolf-steam-giveaway": {
+        "resolved_url": "https://store.steampowered.com/app/4742660/DragonSword__Awakening__Familiar__Abyssal_Direwolf/",
+        "requirements": "Mínimos:\nRequer um sistema operativo e processador de 64 bits"
+    },
+    "4742660": "Mínimos:\nRequer um sistema operativo e processador de 64 bits"
 }
