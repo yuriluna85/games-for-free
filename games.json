@@ -1,21 +1,27 @@
 {
     "search_links": [
         {
-            "title": "15 jogos grátis para PC que todo gamer precisa baixar",
-            "url": "https://www.techtudo.com.br/listas/2024/09/15-jogos-gratis-para-pc-que-todo-gamer-precisa-baixar-edjogos.ghtml",
+            "title": "Steam Community :: Group :: Free To Keep",
+            "url": "https://steamcommunity.com/groups/freetokeep",
+            "source": "Google/Bing",
+            "discovered_at": "29/07/2026"
+        },
+        {
+            "title": "Wild Terra Online - Lord Pack",
+            "url": "https://store.steampowered.com/app/1019290/Wild_Terra_Online__Lord_Pack",
             "source": "Serper (Google)",
             "discovered_at": "29/07/2026"
         },
         {
-            "title": "Descarrega um jogo de PC gratuito todas as semanas",
+            "title": "GOG.com",
+            "url": "https://www.gog.com/en/partner/free_games",
+            "source": "Google/Bing",
+            "discovered_at": "29/07/2026"
+        },
+        {
+            "title": "Download A Free PC Game Every Week - Epic Games Store",
             "url": "https://store.epicgames.com/free-games",
-            "source": "Serper (Google)",
-            "discovered_at": "29/07/2026"
-        },
-        {
-            "title": "Steamで100% OFF：Remothered: Tormented Fathers",
-            "url": "https://store.steampowered.com/app/633360/Remothered_Tormented_Fathers",
-            "source": "Serper (Google)",
+            "source": "Google/Bing",
             "discovered_at": "29/07/2026"
         },
         {
@@ -293,13 +299,7 @@
             "url": "https://store.steampowered.com",
             "source": "Serper (Google)",
             "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Epic Games Store | Baixe e jogue jogos para PC, mods, DLCs e ...",
-            "url": "https://store.epicgames.com",
-            "source": "Serper (Google)",
-            "discovered_at": "23/06/2026"
         }
     ],
-    "last_update": "2026-07-29T23:07:12.613852"
+    "last_update": "2026-07-29T20:14:53.372778"
 }

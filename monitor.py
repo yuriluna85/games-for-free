@@ -600,6 +600,25 @@ def extract_epic_slug(el):
     return None
 
 # Fetch from Amazon Prime Gaming Claims (via Reddit RSS & local JSON)
+def resolve_game_cover(title):
+    """Busca capa HD oficial do jogo via Steam Store API como fallback de alta qualidade."""
+    if not title:
+        return 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600&auto=format&fit=crop'
+    try:
+        q = urllib.parse.quote(title)
+        url = f'https://store.steampowered.com/api/storesearch/?term={q}&l=brazilian&cc=BR'
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'})
+        with urllib.request.urlopen(req, timeout=6) as r:
+            data = json.loads(r.read().decode('utf-8'))
+            items = data.get('items', [])
+            if items:
+                app_id = items[0].get('id')
+                return f'https://cdn.cloudflare.steamstatic.com/steam/apps/{app_id}/header.jpg'
+    except Exception:
+        pass
+    return 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600&auto=format&fit=crop'
+
+
 def get_luna_games():
     print("Fetching Amazon Prime Gaming claimable games...")
     games = []
@@ -691,10 +710,11 @@ def get_luna_games():
                 title_lower = name.lower()
                 if title_lower not in seen_titles:
                     seen_titles.add(title_lower)
+                    cover_url = resolve_game_cover(name)
                     games.append({
                         'title': name,
                         'description': "Jogo disponível para resgate no Prime Gaming. IMPORTANTE: É imprescindível ser assinante do Amazon Prime para resgatar e jogar.",
-                        'image': 'https://images.unsplash.com/photo-1612287230202-1bf1d85d1bdf?q=80&w=600&auto=format&fit=crop',
+                        'image': cover_url,
                         'url': 'https://luna.amazon.com/claims/home',
                         'original_price': 'Incluído no Prime',
                         'platform': plat_display,
@@ -1595,7 +1615,7 @@ def generate_html(current_games, upcoming_games, web_search_links):
             html_content += f"""
                     <div class="card" data-platform="{game['platform'].lower()}" data-title="{game['title'].lower()}" data-type="{game.get('type', 'Jogo').lower()}">
                         <div class="image-container">
-                            <img src="{image_url}" alt="{game['title']}">
+                            <img src="{image_url}" alt="{game['title']}" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600&auto=format&fit=crop';">
                             <div class="platform-badge {platform_class}">
                                 <i class="{get_platform_icon(game['platform'])}"></i> {game['platform']}
                             </div>
@@ -1694,7 +1714,7 @@ def generate_html(current_games, upcoming_games, web_search_links):
             html_content += f"""
                     <div class="card" data-platform="{game['platform'].lower()}" data-title="{game['title'].lower()}" data-type="{game.get('type', 'Jogo').lower()}">
                         <div class="image-container">
-                            <img src="{image_url}" alt="{game['title']}">
+                            <img src="{image_url}" alt="{game['title']}" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600&auto=format&fit=crop';">
                             <div class="platform-badge {platform_class}">
                                 <i class="{get_platform_icon(game['platform'])}"></i> {game['platform']}
                             </div>
