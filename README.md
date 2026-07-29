@@ -1,4 +1,6 @@
 # 🎮 Monitor e Indexador de Jogos Grátis
+> **Projeto desenvolvido sob a chancela 🔬 YLuna85 LABs**
+
 
 Este repositório contém uma aplicação automatizada para monitorar, buscar e indexar ofertas de jogos gratuitos em lojas como **Steam, Epic Games Store, GOG** e outros portais da internet. A página principal é gerada estaticamente e foi projetada para ser hospedada diretamente no **GitHub Pages**.
 
@@ -76,3 +78,11 @@ O arquivo `index.html` gerado de forma estática conta com:
 * **Glassmorphism** nos cartões de jogos e painel de controle.
 * **Filtros Dinâmicos** por plataforma (Steam, Epic, GOG) e caixa de pesquisa por título de jogo em tempo real.
 * **Seção de Links Indexados**: Exibe os links dinâmicos e artigos de ofertas encontrados pelas buscas web do Google e Bing.
+
+
+## 📜 Log de Atualizações (Changelog)
+
+### 📅 30/06/2026 - Estruturação de SEO & Monetização
+- 🌐 **Otimização de SEO (White Hat)**: Inclusão de meta tags de indexação, dados estruturados JSON-LD e tags Open Graph (OG) para melhorar a relevância e indexação orgânica no Google.
+- 💵 **Estrutura de Monetização**: Adicionados slots de publicidade responsivos (banner horizontal e lateral) compatíveis com o modo de alto contraste para Google AdSense e AdMob.
+

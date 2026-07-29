@@ -1,20 +1,26 @@
 {
     "search_links": [
         {
-            "title": "Baixe jogos grátis para Windows: FPS, estratégia, RPGs",
-            "url": "https://br.uptodown.com/windows/games",
-            "source": "Serper (Google)",
+            "title": "Jogos Grátis - Site Oficial da EA",
+            "url": "https://www.ea.com/pt-br/games/library/freetoplay",
+            "source": "Google/Bing",
             "discovered_at": "29/07/2026"
         },
         {
-            "title": "Melhores jogos grátis da Steam? Começando agora no PC ...",
-            "url": "https://www.reddit.com/r/ShouldIbuythisgame/comments/1k7mua5/best_free_steam_games_just_getting_into_pc_gaming",
-            "source": "Serper (Google)",
+            "title": "Jogos grátis hoje: Lista atualizada da Steam, Epic Games ...",
+            "url": "https://viciados.net/jogos-gratis-hoje-lista-atualizada-steam-epic-games",
+            "source": "Google/Bing",
             "discovered_at": "29/07/2026"
         },
         {
-            "title": "Steamで100% OFF：Remothered: Tormented Fathers",
-            "url": "https://store.steampowered.com/app/633360/Remothered_Tormented_Fathers",
+            "title": "Lista de Jogos Grátis (Steam, Epic Games, Uplay, Origin e ...",
+            "url": "https://www.nerdmaldito.com/2020/04/lista-de-jogos-gratis.html",
+            "source": "Google/Bing",
+            "discovered_at": "29/07/2026"
+        },
+        {
+            "title": "Alguém tem jogos grátis para me recomendar para o meu PC?",
+            "url": "https://www.reddit.com/r/jeuxvideo/comments/1s2femm/quelquun_a_des_jeux_gratuits_a_me_conseiller_pour",
             "source": "Serper (Google)",
             "discovered_at": "29/07/2026"
         },
@@ -25,8 +31,20 @@
             "discovered_at": "29/07/2026"
         },
         {
+            "title": "The Mound: Omen of Cthulhu – Lost Explorers' Swords Pack",
+            "url": "https://store.steampowered.com/app/4630450/The_Mound_Omen_of_Cthulhu__Lost_Explorers_Swords_Pack",
+            "source": "Serper (Google)",
+            "discovered_at": "29/07/2026"
+        },
+        {
             "title": "Steamで100% OFF：World of Warships — Marblehead Lima",
             "url": "https://store.steampowered.com/app/934690/World_of_Warships__Marblehead_Lima",
+            "source": "Serper (Google)",
+            "discovered_at": "29/07/2026"
+        },
+        {
+            "title": "The Life and Suffering of Sir Brante",
+            "url": "https://store.steampowered.com/app/1272160/The_Life_and_Suffering_of_Sir_Brante",
             "source": "Serper (Google)",
             "discovered_at": "29/07/2026"
         },
@@ -37,269 +55,251 @@
             "discovered_at": "29/07/2026"
         },
         {
-            "title": "6 jogos estão grátis agora; veja como resgatar cada um - VZone",
-            "url": "https://vzone.gg/noticia/jogos-gratis-agora",
-            "source": "Serper (Google)",
-            "discovered_at": "28/07/2026"
-        },
-        {
-            "title": "Car Mechanic Simulator 2018 on Steam",
-            "url": "https://store.steampowered.com/app/645630/Car_Mechanic_Simulator_2018",
-            "source": "Serper (Google)",
-            "discovered_at": "28/07/2026"
-        },
-        {
-            "title": "House Flipper on Steam",
-            "url": "https://store.steampowered.com/app/613100/House_Flipper",
-            "source": "Serper (Google)",
-            "discovered_at": "28/07/2026"
-        },
-        {
             "title": "GOG.com",
             "url": "https://static-s.gog.com/wishlist/games",
             "source": "Google/Bing",
-            "discovered_at": "28/07/2026"
+            "discovered_at": "29/07/2026"
         },
         {
-            "title": "GOG.com",
-            "url": "https://www.gog.com/en/partner/free_games",
+            "title": "GOG.COM",
+            "url": "https://www.gog.com",
             "source": "Google/Bing",
-            "discovered_at": "28/07/2026"
+            "discovered_at": "29/07/2026"
         },
         {
             "title": "Home - Epic Games",
             "url": "https://www.epicgames.com/site/home",
             "source": "Google/Bing",
-            "discovered_at": "28/07/2026"
-        },
-        {
-            "title": "Como baixar jogos para PC",
-            "url": "https://store.epicgames.com/news/how-to-download-pc-games",
-            "source": "Serper (Google)",
-            "discovered_at": "28/07/2026"
-        },
-        {
-            "title": "Os melhores jogos grátis para PC",
-            "url": "https://store.epicgames.com/collection/top-free-to-play",
-            "source": "Serper (Google)",
-            "discovered_at": "28/07/2026"
-        },
-        {
-            "title": "Jogos Grátis para PC: Top 50 Melhores Que Você Vai Amar",
-            "url": "https://jogoparapc.com.br/jogos-gratis-para-pc",
-            "source": "Google/Bing",
-            "discovered_at": "27/07/2026"
-        },
-        {
-            "title": "Jogos Gratuitos",
-            "url": "https://www.nuuvem.com/au-pt/promo/free-to-play",
-            "source": "Serper (Google)",
-            "discovered_at": "27/07/2026"
-        },
-        {
-            "title": "Lista de Jogos Grátis (Steam, Epic Games, Uplay, Origin e mais...) e ...",
-            "url": "https://www.nerdmaldito.com/2020/04/lista-de-jogos-gratis.html",
-            "source": "Serper (Google)",
-            "discovered_at": "27/07/2026"
-        },
-        {
-            "title": "Jogos para PC - Jogos de Computador Online Gratuitos no Minijogos.com.br",
-            "url": "https://www.minijogos.com.br/amp/jogos-de-pc",
-            "source": "Serper (Google)",
-            "discovered_at": "27/07/2026"
-        },
-        {
-            "title": "Steamで100% OFF：Yet Another Zombie Defense HD",
-            "url": "https://store.steampowered.com/app/674750/Yet_Another_Zombie_Defense_HD",
-            "source": "Serper (Google)",
-            "discovered_at": "27/07/2026"
-        },
-        {
-            "title": "Most Popular Free-to-Play PC Games – Epic Games Store",
-            "url": "https://store.epicgames.com/collection/most-popular-free-to-play",
-            "source": "Google/Bing",
-            "discovered_at": "27/07/2026"
-        },
-        {
-            "title": "Os jogos de PC perfeitos para jogar durante as festas de ...",
-            "url": "https://store.epicgames.com/news/the-perfect-pc-games-to-play-over-the-winter-holiday-break",
-            "source": "Serper (Google)",
-            "discovered_at": "27/07/2026"
-        },
-        {
-            "title": "Ganhe um jogo grátis toda semana | Epic Games Store",
-            "url": "https://store.epicgames.com/free-games",
-            "source": "Serper (Google)",
-            "discovered_at": "27/07/2026"
-        },
-        {
-            "title": "Jogos de PC para download",
-            "url": "https://www.ea.com/pt-br/games/library/pc-download",
-            "source": "Serper (Google)",
-            "discovered_at": "26/07/2026"
-        },
-        {
-            "title": "Jogos Online Grátis | Jogue Agora na CrazyGames!",
-            "url": "https://www.crazygames.com/br",
-            "source": "Serper (Google)",
-            "discovered_at": "26/07/2026"
-        },
-        {
-            "title": "Steam Community :: Group :: Free To Keep",
-            "url": "https://steamcommunity.com/groups/freetokeep",
-            "source": "Google/Bing",
-            "discovered_at": "26/07/2026"
-        },
-        {
-            "title": "Graveyard Keeper on Steam",
-            "url": "https://store.steampowered.com/app/599140/Graveyard_Keeper",
-            "source": "Serper (Google)",
-            "discovered_at": "26/07/2026"
-        },
-        {
-            "title": "Megapromoção da Epic Games | Economize em jogos ...",
-            "url": "https://store.epicgames.com/sales-and-specials/mega-sale",
-            "source": "Serper (Google)",
-            "discovered_at": "26/07/2026"
-        },
-        {
-            "title": "Jogos Grátis para Jogar",
-            "url": "https://store.steampowered.com/genre/Free%20to%20Play",
-            "source": "Serper (Google)",
-            "discovered_at": "26/07/2026"
-        },
-        {
-            "title": "15 jogos grátis para PC que todo gamer precisa baixar",
-            "url": "https://www.techtudo.com.br/google/amp/listas/2024/09/15-jogos-gratis-para-pc-que-todo-gamer-precisa-baixar-edjogos.ghtml",
-            "source": "Serper (Google)",
-            "discovered_at": "25/07/2026"
-        },
-        {
-            "title": "Steamで100% OFF：The Red Lantern",
-            "url": "https://store.steampowered.com/app/1053710/The_Red_Lantern",
-            "source": "Serper (Google)",
-            "discovered_at": "25/07/2026"
-        },
-        {
-            "title": "Los mejores videojuegos, sin DRM. | GOG.COM",
-            "url": "https://www.gog.com/es/games",
-            "source": "Google/Bing",
-            "discovered_at": "25/07/2026"
-        },
-        {
-            "title": "Steam Curator: Jogos Leves Para PC Fracos",
-            "url": "https://store.steampowered.com/curator/11987693-Jogos-Leves-Para-PC-Fracos",
-            "source": "Google/Bing",
-            "discovered_at": "25/07/2026"
-        },
-        {
-            "title": "Como faço para resgatar jogos grátis na EGS ...",
-            "url": "https://www.epicgames.com/help/pt-BR/c-202300000001639/c-202300000001731/como-faco-para-resgatar-jogos-gratis-na-egs-para-dispositivos-moveis-a202300000016454",
-            "source": "Serper (Google)",
-            "discovered_at": "25/07/2026"
-        },
-        {
-            "title": "DOOMBLADE Steamissä",
-            "url": "https://store.steampowered.com/app/922050/DOOMBLADE",
-            "source": "Serper (Google)",
-            "discovered_at": "24/07/2026"
-        },
-        {
-            "title": "The Life and Suffering of Sir Brante on Steam",
-            "url": "https://store.steampowered.com/app/1272160/The_Life_and_Suffering_of_Sir_Brante",
-            "source": "Serper (Google)",
-            "discovered_at": "24/07/2026"
-        },
-        {
-            "title": "Warhammer Underworlds - Shadespire Edition (Classic)",
-            "url": "https://store.steampowered.com/app/1022310/Warhammer_Underworlds__Shadespire_Edition",
-            "source": "Serper (Google)",
-            "discovered_at": "24/07/2026"
-        },
-        {
-            "title": "Save 50% on IQ Under Construction on Steam",
-            "url": "https://store.steampowered.com/app/3771740",
-            "source": "Serper (Google)",
-            "discovered_at": "24/07/2026"
-        },
-        {
-            "title": "Save 65% on Press Any Button on Steam",
-            "url": "https://store.steampowered.com/app/1448030",
-            "source": "Serper (Google)",
-            "discovered_at": "24/07/2026"
-        },
-        {
-            "title": "Steamで100% OFF：LivingBattle",
-            "url": "https://store.steampowered.com/app/3353830/_",
-            "source": "Serper (Google)",
-            "discovered_at": "24/07/2026"
-        },
-        {
-            "title": "Steamで100% OFF：NineHells",
-            "url": "https://store.steampowered.com/app/2860410/NineHells",
-            "source": "Serper (Google)",
-            "discovered_at": "24/07/2026"
-        },
-        {
-            "title": "Os melhores jogos gratuitos para PC e consolas",
-            "url": "https://www.instant-gaming.com/pt/explorar/generos/free-to-play",
-            "source": "Serper (Google)",
-            "discovered_at": "23/07/2026"
-        },
-        {
-            "title": "15 jogos grátis para PC que todo gamer precisa baixar",
-            "url": "https://www.techtudo.com.br/listas/2024/09/15-jogos-gratis-para-pc-que-todo-gamer-precisa-baixar-edjogos.ghtml",
-            "source": "Serper (Google)",
-            "discovered_at": "23/07/2026"
-        },
-        {
-            "title": "The Mound: Omen of Cthulhu – Lost Explorers' Swords Pack",
-            "url": "https://store.steampowered.com/app/4630450/The_Mound_Omen_of_Cthulhu__Lost_Explorers_Swords_Pack",
-            "source": "Serper (Google)",
-            "discovered_at": "23/07/2026"
+            "discovered_at": "29/07/2026"
         },
         {
             "title": "Curador Steam: Jogos Grátis BR",
             "url": "https://store.steampowered.com/curator/6267774-Jogos-Gr%25C3%25A1tis-BR",
             "source": "Serper (Google)",
-            "discovered_at": "23/07/2026"
+            "discovered_at": "29/07/2026"
+        },
+        {
+            "title": "Steam Curator: Jogos gratis brasil",
+            "url": "https://store.steampowered.com/curator/6874381-Jogos-gratis-brasil",
+            "source": "Serper (Google)",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "Megapromoção da Epic Games | Economize em jogos para PC",
+            "url": "https://store.epicgames.com/sales-and-specials/mega-sale",
+            "source": "Serper (Google)",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "Como baixar jogos para PC - Epic Games Store",
+            "url": "https://store.epicgames.com/news/how-to-download-pc-games",
+            "source": "Serper (Google)",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "Car Mechanic Simulator 2018 on Steam",
+            "url": "https://store.steampowered.com/app/645630/Car_Mechanic_Simulator_2018",
+            "source": "Serper (Google)",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "House Flipper on Steam",
+            "url": "https://store.steampowered.com/app/613100/House_Flipper",
+            "source": "Serper (Google)",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "Steamで100% OFF：Just Move:Clean City Messy Battle",
+            "url": "https://store.steampowered.com/app/3414900/_",
+            "source": "Serper (Google)",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "Análise do ano de 2022 da Epic Games Store",
+            "url": "https://store.epicgames.com/news/epic-games-store-2022-year-in-review",
+            "source": "Serper (Google)",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "Los mejores videojuegos, sin DRM. | GOG.COM",
+            "url": "https://www.gog.com/es/games",
+            "source": "Google/Bing",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "Obtén un juego gratis cada semana | Epic Games Store",
+            "url": "https://www.epicgames.com/freegames",
+            "source": "Google/Bing",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "The Backrooms Game FREE Edition on Steam",
+            "url": "https://store.steampowered.com/app/1111210/The_Backrooms_Game_FREE_Edition",
+            "source": "Google/Bing",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "Steam's Free-to-Keep Promotion Has 5* Upcoming 100% Free ...",
+            "url": "https://gamerant.com/steam-free-games-coming-soon-list-june-2026",
+            "source": "Google/Bing",
+            "discovered_at": "24/06/2026"
+        },
+        {
+            "title": "Os melhores jogos gratuitos para PC e consolas - Instant-Gaming.com",
+            "url": "https://www.instant-gaming.com/pt/explorar/generos/free-to-play",
+            "source": "Serper (Google)",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Jogos de PC para download - Electronic Arts",
+            "url": "https://www.ea.com/pt-br/games/library/pc-download",
+            "source": "Serper (Google)",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Jogos Online Grátis | Jogue Agora na CrazyGames!",
+            "url": "https://www.crazygames.com/br",
+            "source": "Serper (Google)",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Melhores jogos grátis da Steam? Começando agora no PC gaming",
+            "url": "https://www.reddit.com/r/ShouldIbuythisgame/comments/1k7mua5/best_free_steam_games_just_getting_into_pc_gaming",
+            "source": "Serper (Google)",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Steamで100% OFF：Moonrise Fall",
+            "url": "https://store.steampowered.com/app/1035110/Moonrise_Fall",
+            "source": "Serper (Google)",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Steamで100% OFF：Gravity Circuit",
+            "url": "https://store.steampowered.com/app/858710/Gravity_Circuit",
+            "source": "Serper (Google)",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Steamで100% OFF：Eets",
+            "url": "https://store.steampowered.com/app/6100/Eets",
+            "source": "Serper (Google)",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Steamで100% OFF：The Red Lantern",
+            "url": "https://store.steampowered.com/app/1053710/The_Red_Lantern",
+            "source": "Serper (Google)",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Wild Terra 2: New Lands on Steam",
+            "url": "https://store.steampowered.com/app/1134700/Wild_Terra_2_New_Lands",
+            "source": "Serper (Google)",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Nocturnal on Steam",
+            "url": "https://store.steampowered.com/app/1634080/Nocturnal",
+            "source": "Serper (Google)",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Steamで100% OFF：LivingForest",
+            "url": "https://store.steampowered.com/app/3027490",
+            "source": "Serper (Google)",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Save 100% on Tell Me Why on Steam",
+            "url": "https://store.steampowered.com/app/1180660/Tell_Me_Why",
+            "source": "Serper (Google)",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Juegos gratuitos para PC más jugados - Epic Games Store",
+            "url": "https://store.epicgames.com/collection/most-played-free-to-play",
+            "source": "Google/Bing",
+            "discovered_at": "23/06/2026"
         },
         {
             "title": "Recanto dos Jogos Leves",
             "url": "https://store.steampowered.com/curator/36950778-Recanto-dos-Jogos-Leves/lists",
-            "source": "Serper (Google)",
-            "discovered_at": "23/07/2026"
+            "source": "Google",
+            "discovered_at": "23/06/2026"
         },
         {
-            "title": "Baixe nossos Jogos de Aventura",
+            "title": "Baixe nossos Jogos de Aventura - Epic Games",
             "url": "https://store.epicgames.com/c/adventure-games",
             "source": "Serper (Google)",
-            "discovered_at": "23/07/2026"
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Só Jogos Gratis - Steam Curator",
+            "url": "https://store.steampowered.com/curator/31501281-S%C3%B3-Jogos-Gratis",
+            "source": "Serper (Google)",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Os jogos de PC perfeitos para jogar durante as festas de fim de ano",
+            "url": "https://store.epicgames.com/news/the-perfect-pc-games-to-play-over-the-winter-holiday-break",
+            "source": "Serper (Google)",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Revisão do ano de 2025 da Epic Games Store",
+            "url": "https://store.epicgames.com/news/epic-games-store-2025-year-in-review",
+            "source": "Serper (Google)",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Como faço para resgatar jogos grátis na EGS para dispositivos ...",
+            "url": "https://www.epicgames.com/help/pt-BR/c-202300000001639/c-202300000001731/como-faco-para-resgatar-jogos-gratis-na-egs-para-dispositivos-moveis-a202300000016454",
+            "source": "Serper (Google)",
+            "discovered_at": "23/06/2026"
         },
         {
             "title": "Steam Store",
             "url": "https://store.steampowered.com",
             "source": "Serper (Google)",
-            "discovered_at": "23/07/2026"
+            "discovered_at": "23/06/2026"
         },
         {
-            "title": "Poki - Jogos Online Grátis - Jogue Agora!",
-            "url": "https://poki.com/br",
+            "title": "Epic Games Store | Baixe e jogue jogos para PC, mods, DLCs e ...",
+            "url": "https://store.epicgames.com",
+            "source": "Serper (Google)",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Steam Search",
+            "url": "https://store.steampowered.com/search",
             "source": "Google/Bing",
-            "discovered_at": "22/07/2026"
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "The Witcher and more – discover exciting free games on GOG ...",
+            "url": "https://www.gog.com/en/news/the_witcher_and_more_discover_exciting_free_games_on_gogcom",
+            "source": "Google/Bing",
+            "discovered_at": "23/06/2026"
         },
         {
             "title": "Jogos Gratuitos para Jogar - Steam",
             "url": "https://store.steampowered.com/genre/Free%20to%20Play/In",
             "source": "Google/Bing",
-            "discovered_at": "22/07/2026"
+            "discovered_at": "23/06/2026"
         },
         {
-            "title": "Existe algum site que mostra os jogos gratuitos das as lojas de PC?",
-            "url": "https://www.reddit.com/r/gamesEcultura/comments/1uzgpuv/existe_algum_site_que_mostra_os_jogos_gratuitos",
-            "source": "Serper (Google)",
-            "discovered_at": "22/07/2026"
+            "title": "Free to Play PC Games | Ubisoft Store",
+            "url": "https://store.ubisoft.com/ofertas/free-pc-games",
+            "source": "Google/Bing",
+            "discovered_at": "23/06/2026"
+        },
+        {
+            "title": "Poki - Jogos Online Grátis - Jogue Agora!",
+            "url": "https://poki.com/br",
+            "source": "Google/Bing",
+            "discovered_at": "23/06/2026"
         }
     ],
-    "last_update": "2026-07-29T17:03:24.680010"
+    "last_update": "2026-07-29T19:59:41.081328"
 }
