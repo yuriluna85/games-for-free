@@ -328,5 +328,10 @@
     "luna_url_regular factory: escape room": "https://luna.amazon.com/claims/regular-factory-escape-room-gog/dp/amzn1.pg.item.1b071387-e61c-48a3-bcdf-f3086b8d18ba",
     "luna_url_cyclones": "https://luna.amazon.com/claims/cyclones-gog/dp/amzn1.pg.item.34a07e29-18da-495f-9673-266fd4722390",
     "luna_url_lonestar": "https://luna.amazon.com/claims/lonestar-epic/dp/amzn1.pg.item.6c65c488-c2bc-4715-b90a-d364dd587581",
-    "luna_url_symphony of war: the nephilim saga": "https://luna.amazon.com/claims/symphony-of-war-the-nephilim-saga-epic/dp/amzn1.pg.item.db94348f-9423-423e-a707-aed5ebf07c0c"
+    "luna_url_symphony of war: the nephilim saga": "https://luna.amazon.com/claims/symphony-of-war-the-nephilim-saga-epic/dp/amzn1.pg.item.db94348f-9423-423e-a707-aed5ebf07c0c",
+    "https://www.gamerpower.com/open/sol-cesto-epic-games-giveaway": {
+        "resolved_url": "https://www.gamerpower.com/open/sol-cesto-epic-games-giveaway"
+    },
+    "luna_url_zoria: age of shattering": null,
+    "luna_url_weakless": null
 }
