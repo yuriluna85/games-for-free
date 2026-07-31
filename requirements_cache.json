@@ -332,6 +332,12 @@
     "https://www.gamerpower.com/open/sol-cesto-epic-games-giveaway": {
         "resolved_url": "https://www.gamerpower.com/open/sol-cesto-epic-games-giveaway"
     },
-    "luna_url_zoria: age of shattering": null,
-    "luna_url_weakless": null
+    "https://www.gamerpower.com/open/eso-code-giveaway": {
+        "resolved_url": "https://account.elderscrollsonline.com/en-us/redeem-code?code=Bethesda40"
+    },
+    "https://www.gamerpower.com/open/grass-playtest-steam-key-giveaway": {
+        "resolved_url": "https://na.alienwarearena.com/ucf/show/2174451/Giveaway/grass-playtest-key-giveaway"
+    },
+    "luna_url_zoria: age of shattering": "https://luna.amazon.com/claims/zoria-age-of-shattering-gog/dp/amzn1.pg.item.ec074069-a977-4885-b5b0-6f972d17abb7",
+    "luna_url_weakless": "https://luna.amazon.com/claims/weakless-gog/dp/amzn1.pg.item.35aae84a-f566-4890-8fd3-492318a39036"
 }
