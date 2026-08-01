@@ -1,6 +1,24 @@
 {
     "search_links": [
         {
+            "title": "Steamで100% OFF：Happy's Humble Burger Farm",
+            "url": "https://store.steampowered.com/app/1433340/Happys_Humble_Burger_Farm",
+            "source": "Serper (Google)",
+            "discovered_at": "01/08/2026"
+        },
+        {
+            "title": "Epic Games",
+            "url": "https://accounts.epicgames.com",
+            "source": "Google/Bing",
+            "discovered_at": "01/08/2026"
+        },
+        {
+            "title": "Best Video games, DRM-free | GOG.COM",
+            "url": "https://www.gog.com/en/games/free",
+            "source": "Google/Bing",
+            "discovered_at": "01/08/2026"
+        },
+        {
             "title": "Recanto dos Jogos Leves",
             "url": "https://store.steampowered.com/curator/36950778-Recanto-dos-Jogos-Leves/lists",
             "source": "Serper (Google)",
@@ -281,25 +299,7 @@
             "url": "https://store.steampowered.com/app/1035110/Moonrise_Fall",
             "source": "Serper (Google)",
             "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Steamで100% OFF：Gravity Circuit",
-            "url": "https://store.steampowered.com/app/858710/Gravity_Circuit",
-            "source": "Serper (Google)",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Steamで100% OFF：Eets",
-            "url": "https://store.steampowered.com/app/6100/Eets",
-            "source": "Serper (Google)",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Steamで100% OFF：The Red Lantern",
-            "url": "https://store.steampowered.com/app/1053710/The_Red_Lantern",
-            "source": "Serper (Google)",
-            "discovered_at": "23/06/2026"
         }
     ],
-    "last_update": "2026-07-31T17:18:32.276146"
+    "last_update": "2026-08-01T16:47:03.705245"
 }
