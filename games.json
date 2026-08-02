@@ -1,6 +1,18 @@
 {
     "search_links": [
         {
+            "title": "Steamで100% OFF：The Red Lantern",
+            "url": "https://store.steampowered.com/app/1053710/The_Red_Lantern",
+            "source": "Serper (Google)",
+            "discovered_at": "02/08/2026"
+        },
+        {
+            "title": "Steamで100% OFF：Gravity Circuit",
+            "url": "https://store.steampowered.com/app/858710/Gravity_Circuit",
+            "source": "Serper (Google)",
+            "discovered_at": "02/08/2026"
+        },
+        {
             "title": "Steamで100% OFF：Happy's Humble Burger Farm",
             "url": "https://store.steampowered.com/app/1433340/Happys_Humble_Burger_Farm",
             "source": "Serper (Google)",
@@ -287,19 +299,7 @@
             "url": "https://www.crazygames.com/br",
             "source": "Serper (Google)",
             "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Melhores jogos grátis da Steam? Começando agora no PC gaming",
-            "url": "https://www.reddit.com/r/ShouldIbuythisgame/comments/1k7mua5/best_free_steam_games_just_getting_into_pc_gaming",
-            "source": "Serper (Google)",
-            "discovered_at": "23/06/2026"
-        },
-        {
-            "title": "Steamで100% OFF：Moonrise Fall",
-            "url": "https://store.steampowered.com/app/1035110/Moonrise_Fall",
-            "source": "Serper (Google)",
-            "discovered_at": "23/06/2026"
         }
     ],
-    "last_update": "2026-08-01T16:47:03.705245"
+    "last_update": "2026-08-02T16:45:12.702711"
 }
