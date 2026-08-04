@@ -1,6 +1,24 @@
 {
     "search_links": [
         {
+            "title": "Jogos de PC para download",
+            "url": "https://www.ea.com/pt-br/games/library/pc-download",
+            "source": "Serper (Google)",
+            "discovered_at": "04/08/2026"
+        },
+        {
+            "title": "Jogos Online Grátis | Jogue Agora na CrazyGames!",
+            "url": "https://www.crazygames.com/br",
+            "source": "Serper (Google)",
+            "discovered_at": "04/08/2026"
+        },
+        {
+            "title": "Steamで100% OFF：LivingBattle",
+            "url": "https://store.steampowered.com/app/3353830/_",
+            "source": "Serper (Google)",
+            "discovered_at": "04/08/2026"
+        },
+        {
             "title": "Melhores jogos grátis da Steam? Começando agora no PC gaming",
             "url": "https://www.reddit.com/r/ShouldIbuythisgame/comments/1k7mua5/best_free_steam_games_just_getting_into_pc_gaming",
             "source": "Serper (Google)",
@@ -281,25 +299,7 @@
             "url": "https://www.epicgames.com/freegames",
             "source": "Google/Bing",
             "discovered_at": "24/06/2026"
-        },
-        {
-            "title": "The Backrooms Game FREE Edition on Steam",
-            "url": "https://store.steampowered.com/app/1111210/The_Backrooms_Game_FREE_Edition",
-            "source": "Google/Bing",
-            "discovered_at": "24/06/2026"
-        },
-        {
-            "title": "Steam's Free-to-Keep Promotion Has 5* Upcoming 100% Free ...",
-            "url": "https://gamerant.com/steam-free-games-coming-soon-list-june-2026",
-            "source": "Google/Bing",
-            "discovered_at": "24/06/2026"
-        },
-        {
-            "title": "Os melhores jogos gratuitos para PC e consolas - Instant-Gaming.com",
-            "url": "https://www.instant-gaming.com/pt/explorar/generos/free-to-play",
-            "source": "Serper (Google)",
-            "discovered_at": "23/06/2026"
         }
     ],
-    "last_update": "2026-08-03T17:41:46.615597"
+    "last_update": "2026-08-04T17:28:28.748894"
 }
