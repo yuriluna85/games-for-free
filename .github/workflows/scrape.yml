@@ -12,15 +12,19 @@ permissions:
 jobs:
   scrape-and-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
-      - name: Checkout Código
+      - name: Checkout Código (Histórico Completo)
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Configurar Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
+          cache: 'pip'
 
       - name: Instalar Dependências
         run: |
@@ -37,11 +41,12 @@ jobs:
         run: |
           git config --global user.name "GitHub Action Bot"
           git config --global user.email "actions@github.com"
-          git add index.html games.json games_data.csv games_metrics.json requirements_cache.json
-          # Só faz commit se houver alguma alteração nos arquivos adicionados
+          git add index.html games.json games_data.csv games_metrics.json prime_games.json requirements_cache.json
+          
           if ! git diff --cached --quiet; then
             git commit -m "Auto-update: Jogos indexados em $(date +'%d/%m/%Y %H:%M')"
-            git stash -u
-            git pull --rebase -X theirs origin main
+            git pull --rebase origin main
             git push origin main
+          else
+            echo "Nenhuma alteração de dados detectada."
           fi
