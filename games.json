@@ -1,6 +1,18 @@
 {
     "search_links": [
         {
+            "title": "Save 100% on Moonlighter on Steam",
+            "url": "https://store.steampowered.com/app/606150/Moonlighter",
+            "source": "Serper (Google)",
+            "discovered_at": "07/08/2026"
+        },
+        {
+            "title": "Check out all the ongoing promo events! - GOG.com",
+            "url": "https://www.gog.com/en/news/check_out_all_the_ongoing_promo_events",
+            "source": "Google/Bing",
+            "discovered_at": "07/08/2026"
+        },
+        {
             "title": "Os melhores jogos gratuitos para PC e consolas",
             "url": "https://www.instant-gaming.com/pt/explorar/generos/free-to-play",
             "source": "Serper (Google)",
@@ -287,19 +299,7 @@
             "url": "https://store.steampowered.com/app/613100/House_Flipper",
             "source": "Serper (Google)",
             "discovered_at": "24/06/2026"
-        },
-        {
-            "title": "Steamで100% OFF：Just Move:Clean City Messy Battle",
-            "url": "https://store.steampowered.com/app/3414900/_",
-            "source": "Serper (Google)",
-            "discovered_at": "24/06/2026"
-        },
-        {
-            "title": "Análise do ano de 2022 da Epic Games Store",
-            "url": "https://store.epicgames.com/news/epic-games-store-2022-year-in-review",
-            "source": "Serper (Google)",
-            "discovered_at": "24/06/2026"
         }
     ],
-    "last_update": "2026-08-05T17:18:52.287138"
+    "last_update": "2026-08-07T12:45:42.345258"
 }
