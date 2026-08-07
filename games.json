@@ -1,6 +1,18 @@
 {
     "search_links": [
         {
+            "title": "100% Orange Juice on Steam",
+            "url": "https://store.steampowered.com/app/282800/100_Orange_Juice",
+            "source": "Google/Bing",
+            "discovered_at": "07/08/2026"
+        },
+        {
+            "title": "SteamWorld Dig on Steam",
+            "url": "https://store.steampowered.com/app/252410/SteamWorld_Dig",
+            "source": "Serper (Google)",
+            "discovered_at": "07/08/2026"
+        },
+        {
             "title": "Save 100% on Moonlighter on Steam",
             "url": "https://store.steampowered.com/app/606150/Moonlighter",
             "source": "Serper (Google)",
@@ -287,19 +299,7 @@
             "url": "https://store.epicgames.com/news/how-to-download-pc-games",
             "source": "Serper (Google)",
             "discovered_at": "24/06/2026"
-        },
-        {
-            "title": "Car Mechanic Simulator 2018 on Steam",
-            "url": "https://store.steampowered.com/app/645630/Car_Mechanic_Simulator_2018",
-            "source": "Serper (Google)",
-            "discovered_at": "24/06/2026"
-        },
-        {
-            "title": "House Flipper on Steam",
-            "url": "https://store.steampowered.com/app/613100/House_Flipper",
-            "source": "Serper (Google)",
-            "discovered_at": "24/06/2026"
         }
     ],
-    "last_update": "2026-08-07T12:45:42.345258"
+    "last_update": "2026-08-07T16:40:47.882340"
 }
