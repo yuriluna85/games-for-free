@@ -1,6 +1,24 @@
 {
     "search_links": [
         {
+            "title": "Steamで100% OFF：Breathedge",
+            "url": "https://store.steampowered.com/app/738520/_",
+            "source": "Serper (Google)",
+            "discovered_at": "08/08/2026"
+        },
+        {
+            "title": "Car Mechanic Simulator 2018 on Steam",
+            "url": "https://store.steampowered.com/app/645630/Car_Mechanic_Simulator_2018",
+            "source": "Serper (Google)",
+            "discovered_at": "08/08/2026"
+        },
+        {
+            "title": "Melhores jogos de corridas para PC – Epic Games Store",
+            "url": "https://store.epicgames.com/news/best-racing-games-for-pc-epic-games",
+            "source": "Serper (Google)",
+            "discovered_at": "08/08/2026"
+        },
+        {
             "title": "100% Orange Juice on Steam",
             "url": "https://store.steampowered.com/app/282800/100_Orange_Juice",
             "source": "Google/Bing",
@@ -281,25 +299,7 @@
             "url": "https://store.steampowered.com/curator/6267774-Jogos-Gr%25C3%25A1tis-BR",
             "source": "Serper (Google)",
             "discovered_at": "29/07/2026"
-        },
-        {
-            "title": "Steam Curator: Jogos gratis brasil",
-            "url": "https://store.steampowered.com/curator/6874381-Jogos-gratis-brasil",
-            "source": "Serper (Google)",
-            "discovered_at": "24/06/2026"
-        },
-        {
-            "title": "Megapromoção da Epic Games | Economize em jogos para PC",
-            "url": "https://store.epicgames.com/sales-and-specials/mega-sale",
-            "source": "Serper (Google)",
-            "discovered_at": "24/06/2026"
-        },
-        {
-            "title": "Como baixar jogos para PC - Epic Games Store",
-            "url": "https://store.epicgames.com/news/how-to-download-pc-games",
-            "source": "Serper (Google)",
-            "discovered_at": "24/06/2026"
         }
     ],
-    "last_update": "2026-08-07T16:40:47.882340"
+    "last_update": "2026-08-08T16:19:57.926591"
 }

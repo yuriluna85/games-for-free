@@ -361,5 +361,16 @@
     "luna_url_hiveswap friendsim": "https://luna.amazon.com/claims/hiveswap-friendsim-gog/dp/amzn1.pg.item.8e0d3ee4-446f-435e-bfb4-33fe97d25af8?g=s",
     "https://www.gamerpower.com/open/happiness-market-epic-games-giveaway": {
         "resolved_url": "https://www.gamerpower.com/open/happiness-market-epic-games-giveaway"
+    },
+    "https://www.gamerpower.com/open/breathedge-steam-giveaway": {
+        "resolved_url": "https://store.steampowered.com/app/738520/Breathedge/",
+        "requirements": "Mínimos:\nRequer um sistema operativo e processador de 64 bits\nSistema Operativo:\n7, 8, 10 (x64)\nProcessador:\nIntel core i3 (3rd generation)\nMemória:\n8 GB de RAM\nPlaca gráfica:\nGeForce GTX 660\nDirectX:\nVersão 10\nEspaço no disco:\nRequer 7 GB de espaço livre"
+    },
+    "738520": "Mínimos:\nRequer um sistema operativo e processador de 64 bits\nSistema Operativo:\n7, 8, 10 (x64)\nProcessador:\nIntel core i3 (3rd generation)\nMemória:\n8 GB de RAM\nPlaca gráfica:\nGeForce GTX 660\nDirectX:\nVersão 10\nEspaço no disco:\nRequer 7 GB de espaço livre",
+    "https://www.gamerpower.com/open/drop-loot-playtest-steam-key-giveaway": {
+        "resolved_url": "https://www.alienwarearena.com/ucf/show/2175826/boards/contest-and-giveaways-global/Giveaway/drop-loot-playtest-key-giveaway"
+    },
+    "https://www.gamerpower.com/open/schrodinger-s-cat-burglar-pack-steam-key-giveaway": {
+        "resolved_url": "https://www.alienwarearena.com/ucf/show/2175731/boards/contest-and-giveaways-global/Giveaway/schrodingers-cat-burglar-alienware-cosmetics-pack-key-giveaway"
     }
 }
