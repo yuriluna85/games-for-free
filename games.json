@@ -1,6 +1,48 @@
 {
     "search_links": [
         {
+            "title": "Steamで100% OFF：Eets",
+            "url": "https://store.steampowered.com/app/6100/Eets",
+            "source": "Serper (Google)",
+            "discovered_at": "09/08/2026"
+        },
+        {
+            "title": "Save 100% on Breathedge on Steam",
+            "url": "https://store.steampowered.com/app/738520/Breathedge",
+            "source": "Serper (Google)",
+            "discovered_at": "09/08/2026"
+        },
+        {
+            "title": "List of DRM-free games on Steam, page 1 - Forum - GOG.com",
+            "url": "https://www.gog.com/forum/general/list_of_drmfree_games_on_steam/page1",
+            "source": "Google/Bing",
+            "discovered_at": "09/08/2026"
+        },
+        {
+            "title": "Steam Curator: Jogos Leves Para PC Fracos",
+            "url": "https://store.steampowered.com/curator/11987693-Jogos-Leves-Para-PC-Fracos",
+            "source": "Google/Bing",
+            "discovered_at": "09/08/2026"
+        },
+        {
+            "title": "Como faço para resgatar jogos grátis na EGS para dispositivos ...",
+            "url": "https://www.epicgames.com/help/pt-BR/c-202300000001639/c-202300000001731/como-faco-para-resgatar-jogos-gratis-na-egs-para-dispositivos-moveis-a202300000016454",
+            "source": "Serper (Google)",
+            "discovered_at": "09/08/2026"
+        },
+        {
+            "title": "Como baixar jogos para PC - Epic Games Store",
+            "url": "https://store.epicgames.com/news/how-to-download-pc-games",
+            "source": "Serper (Google)",
+            "discovered_at": "09/08/2026"
+        },
+        {
+            "title": "Megapromoção da Epic Games | Economize em jogos para PC",
+            "url": "https://store.epicgames.com/sales-and-specials/mega-sale",
+            "source": "Serper (Google)",
+            "discovered_at": "09/08/2026"
+        },
+        {
             "title": "Steamで100% OFF：Breathedge",
             "url": "https://store.steampowered.com/app/738520/_",
             "source": "Serper (Google)",
@@ -257,49 +299,7 @@
             "url": "https://store.steampowered.com/app/4630450/The_Mound_Omen_of_Cthulhu__Lost_Explorers_Swords_Pack",
             "source": "Serper (Google)",
             "discovered_at": "29/07/2026"
-        },
-        {
-            "title": "Steamで100% OFF：World of Warships — Marblehead Lima",
-            "url": "https://store.steampowered.com/app/934690/World_of_Warships__Marblehead_Lima",
-            "source": "Serper (Google)",
-            "discovered_at": "29/07/2026"
-        },
-        {
-            "title": "The Life and Suffering of Sir Brante",
-            "url": "https://store.steampowered.com/app/1272160/The_Life_and_Suffering_of_Sir_Brante",
-            "source": "Serper (Google)",
-            "discovered_at": "29/07/2026"
-        },
-        {
-            "title": "Save 100% on Terrors to Unveil - Day Off on Steam",
-            "url": "https://store.steampowered.com/app/3587490",
-            "source": "Serper (Google)",
-            "discovered_at": "29/07/2026"
-        },
-        {
-            "title": "GOG.com",
-            "url": "https://static-s.gog.com/wishlist/games",
-            "source": "Google/Bing",
-            "discovered_at": "29/07/2026"
-        },
-        {
-            "title": "GOG.COM",
-            "url": "https://www.gog.com",
-            "source": "Google/Bing",
-            "discovered_at": "29/07/2026"
-        },
-        {
-            "title": "Home - Epic Games",
-            "url": "https://www.epicgames.com/site/home",
-            "source": "Google/Bing",
-            "discovered_at": "29/07/2026"
-        },
-        {
-            "title": "Curador Steam: Jogos Grátis BR",
-            "url": "https://store.steampowered.com/curator/6267774-Jogos-Gr%25C3%25A1tis-BR",
-            "source": "Serper (Google)",
-            "discovered_at": "29/07/2026"
         }
     ],
-    "last_update": "2026-08-08T16:19:57.926591"
+    "last_update": "2026-08-09T16:21:30.620009"
 }
