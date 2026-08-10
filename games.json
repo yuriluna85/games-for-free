@@ -1,6 +1,36 @@
 {
     "search_links": [
         {
+            "title": "The Life and Suffering of Sir Brante on Steam",
+            "url": "https://store.steampowered.com/app/1272160/The_Life_and_Suffering_of_Sir_Brante",
+            "source": "Serper (Google)",
+            "discovered_at": "10/08/2026"
+        },
+        {
+            "title": "Steamで100% OFF：World of Warships — Marblehead Lima",
+            "url": "https://store.steampowered.com/app/934690/World_of_Warships__Marblehead_Lima",
+            "source": "Serper (Google)",
+            "discovered_at": "10/08/2026"
+        },
+        {
+            "title": "Best Video games, DRM-free | GOG.COM",
+            "url": "https://www.gog.com/en/games",
+            "source": "Google/Bing",
+            "discovered_at": "10/08/2026"
+        },
+        {
+            "title": "Home - Epic Games",
+            "url": "https://www.epicgames.com/site/home",
+            "source": "Google/Bing",
+            "discovered_at": "10/08/2026"
+        },
+        {
+            "title": "Curador Steam: Jogos Grátis BR",
+            "url": "https://store.steampowered.com/curator/6267774-Jogos-Gr%25C3%25A1tis-BR",
+            "source": "Serper (Google)",
+            "discovered_at": "10/08/2026"
+        },
+        {
             "title": "Steamで100% OFF：Eets",
             "url": "https://store.steampowered.com/app/6100/Eets",
             "source": "Serper (Google)",
@@ -269,37 +299,7 @@
             "url": "https://www.ea.com/pt-br/games/library/freetoplay",
             "source": "Google/Bing",
             "discovered_at": "29/07/2026"
-        },
-        {
-            "title": "Jogos grátis hoje: Lista atualizada da Steam, Epic Games ...",
-            "url": "https://viciados.net/jogos-gratis-hoje-lista-atualizada-steam-epic-games",
-            "source": "Google/Bing",
-            "discovered_at": "29/07/2026"
-        },
-        {
-            "title": "Lista de Jogos Grátis (Steam, Epic Games, Uplay, Origin e ...",
-            "url": "https://www.nerdmaldito.com/2020/04/lista-de-jogos-gratis.html",
-            "source": "Google/Bing",
-            "discovered_at": "29/07/2026"
-        },
-        {
-            "title": "Alguém tem jogos grátis para me recomendar para o meu PC?",
-            "url": "https://www.reddit.com/r/jeuxvideo/comments/1s2femm/quelquun_a_des_jeux_gratuits_a_me_conseiller_pour",
-            "source": "Serper (Google)",
-            "discovered_at": "29/07/2026"
-        },
-        {
-            "title": "Steamで100% OFF：AquaDream Soundtrack",
-            "url": "https://store.steampowered.com/app/3502050",
-            "source": "Serper (Google)",
-            "discovered_at": "29/07/2026"
-        },
-        {
-            "title": "The Mound: Omen of Cthulhu – Lost Explorers' Swords Pack",
-            "url": "https://store.steampowered.com/app/4630450/The_Mound_Omen_of_Cthulhu__Lost_Explorers_Swords_Pack",
-            "source": "Serper (Google)",
-            "discovered_at": "29/07/2026"
         }
     ],
-    "last_update": "2026-08-09T16:21:30.620009"
+    "last_update": "2026-08-10T16:42:05.975091"
 }
