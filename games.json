@@ -1,6 +1,42 @@
 {
     "search_links": [
         {
+            "title": "Steam Community :: Group :: Free To Keep",
+            "url": "https://steamcommunity.com/groups/freetokeep",
+            "source": "Google/Bing",
+            "discovered_at": "13/08/2026"
+        },
+        {
+            "title": "GOG.com",
+            "url": "https://www.gog.com/en/partner/free_games",
+            "source": "Google/Bing",
+            "discovered_at": "13/08/2026"
+        },
+        {
+            "title": "Baixe e jogue jogos para PC, mods, DLCs e muito mais",
+            "url": "https://store.epicgames.com/vi",
+            "source": "Serper (Google)",
+            "discovered_at": "13/08/2026"
+        },
+        {
+            "title": "Steam Curator: Jogos gratis brasil",
+            "url": "https://store.steampowered.com/curator/6874381-Jogos-gratis-brasil",
+            "source": "Serper (Google)",
+            "discovered_at": "13/08/2026"
+        },
+        {
+            "title": "Ganhe um jogo grátis toda semana | Epic Games Store",
+            "url": "https://store.epicgames.com/free-games",
+            "source": "Serper (Google)",
+            "discovered_at": "13/08/2026"
+        },
+        {
+            "title": "Jogos Grátis para Jogar",
+            "url": "https://store.steampowered.com/genre/Free%20to%20Play",
+            "source": "Serper (Google)",
+            "discovered_at": "13/08/2026"
+        },
+        {
             "title": "O que está Grátis agora na Steam - gameplayscassi.com.br",
             "url": "https://gameplayscassi.com.br/noticias/o-que-esta-gratis-agora-na-steam/119866",
             "source": "Google/Bing",
@@ -263,43 +299,7 @@
             "url": "https://poki.com/br",
             "source": "Google/Bing",
             "discovered_at": "30/07/2026"
-        },
-        {
-            "title": "Jogos Gratuitos para Jogar - Steam",
-            "url": "https://store.steampowered.com/genre/Free%20to%20Play/In",
-            "source": "Google/Bing",
-            "discovered_at": "30/07/2026"
-        },
-        {
-            "title": "Baixe jogos grátis para Windows: FPS, estratégia, RPGs",
-            "url": "https://br.uptodown.com/windows/games",
-            "source": "Serper (Google)",
-            "discovered_at": "30/07/2026"
-        },
-        {
-            "title": "Steamで100% OFF：Remothered: Tormented Fathers",
-            "url": "https://store.steampowered.com/app/633360/Remothered_Tormented_Fathers",
-            "source": "Serper (Google)",
-            "discovered_at": "30/07/2026"
-        },
-        {
-            "title": "Save the World Goes Free-to-Play April 16, 2026",
-            "url": "https://communities.epicgames.com/thread/save-the-world-goes-free-to-play-april-16-2026/Ldwm",
-            "source": "Google/Bing",
-            "discovered_at": "30/07/2026"
-        },
-        {
-            "title": "301 Moved Permanently",
-            "url": "http://epicgames.com",
-            "source": "Google/Bing",
-            "discovered_at": "30/07/2026"
-        },
-        {
-            "title": "Epic Games Store | Baixe e jogue jogos para PC, mods, DLCs ...",
-            "url": "https://store.epicgames.com",
-            "source": "Serper (Google)",
-            "discovered_at": "30/07/2026"
         }
     ],
-    "last_update": "2026-08-12T16:45:31.007912"
+    "last_update": "2026-08-13T16:44:27.429404"
 }
