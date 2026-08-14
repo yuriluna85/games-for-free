@@ -378,5 +378,13 @@
     },
     "https://www.gamerpower.com/open/targeted-10-days-epic-games-giveaway": {
         "resolved_url": "https://www.gamerpower.com/open/targeted-10-days-epic-games-giveaway"
-    }
+    },
+    "https://www.gamerpower.com/open/deponia-steam-giveaway": {
+        "resolved_url": "https://store.steampowered.com/app/214340/Deponia/",
+        "requirements": "Minimum:\nOS *:\nWindows Vista/7\nProcessor:\n2.5 GHz (Single Core) or 2 GHz (Dual Core)\nMemory:\n2 GB RAM\nGraphics:\nOpenGL 2.0 compatible with 512 MB RAM (Shared Memory is not recommended)\nDirectX®:\n9.0c\nHard Drive:\n5 GB HDD space\nSound:\nDirectX compatible"
+    },
+    "214340": "Minimum:\nOS *:\nWindows Vista/7\nProcessor:\n2.5 GHz (Single Core) or 2 GHz (Dual Core)\nMemory:\n2 GB RAM\nGraphics:\nOpenGL 2.0 compatible with 512 MB RAM (Shared Memory is not recommended)\nDirectX®:\n9.0c\nHard Drive:\n5 GB HDD space\nSound:\nDirectX compatible",
+    "luna_url_pyramids and aliens: escape room": "https://luna.amazon.com/claims/pyramids-and-aliens-escape-room-gog/dp/amzn1.pg.item.ea4a762d-4616-4f5d-af80-61c76ea1abd3",
+    "luna_url_airship: kingdoms adrift": "https://luna.amazon.com/claims/airship-kingdoms-adrift-epic/dp/amzn1.pg.item.aa62d067-6b98-4929-bc49-3ccdd11d888a",
+    "luna_url_steelrising": "https://luna.amazon.com/claims/steelrising-epic/dp/amzn1.pg.item.2e34e997-a137-48b3-9b5c-ad2eb51c45f7"
 }
