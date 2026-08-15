@@ -1,6 +1,66 @@
 {
     "search_links": [
         {
+            "title": "Poki - Jogos Online Grátis - Jogue Agora!",
+            "url": "https://poki.com/br",
+            "source": "Google/Bing",
+            "discovered_at": "15/08/2026"
+        },
+        {
+            "title": "Save 100% on Terrors to Unveil - Day Off on Steam",
+            "url": "https://store.steampowered.com/app/3587490",
+            "source": "Serper (Google)",
+            "discovered_at": "15/08/2026"
+        },
+        {
+            "title": "Steamで100% OFF：World of Warships — Marblehead Lima",
+            "url": "https://store.steampowered.com/app/934690/_Marblehead_Lima",
+            "source": "Serper (Google)",
+            "discovered_at": "15/08/2026"
+        },
+        {
+            "title": "GOG.com",
+            "url": "https://static-s.gog.com/wishlist/games",
+            "source": "Google/Bing",
+            "discovered_at": "15/08/2026"
+        },
+        {
+            "title": "Best Video games, DRM-free | GOG.COM",
+            "url": "https://www.gog.com/games",
+            "source": "Google/Bing",
+            "discovered_at": "15/08/2026"
+        },
+        {
+            "title": "301 Moved Permanently",
+            "url": "http://epicgames.com",
+            "source": "Google/Bing",
+            "discovered_at": "15/08/2026"
+        },
+        {
+            "title": "Baixe nossos Jogos de Aventura",
+            "url": "https://store.epicgames.com/c/adventure-games",
+            "source": "Serper (Google)",
+            "discovered_at": "15/08/2026"
+        },
+        {
+            "title": "Recanto dos Jogos Leves",
+            "url": "https://store.steampowered.com/curator/36950778-Recanto-dos-Jogos-Leves/lists",
+            "source": "Serper (Google)",
+            "discovered_at": "15/08/2026"
+        },
+        {
+            "title": "Só Jogos Gratis - Steam Curator",
+            "url": "https://store.steampowered.com/curator/31501281-S%C3%B3-Jogos-Gratis",
+            "source": "Serper (Google)",
+            "discovered_at": "15/08/2026"
+        },
+        {
+            "title": "Steam Store",
+            "url": "https://store.steampowered.com",
+            "source": "Serper (Google)",
+            "discovered_at": "15/08/2026"
+        },
+        {
             "title": "Lista de Jogos Grátis (Steam, Epic Games, Uplay, Origin e ...",
             "url": "https://www.nerdmaldito.com/2020/04/lista-de-jogos-gratis.html",
             "source": "Google/Bing",
@@ -239,67 +299,7 @@
             "url": "https://store.steampowered.com/app/4148570/SurrounDead_Poly_Construction",
             "source": "Serper (Google)",
             "discovered_at": "05/08/2026"
-        },
-        {
-            "title": "Jogos de PC para download",
-            "url": "https://www.ea.com/pt-br/games/library/pc-download",
-            "source": "Serper (Google)",
-            "discovered_at": "04/08/2026"
-        },
-        {
-            "title": "Jogos Online Grátis | Jogue Agora na CrazyGames!",
-            "url": "https://www.crazygames.com/br",
-            "source": "Serper (Google)",
-            "discovered_at": "04/08/2026"
-        },
-        {
-            "title": "Steamで100% OFF：LivingBattle",
-            "url": "https://store.steampowered.com/app/3353830/_",
-            "source": "Serper (Google)",
-            "discovered_at": "04/08/2026"
-        },
-        {
-            "title": "Melhores jogos grátis da Steam? Começando agora no PC gaming",
-            "url": "https://www.reddit.com/r/ShouldIbuythisgame/comments/1k7mua5/best_free_steam_games_just_getting_into_pc_gaming",
-            "source": "Serper (Google)",
-            "discovered_at": "03/08/2026"
-        },
-        {
-            "title": "Análise do ano de 2023 da Epic Games Store",
-            "url": "https://store.epicgames.com/news/epic-games-store-2023-year-in-review",
-            "source": "Serper (Google)",
-            "discovered_at": "03/08/2026"
-        },
-        {
-            "title": "Steamで100% OFF：The Red Lantern",
-            "url": "https://store.steampowered.com/app/1053710/The_Red_Lantern",
-            "source": "Serper (Google)",
-            "discovered_at": "02/08/2026"
-        },
-        {
-            "title": "Steamで100% OFF：Gravity Circuit",
-            "url": "https://store.steampowered.com/app/858710/Gravity_Circuit",
-            "source": "Serper (Google)",
-            "discovered_at": "02/08/2026"
-        },
-        {
-            "title": "Steamで100% OFF：Happy's Humble Burger Farm",
-            "url": "https://store.steampowered.com/app/1433340/Happys_Humble_Burger_Farm",
-            "source": "Serper (Google)",
-            "discovered_at": "01/08/2026"
-        },
-        {
-            "title": "Epic Games",
-            "url": "https://accounts.epicgames.com",
-            "source": "Google/Bing",
-            "discovered_at": "01/08/2026"
-        },
-        {
-            "title": "Best Video games, DRM-free | GOG.COM",
-            "url": "https://www.gog.com/en/games/free",
-            "source": "Google/Bing",
-            "discovered_at": "01/08/2026"
         }
     ],
-    "last_update": "2026-08-14T16:39:55.202809"
+    "last_update": "2026-08-15T16:11:44.786138"
 }

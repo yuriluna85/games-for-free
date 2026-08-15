@@ -1,13 +1,13 @@
 {
-    "last_updated": "2026-08-14T16:39:55.204702",
+    "last_updated": "2026-08-15T16:11:44.788224",
     "metrics": {
-        "total_active_free_games": 71,
+        "total_active_free_games": 66,
         "total_upcoming_promotions": 2,
         "total_indexed_web_search_links": 50,
-        "total_records": 123
+        "total_records": 118
     },
     "platform_distribution": {
-        "Epic Games": 7,
+        "Epic Games": 5,
         "PC, Playstation 4, Xbox One": 3,
         "PC, Playstation 5, Android, iOS": 1,
         "PC, Playstation 5, Playstation 4": 1,
@@ -15,9 +15,9 @@
         "PC, Playstation 5, Xbox Series X|S, Playstation 4, Xbox One": 2,
         "PC, Playstation 5, Xbox Series X|S, Playstation 4, Xbox One, Android, iOS": 1,
         "Prime Gaming (Amazon)": 3,
-        "Prime Gaming (Epic)": 7,
-        "Prime Gaming (GOG)": 16,
-        "Prime Gaming (Legacy)": 2,
+        "Prime Gaming (Epic)": 6,
+        "Prime Gaming (GOG)": 15,
+        "Prime Gaming (Legacy)": 1,
         "Steam": 27
     },
     "sources_scraped": {
