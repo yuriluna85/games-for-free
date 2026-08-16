@@ -1,6 +1,42 @@
 {
     "search_links": [
         {
+            "title": "Jogos de PC para download",
+            "url": "https://www.ea.com/pt-br/games/library/pc-download",
+            "source": "Serper (Google)",
+            "discovered_at": "16/08/2026"
+        },
+        {
+            "title": "Jogos Online Grátis | Jogue Agora na CrazyGames!",
+            "url": "https://www.crazygames.com/br",
+            "source": "Serper (Google)",
+            "discovered_at": "16/08/2026"
+        },
+        {
+            "title": "Steamで100% OFF：Happy's Humble Burger Farm",
+            "url": "https://store.steampowered.com/app/1433340/Happys_Humble_Burger_Farm",
+            "source": "Serper (Google)",
+            "discovered_at": "16/08/2026"
+        },
+        {
+            "title": "Steamで100% OFF：The Red Lantern",
+            "url": "https://store.steampowered.com/app/1053710/The_Red_Lantern",
+            "source": "Serper (Google)",
+            "discovered_at": "16/08/2026"
+        },
+        {
+            "title": "Steamで100% OFF：LivingBattle",
+            "url": "https://store.steampowered.com/app/3353830/_",
+            "source": "Serper (Google)",
+            "discovered_at": "16/08/2026"
+        },
+        {
+            "title": "Aproveita ofertas de jogos, brindes grátis e muito mais!",
+            "url": "https://store.epicgames.com/news/epic-games-mega-sale-buyers-guide",
+            "source": "Serper (Google)",
+            "discovered_at": "16/08/2026"
+        },
+        {
             "title": "Poki - Jogos Online Grátis - Jogue Agora!",
             "url": "https://poki.com/br",
             "source": "Google/Bing",
@@ -263,43 +299,7 @@
             "url": "https://store.epicgames.com/news/best-racing-games-for-pc-epic-games",
             "source": "Serper (Google)",
             "discovered_at": "08/08/2026"
-        },
-        {
-            "title": "100% Orange Juice on Steam",
-            "url": "https://store.steampowered.com/app/282800/100_Orange_Juice",
-            "source": "Google/Bing",
-            "discovered_at": "07/08/2026"
-        },
-        {
-            "title": "SteamWorld Dig on Steam",
-            "url": "https://store.steampowered.com/app/252410/SteamWorld_Dig",
-            "source": "Serper (Google)",
-            "discovered_at": "07/08/2026"
-        },
-        {
-            "title": "Save 100% on Moonlighter on Steam",
-            "url": "https://store.steampowered.com/app/606150/Moonlighter",
-            "source": "Serper (Google)",
-            "discovered_at": "07/08/2026"
-        },
-        {
-            "title": "Check out all the ongoing promo events! - GOG.com",
-            "url": "https://www.gog.com/en/news/check_out_all_the_ongoing_promo_events",
-            "source": "Google/Bing",
-            "discovered_at": "07/08/2026"
-        },
-        {
-            "title": "Os melhores jogos gratuitos para PC e consolas",
-            "url": "https://www.instant-gaming.com/pt/explorar/generos/free-to-play",
-            "source": "Serper (Google)",
-            "discovered_at": "05/08/2026"
-        },
-        {
-            "title": "Save 80% on SurrounDead Poly Construction on Steam",
-            "url": "https://store.steampowered.com/app/4148570/SurrounDead_Poly_Construction",
-            "source": "Serper (Google)",
-            "discovered_at": "05/08/2026"
         }
     ],
-    "last_update": "2026-08-15T16:11:44.786138"
+    "last_update": "2026-08-16T16:12:13.554713"
 }
