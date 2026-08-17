@@ -1,6 +1,30 @@
 {
     "search_links": [
         {
+            "title": "Save 100% on Deponia on Steam",
+            "url": "https://store.steampowered.com/app/214340/deponia",
+            "source": "Google/Bing",
+            "discovered_at": "17/08/2026"
+        },
+        {
+            "title": "Free To Keep - Steam Community :: Group",
+            "url": "https://steamcommunity.com/groups/freetokeep/announcements/listing",
+            "source": "Google/Bing",
+            "discovered_at": "17/08/2026"
+        },
+        {
+            "title": "100% Orange Juice on Steam",
+            "url": "https://store.steampowered.com/app/282800/100_Orange_Juice",
+            "source": "Google/Bing",
+            "discovered_at": "17/08/2026"
+        },
+        {
+            "title": "Check out all the ongoing promo events! - GOG.com",
+            "url": "https://www.gog.com/en/news/check_out_all_the_ongoing_promo_events",
+            "source": "Google/Bing",
+            "discovered_at": "17/08/2026"
+        },
+        {
             "title": "Jogos de PC para download",
             "url": "https://www.ea.com/pt-br/games/library/pc-download",
             "source": "Serper (Google)",
@@ -275,31 +299,7 @@
             "url": "https://store.epicgames.com/news/how-to-download-pc-games",
             "source": "Serper (Google)",
             "discovered_at": "09/08/2026"
-        },
-        {
-            "title": "Megapromoção da Epic Games | Economize em jogos para PC",
-            "url": "https://store.epicgames.com/sales-and-specials/mega-sale",
-            "source": "Serper (Google)",
-            "discovered_at": "09/08/2026"
-        },
-        {
-            "title": "Steamで100% OFF：Breathedge",
-            "url": "https://store.steampowered.com/app/738520/_",
-            "source": "Serper (Google)",
-            "discovered_at": "08/08/2026"
-        },
-        {
-            "title": "Car Mechanic Simulator 2018 on Steam",
-            "url": "https://store.steampowered.com/app/645630/Car_Mechanic_Simulator_2018",
-            "source": "Serper (Google)",
-            "discovered_at": "08/08/2026"
-        },
-        {
-            "title": "Melhores jogos de corridas para PC – Epic Games Store",
-            "url": "https://store.epicgames.com/news/best-racing-games-for-pc-epic-games",
-            "source": "Serper (Google)",
-            "discovered_at": "08/08/2026"
         }
     ],
-    "last_update": "2026-08-16T16:12:13.554713"
+    "last_update": "2026-08-17T16:14:29.139362"
 }
