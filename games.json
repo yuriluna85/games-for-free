@@ -1,6 +1,18 @@
 {
     "search_links": [
         {
+            "title": "Breathedge on Steam",
+            "url": "https://store.steampowered.com/app/738520/Breathedge",
+            "source": "Serper (Google)",
+            "discovered_at": "20/08/2026"
+        },
+        {
+            "title": "Ganhe um jogo grátis toda semana",
+            "url": "https://store.epicgames.com/pt-BR/Free-games",
+            "source": "Serper (Google)",
+            "discovered_at": "20/08/2026"
+        },
+        {
             "title": "Os jogos de PC perfeitos para jogar durante as festas de ...",
             "url": "https://store.epicgames.com/news/the-perfect-pc-games-to-play-over-the-winter-holiday-break",
             "source": "Serper (Google)",
@@ -287,19 +299,7 @@
             "url": "https://www.epicgames.com/site/home",
             "source": "Google/Bing",
             "discovered_at": "10/08/2026"
-        },
-        {
-            "title": "Curador Steam: Jogos Grátis BR",
-            "url": "https://store.steampowered.com/curator/6267774-Jogos-Gr%25C3%25A1tis-BR",
-            "source": "Serper (Google)",
-            "discovered_at": "10/08/2026"
-        },
-        {
-            "title": "Steamで100% OFF：Eets",
-            "url": "https://store.steampowered.com/app/6100/Eets",
-            "source": "Serper (Google)",
-            "discovered_at": "09/08/2026"
         }
     ],
-    "last_update": "2026-08-19T16:18:46.200184"
+    "last_update": "2026-08-20T16:21:38.013164"
 }
