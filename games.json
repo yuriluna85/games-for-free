@@ -1,6 +1,18 @@
 {
     "search_links": [
         {
+            "title": "Steamで100% OFF：Eets",
+            "url": "https://store.steampowered.com/app/6100/Eets",
+            "source": "Serper (Google)",
+            "discovered_at": "21/08/2026"
+        },
+        {
+            "title": "Jogos Grátis BR",
+            "url": "https://store.steampowered.com/curator/6267774-Jogos-Gr%25C3%25A1tis-BR",
+            "source": "Serper (Google)",
+            "discovered_at": "21/08/2026"
+        },
+        {
             "title": "Breathedge on Steam",
             "url": "https://store.steampowered.com/app/738520/Breathedge",
             "source": "Serper (Google)",
@@ -287,19 +299,7 @@
             "url": "https://store.steampowered.com/app/934690/World_of_Warships__Marblehead_Lima",
             "source": "Serper (Google)",
             "discovered_at": "10/08/2026"
-        },
-        {
-            "title": "Best Video games, DRM-free | GOG.COM",
-            "url": "https://www.gog.com/en/games",
-            "source": "Google/Bing",
-            "discovered_at": "10/08/2026"
-        },
-        {
-            "title": "Home - Epic Games",
-            "url": "https://www.epicgames.com/site/home",
-            "source": "Google/Bing",
-            "discovered_at": "10/08/2026"
         }
     ],
-    "last_update": "2026-08-20T16:21:38.013164"
+    "last_update": "2026-08-21T16:19:55.557122"
 }
