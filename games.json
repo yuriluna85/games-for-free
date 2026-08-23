@@ -1,6 +1,24 @@
 {
     "search_links": [
         {
+            "title": "Melhores jogos de corridas para PC",
+            "url": "https://store.epicgames.com/news/best-racing-games-for-pc-epic-games",
+            "source": "Serper (Google)",
+            "discovered_at": "23/08/2026"
+        },
+        {
+            "title": "Megapromoção da Epic Games | Economize em jogos ...",
+            "url": "https://store.epicgames.com/sales-and-specials/mega-sale",
+            "source": "Serper (Google)",
+            "discovered_at": "23/08/2026"
+        },
+        {
+            "title": "Como baixar jogos para PC - Epic Games Store",
+            "url": "https://store.epicgames.com/news/how-to-download-pc-games",
+            "source": "Serper (Google)",
+            "discovered_at": "23/08/2026"
+        },
+        {
             "title": "Steamで100% OFF：Eets",
             "url": "https://store.steampowered.com/app/6100/Eets",
             "source": "Serper (Google)",
@@ -281,25 +299,7 @@
             "url": "https://store.steampowered.com/app/674750/Yet_Another_Zombie_Defense_HD",
             "source": "Serper (Google)",
             "discovered_at": "11/08/2026"
-        },
-        {
-            "title": "Steamで100% OFF：AquaDream Soundtrack",
-            "url": "https://store.steampowered.com/app/3502050",
-            "source": "Serper (Google)",
-            "discovered_at": "11/08/2026"
-        },
-        {
-            "title": "The Life and Suffering of Sir Brante on Steam",
-            "url": "https://store.steampowered.com/app/1272160/The_Life_and_Suffering_of_Sir_Brante",
-            "source": "Serper (Google)",
-            "discovered_at": "10/08/2026"
-        },
-        {
-            "title": "Steamで100% OFF：World of Warships — Marblehead Lima",
-            "url": "https://store.steampowered.com/app/934690/World_of_Warships__Marblehead_Lima",
-            "source": "Serper (Google)",
-            "discovered_at": "10/08/2026"
         }
     ],
-    "last_update": "2026-08-22T16:11:13.541256"
+    "last_update": "2026-08-23T16:13:59.794300"
 }
