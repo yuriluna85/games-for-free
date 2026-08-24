@@ -1,6 +1,30 @@
 {
     "search_links": [
         {
+            "title": "Steamで100% OFF：AquaDream Soundtrack",
+            "url": "https://store.steampowered.com/app/3502050",
+            "source": "Serper (Google)",
+            "discovered_at": "24/08/2026"
+        },
+        {
+            "title": "The Life and Suffering of Sir Brante",
+            "url": "https://store.steampowered.com/app/1272160/The_Life_and_Suffering_of_Sir_Brante",
+            "source": "Serper (Google)",
+            "discovered_at": "24/08/2026"
+        },
+        {
+            "title": "Welcome to GOG.com | best PC games DRM-free",
+            "url": "https://www.gog.com",
+            "source": "Google/Bing",
+            "discovered_at": "24/08/2026"
+        },
+        {
+            "title": "Home - Epic Games",
+            "url": "https://www.epicgames.com/site/home",
+            "source": "Google/Bing",
+            "discovered_at": "24/08/2026"
+        },
+        {
             "title": "Melhores jogos de corridas para PC",
             "url": "https://store.epicgames.com/news/best-racing-games-for-pc-epic-games",
             "source": "Serper (Google)",
@@ -275,31 +299,7 @@
             "url": "https://jogoparapc.com.br/jogos-gratis-para-pc",
             "source": "Google/Bing",
             "discovered_at": "12/08/2026"
-        },
-        {
-            "title": "www.epicgames.com",
-            "url": "https://www.epicgames.com/site/epic-games-header",
-            "source": "Google/Bing",
-            "discovered_at": "12/08/2026"
-        },
-        {
-            "title": "Revisão do ano de 2025 da Epic Games Store",
-            "url": "https://store.epicgames.com/news/epic-games-store-2025-year-in-review",
-            "source": "Serper (Google)",
-            "discovered_at": "12/08/2026"
-        },
-        {
-            "title": "Os melhores jogos grátis para PC",
-            "url": "https://store.epicgames.com/collection/top-free-to-play",
-            "source": "Serper (Google)",
-            "discovered_at": "12/08/2026"
-        },
-        {
-            "title": "Yet Another Zombie Defense HD",
-            "url": "https://store.steampowered.com/app/674750/Yet_Another_Zombie_Defense_HD",
-            "source": "Serper (Google)",
-            "discovered_at": "11/08/2026"
         }
     ],
-    "last_update": "2026-08-23T16:13:59.794300"
+    "last_update": "2026-08-24T16:24:13.264603"
 }
