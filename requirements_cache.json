@@ -403,5 +403,15 @@
         "resolved_url": "https://www.gamerpower.com/open/grow-and-go-cozy-deliveries-epic-games-giveaway"
     },
     "luna_url_royal romances: forbidden magic": "https://luna.amazon.com/claims/royal-romances-forbidden-magic-legacy/dp/amzn1.pg.item.727672b5-8661-4f8f-b4ed-a6c40a1248ee?ingress=amzn&ref_=SM_RoyalRomancesForbiddenMagic_S01_FGWP_CRWN",
-    "luna_url_spray paint simulator": "https://luna.amazon.com/claims/spray-paint-simulator-aga/dp/amzn1.pg.item.cc221e3b-25ab-4e12-b3bd-8eb10ea25824?ingress=amzn&ref_=SM_SprayPaintSimulator_S01_FGWP_CRWN"
+    "luna_url_spray paint simulator": "https://luna.amazon.com/claims/spray-paint-simulator-aga/dp/amzn1.pg.item.cc221e3b-25ab-4e12-b3bd-8eb10ea25824?ingress=amzn&ref_=SM_SprayPaintSimulator_S01_FGWP_CRWN",
+    "https://www.gamerpower.com/open/microsoft-flight-simulator-suite-themes-reimagined-steam-giveaway": {
+        "resolved_url": "https://store.steampowered.com/app/5004030/Microsoft_Flight_Simulator_Suite_Themes_Reimagined/",
+        "requirements": null
+    },
+    "5004030": null,
+    "https://www.gamerpower.com/open/dokimon-quest-steam-giveaway": {
+        "resolved_url": "https://store.steampowered.com/app/2019300/Dokimon_Quest/",
+        "requirements": "Mínimos:\nSistema Operativo:\nWindows 10\nProcessador:\nDual core processor\nMemória:\n4 GB de RAM\nPlaca gráfica:\nIntegrated Graphics\nEspaço no disco:\nRequer 100 MB de espaço livre"
+    },
+    "2019300": "Mínimos:\nSistema Operativo:\nWindows 10\nProcessador:\nDual core processor\nMemória:\n4 GB de RAM\nPlaca gráfica:\nIntegrated Graphics\nEspaço no disco:\nRequer 100 MB de espaço livre"
 }
