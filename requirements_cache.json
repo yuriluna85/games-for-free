@@ -413,5 +413,11 @@
         "resolved_url": "https://store.steampowered.com/app/2019300/Dokimon_Quest/",
         "requirements": "Mínimos:\nSistema Operativo:\nWindows 10\nProcessador:\nDual core processor\nMemória:\n4 GB de RAM\nPlaca gráfica:\nIntegrated Graphics\nEspaço no disco:\nRequer 100 MB de espaço livre"
     },
-    "2019300": "Mínimos:\nSistema Operativo:\nWindows 10\nProcessador:\nDual core processor\nMemória:\n4 GB de RAM\nPlaca gráfica:\nIntegrated Graphics\nEspaço no disco:\nRequer 100 MB de espaço livre"
+    "2019300": "Mínimos:\nSistema Operativo:\nWindows 10\nProcessador:\nDual core processor\nMemória:\n4 GB de RAM\nPlaca gráfica:\nIntegrated Graphics\nEspaço no disco:\nRequer 100 MB de espaço livre",
+    "https://www.gamerpower.com/open/together-after-dark-epic-games-giveaway": {
+        "resolved_url": "https://www.gamerpower.com/open/together-after-dark-epic-games-giveaway"
+    },
+    "https://www.gamerpower.com/open/the-witcher-3-wild-hunt-concert-gog-giveaway": {
+        "resolved_url": "https://www.gog.com/en/game/video_game_show_the_witcher_3_wild_hunt_concert_2016"
+    }
 }
