@@ -1,6 +1,48 @@
 {
     "search_links": [
         {
+            "title": "Baixe jogos grátis para Windows: FPS, estratégia, RPGs - Uptodown",
+            "url": "https://br.uptodown.com/windows/games",
+            "source": "Serper (Google)",
+            "discovered_at": "28/08/2026"
+        },
+        {
+            "title": "301 Moved Permanently",
+            "url": "http://epicgames.com",
+            "source": "Google/Bing",
+            "discovered_at": "28/08/2026"
+        },
+        {
+            "title": "GOG.COM",
+            "url": "https://www.gog.com/en/promo/free_games",
+            "source": "Google/Bing",
+            "discovered_at": "28/08/2026"
+        },
+        {
+            "title": "Baixe nossos Jogos de Aventura",
+            "url": "https://store.epicgames.com/c/adventure-games",
+            "source": "Serper (Google)",
+            "discovered_at": "28/08/2026"
+        },
+        {
+            "title": "Recanto dos Jogos Leves",
+            "url": "https://store.steampowered.com/curator/36950778-Recanto-dos-Jogos-Leves/lists",
+            "source": "Serper (Google)",
+            "discovered_at": "28/08/2026"
+        },
+        {
+            "title": "Só Jogos Gratis - Steam Curator",
+            "url": "https://store.steampowered.com/curator/31501281-S%C3%B3-Jogos-Gratis",
+            "source": "Serper (Google)",
+            "discovered_at": "28/08/2026"
+        },
+        {
+            "title": "Steam Store",
+            "url": "https://store.steampowered.com",
+            "source": "Serper (Google)",
+            "discovered_at": "28/08/2026"
+        },
+        {
             "title": "Steam Community :: Group :: Free To Keep",
             "url": "https://steamcommunity.com/groups/freetokeep",
             "source": "Google/Bing",
@@ -257,49 +299,7 @@
             "url": "https://store.steampowered.com/app/1053710/The_Red_Lantern",
             "source": "Serper (Google)",
             "discovered_at": "16/08/2026"
-        },
-        {
-            "title": "Steamで100% OFF：LivingBattle",
-            "url": "https://store.steampowered.com/app/3353830/_",
-            "source": "Serper (Google)",
-            "discovered_at": "16/08/2026"
-        },
-        {
-            "title": "Aproveita ofertas de jogos, brindes grátis e muito mais!",
-            "url": "https://store.epicgames.com/news/epic-games-mega-sale-buyers-guide",
-            "source": "Serper (Google)",
-            "discovered_at": "16/08/2026"
-        },
-        {
-            "title": "Poki - Jogos Online Grátis - Jogue Agora!",
-            "url": "https://poki.com/br",
-            "source": "Google/Bing",
-            "discovered_at": "15/08/2026"
-        },
-        {
-            "title": "Save 100% on Terrors to Unveil - Day Off on Steam",
-            "url": "https://store.steampowered.com/app/3587490",
-            "source": "Serper (Google)",
-            "discovered_at": "15/08/2026"
-        },
-        {
-            "title": "Steamで100% OFF：World of Warships — Marblehead Lima",
-            "url": "https://store.steampowered.com/app/934690/_Marblehead_Lima",
-            "source": "Serper (Google)",
-            "discovered_at": "15/08/2026"
-        },
-        {
-            "title": "GOG.com",
-            "url": "https://static-s.gog.com/wishlist/games",
-            "source": "Google/Bing",
-            "discovered_at": "15/08/2026"
-        },
-        {
-            "title": "Best Video games, DRM-free | GOG.COM",
-            "url": "https://www.gog.com/games",
-            "source": "Google/Bing",
-            "discovered_at": "15/08/2026"
         }
     ],
-    "last_update": "2026-08-26T16:42:03.030220"
+    "last_update": "2026-08-28T00:40:26.144232"
 }
