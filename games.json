@@ -1,6 +1,48 @@
 {
     "search_links": [
         {
+            "title": "Jogos Gratuitos para Jogar - Steam",
+            "url": "https://store.steampowered.com/genre/Free%20to%20Play/In",
+            "source": "Google/Bing",
+            "discovered_at": "29/08/2026"
+        },
+        {
+            "title": "Lista de Jogos Grátis (Steam, Epic Games, Uplay, Origin e ...",
+            "url": "https://www.nerdmaldito.com/2020/04/lista-de-jogos-gratis.html",
+            "source": "Google/Bing",
+            "discovered_at": "29/08/2026"
+        },
+        {
+            "title": "Poki - Jogos Online Grátis - Jogue Agora!",
+            "url": "https://poki.com/br",
+            "source": "Google/Bing",
+            "discovered_at": "29/08/2026"
+        },
+        {
+            "title": "Jogos de PC para download",
+            "url": "https://www.ea.com/pt-br/games/library/pc-download",
+            "source": "Serper (Google)",
+            "discovered_at": "29/08/2026"
+        },
+        {
+            "title": "Jogos Online Grátis | Jogue Agora na CrazyGames!",
+            "url": "https://www.crazygames.com/br",
+            "source": "Serper (Google)",
+            "discovered_at": "29/08/2026"
+        },
+        {
+            "title": "Steamで100% OFF：Happy's Humble Burger Farm",
+            "url": "https://store.steampowered.com/app/1433340/Happys_Humble_Burger_Farm",
+            "source": "Serper (Google)",
+            "discovered_at": "29/08/2026"
+        },
+        {
+            "title": "www.epicgames.com",
+            "url": "https://www.epicgames.com/site/epic-games-header",
+            "source": "Google/Bing",
+            "discovered_at": "29/08/2026"
+        },
+        {
             "title": "Save 100% on Terrors to Unveil - Day Off on Steam",
             "url": "https://store.steampowered.com/app/3587490",
             "source": "Serper (Google)",
@@ -257,49 +299,7 @@
             "url": "https://www.instant-gaming.com/pt/explorar/generos/free-to-play",
             "source": "Serper (Google)",
             "discovered_at": "18/08/2026"
-        },
-        {
-            "title": "Melhores jogos grátis da Steam? Começando agora no PC gaming",
-            "url": "https://www.reddit.com/r/ShouldIbuythisgame/comments/1k7mua5/best_free_steam_games_just_getting_into_pc_gaming",
-            "source": "Serper (Google)",
-            "discovered_at": "18/08/2026"
-        },
-        {
-            "title": "Steamで100% OFF：Breathedge",
-            "url": "https://store.steampowered.com/app/738520/_",
-            "source": "Serper (Google)",
-            "discovered_at": "18/08/2026"
-        },
-        {
-            "title": "v40.20 Update Notes - Save the World Free to Play & Showdown ...",
-            "url": "https://communities.epicgames.com/thread/v40-20-update-notes-save-the-world-free-to-play-and-showdown-act-ii/VIiX",
-            "source": "Google/Bing",
-            "discovered_at": "18/08/2026"
-        },
-        {
-            "title": "Save 100% on Deponia on Steam",
-            "url": "https://store.steampowered.com/app/214340/deponia",
-            "source": "Google/Bing",
-            "discovered_at": "17/08/2026"
-        },
-        {
-            "title": "Free To Keep - Steam Community :: Group",
-            "url": "https://steamcommunity.com/groups/freetokeep/announcements/listing",
-            "source": "Google/Bing",
-            "discovered_at": "17/08/2026"
-        },
-        {
-            "title": "100% Orange Juice on Steam",
-            "url": "https://store.steampowered.com/app/282800/100_Orange_Juice",
-            "source": "Google/Bing",
-            "discovered_at": "17/08/2026"
-        },
-        {
-            "title": "Check out all the ongoing promo events! - GOG.com",
-            "url": "https://www.gog.com/en/news/check_out_all_the_ongoing_promo_events",
-            "source": "Google/Bing",
-            "discovered_at": "17/08/2026"
         }
     ],
-    "last_update": "2026-08-29T00:14:40.646694"
+    "last_update": "2026-08-29T18:59:29.514201"
 }
