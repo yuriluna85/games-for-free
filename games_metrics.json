@@ -1,13 +1,13 @@
 {
-    "last_updated": "2026-08-30T18:55:29.722544",
+    "last_updated": "2026-08-31T21:12:38.909316",
     "metrics": {
-        "total_active_free_games": 68,
+        "total_active_free_games": 67,
         "total_upcoming_promotions": 0,
         "total_indexed_web_search_links": 50,
-        "total_records": 118
+        "total_records": 117
     },
     "platform_distribution": {
-        "Epic Games": 8,
+        "Epic Games": 7,
         "PC, Playstation 4, Xbox One": 3,
         "PC, Playstation 5, Android, iOS": 1,
         "PC, Playstation 5, Playstation 4": 1,

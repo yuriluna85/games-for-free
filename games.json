@@ -1,6 +1,36 @@
 {
     "search_links": [
         {
+            "title": "Epic Games Store",
+            "url": "https://store.epicgames.com/collection/top-new-releases",
+            "source": "Serper (Google)",
+            "discovered_at": "31/08/2026"
+        },
+        {
+            "title": "Steamで100% OFF：LivingBattle",
+            "url": "https://store.steampowered.com/app/3353830/_",
+            "source": "Serper (Google)",
+            "discovered_at": "31/08/2026"
+        },
+        {
+            "title": "Análise do ano de 2025 da Epic Games Store",
+            "url": "https://store.epicgames.com/news/epic-games-store-2025-year-in-review",
+            "source": "Serper (Google)",
+            "discovered_at": "31/08/2026"
+        },
+        {
+            "title": "Os jogos de PC perfeitos para jogar durante as festas de ...",
+            "url": "https://store.epicgames.com/news/the-perfect-pc-games-to-play-over-the-winter-holiday-break",
+            "source": "Serper (Google)",
+            "discovered_at": "31/08/2026"
+        },
+        {
+            "title": "Como faço para resgatar jogos grátis na EGS ...",
+            "url": "https://www.epicgames.com/help/c-32735058/c-31292734/a16031181",
+            "source": "Serper (Google)",
+            "discovered_at": "31/08/2026"
+        },
+        {
             "title": "15 jogos grátis para PC que todo gamer precisa baixar - TechTudo",
             "url": "https://www.techtudo.com.br/listas/2024/09/15-jogos-gratis-para-pc-que-todo-gamer-precisa-baixar-edjogos.ghtml",
             "source": "Serper (Google)",
@@ -269,37 +299,7 @@
             "url": "https://www.epicgames.com/site/home",
             "source": "Google/Bing",
             "discovered_at": "24/08/2026"
-        },
-        {
-            "title": "Melhores jogos de corridas para PC",
-            "url": "https://store.epicgames.com/news/best-racing-games-for-pc-epic-games",
-            "source": "Serper (Google)",
-            "discovered_at": "23/08/2026"
-        },
-        {
-            "title": "Megapromoção da Epic Games | Economize em jogos ...",
-            "url": "https://store.epicgames.com/sales-and-specials/mega-sale",
-            "source": "Serper (Google)",
-            "discovered_at": "23/08/2026"
-        },
-        {
-            "title": "Como baixar jogos para PC - Epic Games Store",
-            "url": "https://store.epicgames.com/news/how-to-download-pc-games",
-            "source": "Serper (Google)",
-            "discovered_at": "23/08/2026"
-        },
-        {
-            "title": "Steamで100% OFF：Eets",
-            "url": "https://store.steampowered.com/app/6100/Eets",
-            "source": "Serper (Google)",
-            "discovered_at": "21/08/2026"
-        },
-        {
-            "title": "Jogos Grátis BR",
-            "url": "https://store.steampowered.com/curator/6267774-Jogos-Gr%25C3%25A1tis-BR",
-            "source": "Serper (Google)",
-            "discovered_at": "21/08/2026"
         }
     ],
-    "last_update": "2026-08-30T18:55:29.720846"
+    "last_update": "2026-08-31T21:12:38.907346"
 }
