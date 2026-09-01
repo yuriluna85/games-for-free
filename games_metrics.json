@@ -1,10 +1,10 @@
 {
-    "last_updated": "2026-08-31T21:12:38.909316",
+    "last_updated": "2026-09-01T18:58:41.218839",
     "metrics": {
-        "total_active_free_games": 67,
+        "total_active_free_games": 66,
         "total_upcoming_promotions": 0,
         "total_indexed_web_search_links": 50,
-        "total_records": 117
+        "total_records": 116
     },
     "platform_distribution": {
         "Epic Games": 7,
@@ -18,7 +18,7 @@
         "Prime Gaming (Epic)": 7,
         "Prime Gaming (GOG)": 12,
         "Prime Gaming (Legacy)": 2,
-        "Steam": 26
+        "Steam": 25
     },
     "sources_scraped": {
         "epic_games_api": "OK",
