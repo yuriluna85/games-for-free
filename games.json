@@ -1,6 +1,48 @@
 {
     "search_links": [
         {
+            "title": "Someone built a free-to-keep Steam game tracker, and it has ...",
+            "url": "https://www.xda-developers.com/free-to-keep-steam-game-tracker",
+            "source": "Google/Bing",
+            "discovered_at": "02/09/2026"
+        },
+        {
+            "title": "100% Orange Juice on Steam",
+            "url": "https://store.steampowered.com/app/282800/100_Orange_Juice",
+            "source": "Google/Bing",
+            "discovered_at": "02/09/2026"
+        },
+        {
+            "title": "Moonlighter on Steam",
+            "url": "https://store.steampowered.com/app/606150/Moonlighter",
+            "source": "Serper (Google)",
+            "discovered_at": "02/09/2026"
+        },
+        {
+            "title": "Epic Online Services | Home",
+            "url": "https://dev.epicgames.com/en-US/services",
+            "source": "Google/Bing",
+            "discovered_at": "02/09/2026"
+        },
+        {
+            "title": "Welcome to GOG.com | best PC games DRM-free",
+            "url": "https://www.gog.com",
+            "source": "Google/Bing",
+            "discovered_at": "02/09/2026"
+        },
+        {
+            "title": "Home - Epic Games",
+            "url": "https://www.epicgames.com/site/home",
+            "source": "Google/Bing",
+            "discovered_at": "02/09/2026"
+        },
+        {
+            "title": "Free Games | Download A Free PC Game Every Week - Epic Games ...",
+            "url": "https://www.epicgames.com/freegames",
+            "source": "Google/Bing",
+            "discovered_at": "02/09/2026"
+        },
+        {
             "title": "Steam Curator: Jogos gratis brasil",
             "url": "https://store.steampowered.com/curator/6874381-Jogos-gratis-brasil",
             "source": "Serper (Google)",
@@ -257,49 +299,7 @@
             "url": "https://www.1001jogos.com.br",
             "source": "Google/Bing",
             "discovered_at": "25/08/2026"
-        },
-        {
-            "title": "Jogos Online Grátis - Jogue no Click Jogos",
-            "url": "https://www.clickjogos.com.br",
-            "source": "Google/Bing",
-            "discovered_at": "25/08/2026"
-        },
-        {
-            "title": "Jogos populares - Jogos grátis online! - ojogos.com.br",
-            "url": "https://www.ojogos.com.br/jogos",
-            "source": "Google/Bing",
-            "discovered_at": "25/08/2026"
-        },
-        {
-            "title": "Free Online Games on Jogos.com | Play Now!",
-            "url": "https://www.jogos.com/en",
-            "source": "Google/Bing",
-            "discovered_at": "25/08/2026"
-        },
-        {
-            "title": "Jogos - 3500 jogos online grátis!",
-            "url": "https://www.1001jogos.pt",
-            "source": "Google/Bing",
-            "discovered_at": "25/08/2026"
-        },
-        {
-            "title": "Jogos Online - Jogue Grátis Online! - Poki",
-            "url": "https://poki.com/br/online",
-            "source": "Google/Bing",
-            "discovered_at": "25/08/2026"
-        },
-        {
-            "title": "Jogos grátis para PC mais populares",
-            "url": "https://store.epicgames.com/collection/top-selling-free-to-play",
-            "source": "Serper (Google)",
-            "discovered_at": "25/08/2026"
-        },
-        {
-            "title": "Steamで100% OFF：AquaDream Soundtrack",
-            "url": "https://store.steampowered.com/app/3502050",
-            "source": "Serper (Google)",
-            "discovered_at": "24/08/2026"
         }
     ],
-    "last_update": "2026-09-01T18:58:41.216809"
+    "last_update": "2026-09-02T19:04:35.946678"
 }
