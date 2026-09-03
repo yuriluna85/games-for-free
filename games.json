@@ -1,6 +1,12 @@
 {
     "search_links": [
         {
+            "title": "Steamで100% OFF：AquaDream Soundtrack",
+            "url": "https://store.steampowered.com/app/3502050",
+            "source": "Serper (Google)",
+            "discovered_at": "03/09/2026"
+        },
+        {
             "title": "Someone built a free-to-keep Steam game tracker, and it has ...",
             "url": "https://www.xda-developers.com/free-to-keep-steam-game-tracker",
             "source": "Google/Bing",
@@ -293,13 +299,7 @@
             "url": "https://www.jogos360.com.br",
             "source": "Google/Bing",
             "discovered_at": "25/08/2026"
-        },
-        {
-            "title": "Jogos - Jogue 3500 jogos online grátis!",
-            "url": "https://www.1001jogos.com.br",
-            "source": "Google/Bing",
-            "discovered_at": "25/08/2026"
         }
     ],
-    "last_update": "2026-09-02T19:04:35.946678"
+    "last_update": "2026-09-03T18:58:24.130952"
 }
