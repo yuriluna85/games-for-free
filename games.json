@@ -1,6 +1,12 @@
 {
     "search_links": [
         {
+            "title": "Steam Curator: Jogos Leves Para PC Fracos",
+            "url": "https://store.steampowered.com/curator/11987693-Jogos-Leves-Para-PC-Fracos",
+            "source": "Google/Bing",
+            "discovered_at": "04/09/2026"
+        },
+        {
             "title": "Steamで100% OFF：AquaDream Soundtrack",
             "url": "https://store.steampowered.com/app/3502050",
             "source": "Serper (Google)",
@@ -293,13 +299,7 @@
             "url": "https://www.jogos.com/pt",
             "source": "Google/Bing",
             "discovered_at": "25/08/2026"
-        },
-        {
-            "title": "Jogos Online Grátis - Jogue no Jogos 360",
-            "url": "https://www.jogos360.com.br",
-            "source": "Google/Bing",
-            "discovered_at": "25/08/2026"
         }
     ],
-    "last_update": "2026-09-03T18:58:24.130952"
+    "last_update": "2026-09-04T18:41:21.963000"
 }
