@@ -1,6 +1,66 @@
 {
     "search_links": [
         {
+            "title": "Jogos Online Grátis - Jogue no Jogos 360",
+            "url": "https://www.jogos360.com.br",
+            "source": "Google/Bing",
+            "discovered_at": "08/09/2026"
+        },
+        {
+            "title": "Jogos populares - Jogos grátis online! - ojogos.com.br",
+            "url": "https://www.ojogos.com.br/jogos",
+            "source": "Google/Bing",
+            "discovered_at": "08/09/2026"
+        },
+        {
+            "title": "Jogos Online Grátis - Jogue no Click Jogos",
+            "url": "https://www.clickjogos.com.br",
+            "source": "Google/Bing",
+            "discovered_at": "08/09/2026"
+        },
+        {
+            "title": "Jogos - 3500 jogos online grátis!",
+            "url": "https://www.1001jogos.pt",
+            "source": "Google/Bing",
+            "discovered_at": "08/09/2026"
+        },
+        {
+            "title": "Poki - Jogos Online Grátis - Jogue Agora!",
+            "url": "https://poki.us.com/pt",
+            "source": "Google/Bing",
+            "discovered_at": "08/09/2026"
+        },
+        {
+            "title": "Jogos Online Grátis para Jogar Sem Download | Jogos.com",
+            "url": "https://www.jogos.com/pt",
+            "source": "Google/Bing",
+            "discovered_at": "08/09/2026"
+        },
+        {
+            "title": "Jogos Online - Jogue Grátis Online! - Poki",
+            "url": "https://poki.com/br/online",
+            "source": "Google/Bing",
+            "discovered_at": "08/09/2026"
+        },
+        {
+            "title": "Free Online Games on Jogos.com | Play Now!",
+            "url": "https://www.jogos.com/en",
+            "source": "Google/Bing",
+            "discovered_at": "08/09/2026"
+        },
+        {
+            "title": "Jogos Online no Click Jogos",
+            "url": "http://www.clickjogos.com.br",
+            "source": "Google/Bing",
+            "discovered_at": "08/09/2026"
+        },
+        {
+            "title": "Os melhores jogos grátis para PC – Epic Games Store",
+            "url": "https://store.epicgames.com/collection/top-free-to-play",
+            "source": "Serper (Google)",
+            "discovered_at": "08/09/2026"
+        },
+        {
             "title": "Jogos grátis hoje: Lista atualizada da Steam, Epic Games ...",
             "url": "https://viciados.net/jogos-gratis-hoje-lista-atualizada-steam-epic-games",
             "source": "Google/Bing",
@@ -239,67 +299,7 @@
             "url": "https://store.steampowered.com/curator/36950778-Recanto-dos-Jogos-Leves/lists",
             "source": "Serper (Google)",
             "discovered_at": "28/08/2026"
-        },
-        {
-            "title": "Só Jogos Gratis - Steam Curator",
-            "url": "https://store.steampowered.com/curator/31501281-S%C3%B3-Jogos-Gratis",
-            "source": "Serper (Google)",
-            "discovered_at": "28/08/2026"
-        },
-        {
-            "title": "Steam Store",
-            "url": "https://store.steampowered.com",
-            "source": "Serper (Google)",
-            "discovered_at": "28/08/2026"
-        },
-        {
-            "title": "Steam Community :: Group :: Free To Keep",
-            "url": "https://steamcommunity.com/groups/freetokeep",
-            "source": "Google/Bing",
-            "discovered_at": "26/08/2026"
-        },
-        {
-            "title": "Save 91% on Car Mechanic Simulator 2018 on Steam",
-            "url": "https://store.steampowered.com/app/645630/Car_Mechanic_Simulator_2018",
-            "source": "Serper (Google)",
-            "discovered_at": "26/08/2026"
-        },
-        {
-            "title": "Steamで100% OFF：Deponia",
-            "url": "https://store.steampowered.com/app/214340/Deponia",
-            "source": "Serper (Google)",
-            "discovered_at": "26/08/2026"
-        },
-        {
-            "title": "Save the World Goes Free-to-Play April 16, 2026 | Fortnite ...",
-            "url": "https://communities.epicgames.com/thread/save-the-world-goes-free-to-play-april-16-2026/Ldwm",
-            "source": "Google/Bing",
-            "discovered_at": "26/08/2026"
-        },
-        {
-            "title": "GOG.com",
-            "url": "https://www.gog.com/en/partner/free_games",
-            "source": "Google/Bing",
-            "discovered_at": "26/08/2026"
-        },
-        {
-            "title": "Download A Free PC Game Every Week - Epic Games Store",
-            "url": "https://store.epicgames.com/free-games",
-            "source": "Google/Bing",
-            "discovered_at": "26/08/2026"
-        },
-        {
-            "title": "Epic Games Store | Baixe e jogue jogos para PC, mods, DLCs ...",
-            "url": "https://store.epicgames.com",
-            "source": "Serper (Google)",
-            "discovered_at": "26/08/2026"
-        },
-        {
-            "title": "Jogos Grátis para Jogar",
-            "url": "https://store.steampowered.com/genre/Free%20to%20Play",
-            "source": "Serper (Google)",
-            "discovered_at": "26/08/2026"
         }
     ],
-    "last_update": "2026-09-07T19:28:50.966379"
+    "last_update": "2026-09-08T19:07:46.259347"
 }
