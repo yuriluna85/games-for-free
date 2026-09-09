@@ -1,6 +1,42 @@
 {
     "search_links": [
         {
+            "title": "Steamで100% OFF：Deponia",
+            "url": "https://store.steampowered.com/app/214340/Deponia",
+            "source": "Serper (Google)",
+            "discovered_at": "09/09/2026"
+        },
+        {
+            "title": "Microsoft Flight Simulator Suite: Themes Reimagined - Steam",
+            "url": "https://store.steampowered.com/app/5004030/Microsoft_Flight_Simulator_Suite_Themes_Reimagined",
+            "source": "Serper (Google)",
+            "discovered_at": "09/09/2026"
+        },
+        {
+            "title": "GOG.com",
+            "url": "https://www.gog.com/en/partner/free_games",
+            "source": "Google/Bing",
+            "discovered_at": "09/09/2026"
+        },
+        {
+            "title": "Download A Free PC Game Every Week - Epic Games Store",
+            "url": "https://store.epicgames.com/free-games",
+            "source": "Google/Bing",
+            "discovered_at": "09/09/2026"
+        },
+        {
+            "title": "Steam Store",
+            "url": "https://store.steampowered.com",
+            "source": "Serper (Google)",
+            "discovered_at": "09/09/2026"
+        },
+        {
+            "title": "Jogos Grátis para Jogar - Steam",
+            "url": "https://store.steampowered.com/genre/Free%20to%20Play",
+            "source": "Serper (Google)",
+            "discovered_at": "09/09/2026"
+        },
+        {
             "title": "Jogos Online Grátis - Jogue no Jogos 360",
             "url": "https://www.jogos360.com.br",
             "source": "Google/Bing",
@@ -263,43 +299,7 @@
             "url": "https://store.epicgames.com/news/epic-games-mega-sale-buyers-guide",
             "source": "Serper (Google)",
             "discovered_at": "29/08/2026"
-        },
-        {
-            "title": "Ganhe um jogo grátis toda semana | Epic Games Store",
-            "url": "https://store.epicgames.com/Free-games",
-            "source": "Serper (Google)",
-            "discovered_at": "29/08/2026"
-        },
-        {
-            "title": "Baixe jogos grátis para Windows: FPS, estratégia, RPGs - Uptodown",
-            "url": "https://br.uptodown.com/windows/games",
-            "source": "Serper (Google)",
-            "discovered_at": "28/08/2026"
-        },
-        {
-            "title": "301 Moved Permanently",
-            "url": "http://epicgames.com",
-            "source": "Google/Bing",
-            "discovered_at": "28/08/2026"
-        },
-        {
-            "title": "GOG.COM",
-            "url": "https://www.gog.com/en/promo/free_games",
-            "source": "Google/Bing",
-            "discovered_at": "28/08/2026"
-        },
-        {
-            "title": "Baixe nossos Jogos de Aventura",
-            "url": "https://store.epicgames.com/c/adventure-games",
-            "source": "Serper (Google)",
-            "discovered_at": "28/08/2026"
-        },
-        {
-            "title": "Recanto dos Jogos Leves",
-            "url": "https://store.steampowered.com/curator/36950778-Recanto-dos-Jogos-Leves/lists",
-            "source": "Serper (Google)",
-            "discovered_at": "28/08/2026"
         }
     ],
-    "last_update": "2026-09-08T19:07:46.259347"
+    "last_update": "2026-09-09T18:55:18.356316"
 }
