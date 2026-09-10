@@ -1,6 +1,48 @@
 {
     "search_links": [
         {
+            "title": "Baixe jogos grátis para Windows: FPS, estratégia, RPGs",
+            "url": "https://br.uptodown.com/windows/games",
+            "source": "Serper (Google)",
+            "discovered_at": "10/09/2026"
+        },
+        {
+            "title": "GOG.com",
+            "url": "https://static-s.gog.com/wishlist/games",
+            "source": "Google/Bing",
+            "discovered_at": "10/09/2026"
+        },
+        {
+            "title": "GOG.COM",
+            "url": "https://www.gog.com/en/promo/free_games",
+            "source": "Google/Bing",
+            "discovered_at": "10/09/2026"
+        },
+        {
+            "title": "Baixe nossos Jogos de Aventura - Epic Games",
+            "url": "https://store.epicgames.com/c/adventure-games",
+            "source": "Serper (Google)",
+            "discovered_at": "10/09/2026"
+        },
+        {
+            "title": "Onde está a biblioteca de jogos na Epic Games Store para ...",
+            "url": "https://www.epicgames.com/help/epic-games-store-c-32735058/launcher-support-c-36403860/donde-esta-la-biblioteca-de-juegos-en-la-epic-games-store-para-dispositivos-moviles-a20593697",
+            "source": "Serper (Google)",
+            "discovered_at": "10/09/2026"
+        },
+        {
+            "title": "Steam Curator: Recanto dos Jogos Leves",
+            "url": "https://store.steampowered.com/curator/36950778-Recanto-dos-Jogos-Leves/lists",
+            "source": "Serper (Google)",
+            "discovered_at": "10/09/2026"
+        },
+        {
+            "title": "Epic Games Store | Baixe e jogue jogos para PC, mods, DLCs e ...",
+            "url": "https://store.epicgames.com",
+            "source": "Serper (Google)",
+            "discovered_at": "10/09/2026"
+        },
+        {
             "title": "Steamで100% OFF：Deponia",
             "url": "https://store.steampowered.com/app/214340/Deponia",
             "source": "Serper (Google)",
@@ -257,49 +299,7 @@
             "url": "https://poki.com/br",
             "source": "Google/Bing",
             "discovered_at": "29/08/2026"
-        },
-        {
-            "title": "Jogos de PC para download",
-            "url": "https://www.ea.com/pt-br/games/library/pc-download",
-            "source": "Serper (Google)",
-            "discovered_at": "29/08/2026"
-        },
-        {
-            "title": "Jogos Online Grátis | Jogue Agora na CrazyGames!",
-            "url": "https://www.crazygames.com/br",
-            "source": "Serper (Google)",
-            "discovered_at": "29/08/2026"
-        },
-        {
-            "title": "Steamで100% OFF：Happy's Humble Burger Farm",
-            "url": "https://store.steampowered.com/app/1433340/Happys_Humble_Burger_Farm",
-            "source": "Serper (Google)",
-            "discovered_at": "29/08/2026"
-        },
-        {
-            "title": "www.epicgames.com",
-            "url": "https://www.epicgames.com/site/epic-games-header",
-            "source": "Google/Bing",
-            "discovered_at": "29/08/2026"
-        },
-        {
-            "title": "Save 100% on Terrors to Unveil - Day Off on Steam",
-            "url": "https://store.steampowered.com/app/3587490",
-            "source": "Serper (Google)",
-            "discovered_at": "29/08/2026"
-        },
-        {
-            "title": "Steamで100% OFF：World of Warships — Marblehead Lima",
-            "url": "https://store.steampowered.com/app/934690/_Marblehead_Lima",
-            "source": "Serper (Google)",
-            "discovered_at": "29/08/2026"
-        },
-        {
-            "title": "Aproveita ofertas de jogos, brindes grátis e muito mais!",
-            "url": "https://store.epicgames.com/news/epic-games-mega-sale-buyers-guide",
-            "source": "Serper (Google)",
-            "discovered_at": "29/08/2026"
         }
     ],
-    "last_update": "2026-09-09T18:55:18.356316"
+    "last_update": "2026-09-10T18:49:09.728569"
 }
