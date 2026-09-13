@@ -1,6 +1,18 @@
 {
     "search_links": [
         {
+            "title": "Megapromoção da Epic Games | Economize em jogos para PC",
+            "url": "https://store.epicgames.com/hu/sales-and-specials/mega-sale",
+            "source": "Serper (Google)",
+            "discovered_at": "13/09/2026"
+        },
+        {
+            "title": "Revisão do ano de 2025 da Epic Games Store",
+            "url": "https://store.epicgames.com/news/epic-games-store-2025-year-in-review",
+            "source": "Serper (Google)",
+            "discovered_at": "13/09/2026"
+        },
+        {
             "title": "Melhores jogos grátis da Steam? Começando agora no PC gaming",
             "url": "https://www.reddit.com/r/ShouldIbuythisgame/comments/1k7mua5/best_free_steam_games_just_getting_into_pc_gaming",
             "source": "Serper (Google)",
@@ -287,19 +299,7 @@
             "url": "https://store.steampowered.com/curator/6267774-Jogos-Gr%25C3%25A1tis-BR",
             "source": "Serper (Google)",
             "discovered_at": "01/09/2026"
-        },
-        {
-            "title": "Epic Games Store",
-            "url": "https://store.epicgames.com/collection/top-new-releases",
-            "source": "Serper (Google)",
-            "discovered_at": "31/08/2026"
-        },
-        {
-            "title": "Steamで100% OFF：LivingBattle",
-            "url": "https://store.steampowered.com/app/3353830/_",
-            "source": "Serper (Google)",
-            "discovered_at": "31/08/2026"
         }
     ],
-    "last_update": "2026-09-12T17:58:14.688411"
+    "last_update": "2026-09-13T18:25:00.037718"
 }
