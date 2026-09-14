@@ -1,6 +1,12 @@
 {
     "search_links": [
         {
+            "title": "Steamで100% OFF：LivingBattle",
+            "url": "https://store.steampowered.com/app/3353830/_",
+            "source": "Serper (Google)",
+            "discovered_at": "14/09/2026"
+        },
+        {
             "title": "Megapromoção da Epic Games | Economize em jogos para PC",
             "url": "https://store.epicgames.com/hu/sales-and-specials/mega-sale",
             "source": "Serper (Google)",
@@ -293,13 +299,7 @@
             "url": "https://store.epicgames.com/en-US",
             "source": "Serper (Google)",
             "discovered_at": "01/09/2026"
-        },
-        {
-            "title": "Jogos Grátis BR",
-            "url": "https://store.steampowered.com/curator/6267774-Jogos-Gr%25C3%25A1tis-BR",
-            "source": "Serper (Google)",
-            "discovered_at": "01/09/2026"
         }
     ],
-    "last_update": "2026-09-13T18:25:00.037718"
+    "last_update": "2026-09-14T20:01:58.761411"
 }
