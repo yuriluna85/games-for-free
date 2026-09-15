@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-09-14T20:01:58.763071",
+    "last_updated": "2026-09-15T19:21:37.559755",
     "metrics": {
         "total_active_free_games": 64,
         "total_upcoming_promotions": 2,
@@ -18,7 +18,8 @@
         "Prime Gaming (Epic)": 9,
         "Prime Gaming (GOG)": 10,
         "Prime Gaming (Legacy)": 2,
-        "Steam": 26
+        "Steam": 25,
+        "Ubisoft": 1
     },
     "sources_scraped": {
         "epic_games_api": "OK",
