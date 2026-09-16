@@ -464,5 +464,10 @@
     "447700": "Mínimos:\nRequer um sistema operativo e processador de 64 bits\nSistema Operativo *:\nWindows 7 or above\nProcessador:\n2.4 GHz Dual core\nMemória:\n2 GB de RAM\nPlaca gráfica:\nOpenGL 3.2 compliant video card\nEspaço no disco:\nRequer 2 GB de espaço livre\nPlaca de som:\nDirectSound",
     "https://www.gamerpower.com/open/for-honor-ubisoft-giveaway": {
         "resolved_url": "https://store.ubisoft.com/ie/for-honor/659ea90829c01c38968dce19.html"
-    }
+    },
+    "https://www.gamerpower.com/open/space-menace-steam-giveaway": {
+        "resolved_url": "https://store.steampowered.com/app/2000040/Space_Menace/",
+        "requirements": "Mínimos:\nRequer um sistema operativo e processador de 64 bits\nSistema Operativo *:\nWindows XP / Vista / 7\nProcessador:\n2 GHz\nMemória:\n2 GB de RAM\nPlaca gráfica:\nDedicated graphics card with 256 MB of RAM\nEspaço no disco:\nRequer 300 MB de espaço livre"
+    },
+    "2000040": "Mínimos:\nRequer um sistema operativo e processador de 64 bits\nSistema Operativo *:\nWindows XP / Vista / 7\nProcessador:\n2 GHz\nMemória:\n2 GB de RAM\nPlaca gráfica:\nDedicated graphics card with 256 MB of RAM\nEspaço no disco:\nRequer 300 MB de espaço livre"
 }
