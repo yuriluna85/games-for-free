@@ -469,5 +469,16 @@
         "resolved_url": "https://store.steampowered.com/app/2000040/Space_Menace/",
         "requirements": "Mínimos:\nRequer um sistema operativo e processador de 64 bits\nSistema Operativo *:\nWindows XP / Vista / 7\nProcessador:\n2 GHz\nMemória:\n2 GB de RAM\nPlaca gráfica:\nDedicated graphics card with 256 MB of RAM\nEspaço no disco:\nRequer 300 MB de espaço livre"
     },
-    "2000040": "Mínimos:\nRequer um sistema operativo e processador de 64 bits\nSistema Operativo *:\nWindows XP / Vista / 7\nProcessador:\n2 GHz\nMemória:\n2 GB de RAM\nPlaca gráfica:\nDedicated graphics card with 256 MB of RAM\nEspaço no disco:\nRequer 300 MB de espaço livre"
+    "2000040": "Mínimos:\nRequer um sistema operativo e processador de 64 bits\nSistema Operativo *:\nWindows XP / Vista / 7\nProcessador:\n2 GHz\nMemória:\n2 GB de RAM\nPlaca gráfica:\nDedicated graphics card with 256 MB of RAM\nEspaço no disco:\nRequer 300 MB de espaço livre",
+    "https://www.gamerpower.com/open/aniimo-gift-pack-key-giveaway": {
+        "resolved_url": "https://na.alienwarearena.com/ucf/show/2176243/boards/contest-and-giveaways-global/Giveaway/aniimo-game-pack-key-giveaway"
+    },
+    "https://www.gamerpower.com/open/dying-light-the-beast-discharge-weapon-pack-steam-giveaway": {
+        "resolved_url": "https://store.steampowered.com/app/4355480/Dying_Light_The_Beast__Discharge_Weapon_Pack/",
+        "requirements": "Mínimos:\nRequer um sistema operativo e processador de 64 bits\nSistema Operativo:\nWindows 10 or newer\nProcessador:\nIntel i5-9600K / AMD Ryzen 5 3600\nMemória:\n16 GB de RAM\nPlaca gráfica:\nNVIDIA GeForce 1060 / AMD Radeon 5500 XT / Intel ARC A750\nEspaço no disco:\nRequer 70 GB de espaço livre\nNotas adicionais:\nSSD Required"
+    },
+    "4355480": "Mínimos:\nRequer um sistema operativo e processador de 64 bits\nSistema Operativo:\nWindows 10 or newer\nProcessador:\nIntel i5-9600K / AMD Ryzen 5 3600\nMemória:\n16 GB de RAM\nPlaca gráfica:\nNVIDIA GeForce 1060 / AMD Radeon 5500 XT / Intel ARC A750\nEspaço no disco:\nRequer 70 GB de espaço livre\nNotas adicionais:\nSSD Required",
+    "luna_url_doom eternal": null,
+    "luna_url_rims racing": null,
+    "luna_url_wall world 2": null
 }
