@@ -478,6 +478,11 @@
         "requirements": "Mínimos:\nRequer um sistema operativo e processador de 64 bits\nSistema Operativo:\nWindows 10 or newer\nProcessador:\nIntel i5-9600K / AMD Ryzen 5 3600\nMemória:\n16 GB de RAM\nPlaca gráfica:\nNVIDIA GeForce 1060 / AMD Radeon 5500 XT / Intel ARC A750\nEspaço no disco:\nRequer 70 GB de espaço livre\nNotas adicionais:\nSSD Required"
     },
     "4355480": "Mínimos:\nRequer um sistema operativo e processador de 64 bits\nSistema Operativo:\nWindows 10 or newer\nProcessador:\nIntel i5-9600K / AMD Ryzen 5 3600\nMemória:\n16 GB de RAM\nPlaca gráfica:\nNVIDIA GeForce 1060 / AMD Radeon 5500 XT / Intel ARC A750\nEspaço no disco:\nRequer 70 GB de espaço livre\nNotas adicionais:\nSSD Required",
+    "https://www.gamerpower.com/open/deadshot-steam-giveaway": {
+        "resolved_url": "https://store.steampowered.com/app/2484180/Deadshot/",
+        "requirements": "Mínimos:\nRequer um sistema operativo e processador de 64 bits\nSistema Operativo:\nWindows 10 (64-bit)\nProcessador:\nAMD Ryzen 3 series/Intel I3 series\nMemória:\n3 GB de RAM\nPlaca gráfica:\nNvidia GeForce GTX 970 4GB or AMD Equivalent\nDirectX:\nVersão 11\nEspaço no disco:\nRequer 4 GB de espaço livre"
+    },
+    "2484180": "Mínimos:\nRequer um sistema operativo e processador de 64 bits\nSistema Operativo:\nWindows 10 (64-bit)\nProcessador:\nAMD Ryzen 3 series/Intel I3 series\nMemória:\n3 GB de RAM\nPlaca gráfica:\nNvidia GeForce GTX 970 4GB or AMD Equivalent\nDirectX:\nVersão 11\nEspaço no disco:\nRequer 4 GB de espaço livre",
     "luna_url_doom eternal": null,
     "luna_url_rims racing": null,
     "luna_url_wall world 2": null
