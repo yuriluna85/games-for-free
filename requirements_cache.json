@@ -498,10 +498,15 @@
     "https://www.gamerpower.com/open/no-brakes-club-playtest-steam-keys": {
         "resolved_url": "https://www.dungeonloot.com/no-brakes-club-playtest-steam-keys"
     },
-    "luna_url_hue": null,
-    "luna_url_the da vinci cryptex": null,
-    "luna_url_high on life": null,
-    "luna_url_doom eternal": null,
-    "luna_url_rims racing": null,
-    "luna_url_wall world 2": null
+    "https://www.gamerpower.com/open/mxgp-26-scrubdesignz-liveries-steam-giveaway": {
+        "resolved_url": "https://store.steampowered.com/app/4847440/MXGP_26__Scrubdesignz_Liveries/",
+        "requirements": "Mínimos:\nRequer um sistema operativo e processador de 64 bits"
+    },
+    "4847440": "Mínimos:\nRequer um sistema operativo e processador de 64 bits",
+    "luna_url_hue": "https://luna.amazon.com/claims/hue-epic/dp/amzn1.pg.item.d7de294d-c66d-4445-824d-ec9292fa1acb",
+    "luna_url_the da vinci cryptex": "https://luna.amazon.com/claims/the-da-vinci-cryptex-legacy/dp/amzn1.pg.item.6cd3cd34-9ede-48df-bf9a-cc154ed97525",
+    "luna_url_high on life": "https://luna.amazon.com/claims/high-on-life-epic/dp/amzn1.pg.item.351cbaa9-ac70-4e47-93b6-1a4cb7dd38c8",
+    "luna_url_doom eternal": "https://luna.amazon.com/claims/doom-eternal-microsoft/dp/amzn1.pg.item.1c490f2e-c698-4077-94a6-6a69c98945e2",
+    "luna_url_rims racing": "https://luna.amazon.com/claims/rims-racing-epic/dp/amzn1.pg.item.2cf2cac0-6b4d-4b5e-9064-2005dad4ede7",
+    "luna_url_wall world 2": "https://luna.amazon.com/claims/wall-world-2-aga/dp/amzn1.pg.item.11e467f2-b0e3-4a1e-9dee-4cd723e92ee9"
 }
