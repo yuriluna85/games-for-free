@@ -1,88 +1,91 @@
-# 🎮 Monitor e Indexador de Jogos Grátis
-> **Projeto desenvolvido sob a chancela 🔬 YLuna85 LABs**
+# Monitor de Jogos Grátis
 
+Portal do YLuna85 LABs que agrega automaticamente ofertas de jogos gratuitos e com resgate temporário nas principais plataformas de distribuição digital (Epic Games, Steam, GOG, Itch.io e outras).
 
-Este repositório contém uma aplicação automatizada para monitorar, buscar e indexar ofertas de jogos gratuitos em lojas como **Steam, Epic Games Store, GOG** e outros portais da internet. A página principal é gerada estaticamente e foi projetada para ser hospedada diretamente no **GitHub Pages**.
+**Repositório**: `https://github.com/yuriluna85/games-for-free`
+**Publicado em**: `https://yuriluna85.github.io/games-for-free/`
+**Contexto de marca**: YLuna85 LABs
+**Autor**: Yuri Almeida
 
 ---
 
-## 📂 Estrutura do Repositório (Esqueleto GitHub)
-
-O projeto segue a estrutura padrão de repositórios do GitHub com automação via GitHub Actions:
+## Estrutura de Arquivos
 
 ```
-├── .github/
-│   └── workflows/
-│       └── scrape.yml      # Workflow que roda o script diariamente às 13:01
-├── .gitignore              # Arquivos ignorados pelo Git (caches e arquivos de SO)
-├── README.md               # Documentação do projeto (este arquivo)
-├── requirements.txt        # Dependências de bibliotecas Python
-├── monitor.py              # Script principal do scraper e indexador
-├── games.json              # Banco de dados JSON com histórico dos links indexados
-├── games_data.csv          # Arquivo CSV estruturado contendo todos os jogos e links capturados
-├── games_metrics.json      # Arquivo JSON com estatísticas e métricas de execução
-├── index.html              # Dashboard estático gerado automaticamente
-└── agendar_tarefa.ps1      # Script PowerShell para agendar execução local no Windows
+monitor-jogos-gratis/
+├── index.html                 Página única, gerada automaticamente por monitor.py
+├── privacidade.html            Política de Privacidade (LGPD)
+├── termos.html                 Termos de Uso
+├── robots.txt, sitemap.xml     Arquivos de indexação SEO
+├── favicon.png                 Favicon oficial
+├── monitor.py                  Script principal: coleta, traduz e monta o index.html
+├── games.json                  Base de ofertas ativas (consumida/gerada por monitor.py)
+├── games_data.csv               Histórico de ofertas em formato tabular
+├── games_metrics.json           Métricas de execução do monitor
+├── prime_games.json             Ofertas específicas do Amazon Prime Gaming
+├── requirements_cache.json      Cache de traduções e metadados (evita recomputar a cada execução)
+├── requirements.txt             Dependências Python
+├── agendar_tarefa.ps1           Script de agendamento local (Windows Task Scheduler)
+├── .github/workflows/scrape.yml Automação diária via GitHub Actions
+├── .env                         Chaves de API locais (SERPER_API_KEY, SCRAPERAPI_KEY) — NUNCA versionar
+└── harness.py                   Suíte de autoteste do projeto
 ```
 
----
-
-## ⚡ Como Funciona a Indexação Diária
-
-A indexação dos portais de jogos gratuitos é realizada de duas formas complementares:
-
-### 1. APIs e Scraping Direto (Lojas Oficiais)
-* O script consome a API da **Epic Games Store** para recuperar jogos gratuitos ativos e futuros.
-* Consome a API do **GamerPower** para filtrar e obter ofertas ativas da Steam, GOG, Itch.io e Ubisoft Store.
-
-### 2. Busca e Indexação na Web (Google, Bing e Fallbacks)
-* Diariamente, o script realiza buscas utilizando os índices de busca do Google e Bing (via requisições web seguras de Yahoo e DuckDuckGo) com queries especializadas para identificar portais, novos artigos e links promocionais ativos.
-* Novos links descobertos são comparados e adicionados de forma incremental ao arquivo `games.json`, mantendo um histórico atualizado das últimas 50 ofertas e portais válidos da internet.
+**Importante**: `games.json`, `games_data.csv`, `games_metrics.json`, `prime_games.json` e `requirements_cache.json` são gerados e commitados automaticamente pelo workflow do GitHub Actions a cada execução (ver `.github/workflows/scrape.yml`). Não são resíduos: fazem parte do pipeline de dados do projeto e não devem ser removidos da raiz.
 
 ---
 
-## 🤖 Automação no GitHub Pages e GitHub Actions
+## Pipeline de Coleta Automatizada
 
-Como a aplicação será publicada no **GitHub Pages**, o fluxo de atualização é 100% automatizado através do arquivo `.github/workflows/scrape.yml`:
+O workflow `.github/workflows/scrape.yml` está agendado para 16:02 UTC (13:02 horário de Brasília) e também pode ser disparado manualmente (`workflow_dispatch`). O GitHub não garante o horário do agendamento: entre 26/09 e 30/09/2026 as execuções começaram entre 15:49 e 18:27 de Brasília.
 
-1. **Agendamento (Cron):** O workflow está programado para disparar todos os dias às **13:01 no horário de Brasília** (`16:01 UTC`).
-2. **Execução:** O GitHub Actions ativa uma máquina virtual temporária, instala o Python, instala as dependências do `requirements.txt` e roda o script `monitor.py`.
-3. **Indexação e Geração:** O script busca as ofertas, atualiza o arquivo de histórico `games.json` e gera o novo painel `index.html`.
-4. **Deploy Automático:** O bot do GitHub faz o commit e push das alterações diretamente de volta para o repositório. O GitHub Pages atualiza o site estático instantaneamente!
+1. Executa `python monitor.py`, que varre as plataformas de jogos, traduz descrições para pt-BR e monta o `index.html` estático.
+2. Usa as chaves `SERPER_API_KEY` e `SCRAPERAPI_KEY` como *secrets* do repositório GitHub (nunca hardcoded no código).
+3. Faz commit e push automático de `index.html` e dos arquivos de dados, se houver alteração.
 
----
-
-## 💻 Execução Local (Windows)
-
-Você também pode rodar e agendar a execução do script localmente no seu computador.
-
-### Instalação de Dependências
-Abra o terminal na pasta do projeto e instale as bibliotecas necessárias:
-```bash
-pip install -r requirements.txt
+Para rodar localmente, crie um arquivo `.env` na raiz do projeto com:
 ```
-
-### Rodar Manualmente
-```bash
-python monitor.py
+SERPER_API_KEY=sua_chave_aqui
+SCRAPERAPI_KEY=sua_chave_aqui
 ```
-
-### Agendador Local (Windows Task Scheduler)
-Para configurar seu computador para rodar o indexador automaticamente todos os dias às **13:01** (localmente), clique com o botão direito no arquivo `agendar_tarefa.ps1` e selecione **"Executar com o PowerShell"** (ou execute via terminal PowerShell do Administrador).
+e execute `python monitor.py`. O arquivo `.env` está listado no `.gitignore` e nunca deve ser publicado.
 
 ---
 
-## 🎨 Recursos Visuais do Dashboard
-O arquivo `index.html` gerado de forma estática conta com:
-* **Dark Mode** nativo com gradientes vibrantes em tons de roxo e ciano.
-* **Glassmorphism** nos cartões de jogos e painel de controle.
-* **Filtros Dinâmicos** por plataforma (Steam, Epic, GOG) e caixa de pesquisa por título de jogo em tempo real.
-* **Seção de Links Indexados**: Exibe os links dinâmicos e artigos de ofertas encontrados pelas buscas web do Google e Bing.
+## Acessibilidade e Conformidade Legal
 
+- Barra de acessibilidade (`A+`/`A-`/Alto Contraste) no topo da página, com persistência em `localStorage`.
+- Banner de consentimento de cookies (LGPD/GDPR), informando o uso de `localStorage` e a incorporação de conteúdo de terceiros (Google Fonts, Font Awesome, imagens hospedadas pelas próprias plataformas de jogos).
+- Páginas `privacidade.html` e `termos.html`, linkadas no rodapé.
 
-## 📜 Log de Atualizações (Changelog)
+---
 
-### 📅 30/06/2026 - Estruturação de SEO & Monetização
-- 🌐 **Otimização de SEO (White Hat)**: Inclusão de meta tags de indexação, dados estruturados JSON-LD e tags Open Graph (OG) para melhorar a relevância e indexação orgânica no Google.
-- 💵 **Estrutura de Monetização**: Adicionados slots de publicidade responsivos (banner horizontal e lateral) compatíveis com o modo de alto contraste para Google AdSense e AdMob.
+## Execução Local
 
+- Atalho: `EXECUTAR_MONITOR-JOGOS-GRATIS.bat` (Windows).
+- Agendamento local alternativo: `agendar_tarefa.ps1` (Windows Task Scheduler).
+- Suíte de autoteste: `python harness.py`.
+
+---
+
+## Changelog
+
+### 01/10/2026
+- **Ofertas vencidas deixam de aparecer**:
+  - GamerPower: a API mantém como `Active` sorteios com data de término já vencida (ex.: 2020 e maio/2026). Agora o `monitor.py` descarta todo sorteio cujo `end_date` já passou.
+  - Lista manual do Prime (`prime_games.json`): cada entrada precisa do campo `"expira_em": "AAAA-MM-DD"`. Entradas sem esse campo ou vencidas não são exibidas. As 18 entradas existentes, de junho/2026, ficaram de fora por não terem validade.
+  - Links da busca web: um link some quando não reaparece na busca por mais de 7 dias (`LINK_MAX_AGE_DAYS`). O campo `last_seen` é renovado quando o link é reencontrado.
+  - Página: cada card leva a data de término em `data-end`, e um script remove da tela, a cada minuto, as ofertas que venceram depois da última coleta.
+- Agendamento alterado de 13:01 para 13:02 (horário de Brasília), com `cron: '2 16 * * *'`.
+- A mensagem do commit automático passa a usar o horário de Brasília (antes mostrava UTC, o que dava a impressão de execução às 16h).
+
+### 27/09/2026
+- **Correção de segurança**: o arquivo `.env` (contendo `SERPER_API_KEY` e `SCRAPERAPI_KEY` reais) não estava listado no `.gitignore` deste projeto. Adicionado `.env` e `.env.*` ao `.gitignore` para impedir que as chaves sejam publicadas em um futuro commit. Nenhuma chave foi exposta ou alterada nesta correção; apenas a proteção contra versionamento futuro foi adicionada.
+- Adicionadas tags de SEO (`description`, `robots`, `canonical`, Open Graph) e o favicon oficial ao `<head>` de `index.html`, que não tinha nenhum dos dois.
+- Corrigidos `canonical`/`og:url` para o endereço real de publicação (`https://yuriluna85.github.io/games-for-free/`), já que o projeto não possui `CNAME` de domínio próprio.
+- Criados `robots.txt` e `sitemap.xml` (o projeto não tinha nenhum dos dois).
+- Adicionada barra de acessibilidade (A+/A-/Alto Contraste), que não existia em nenhuma versão anterior do site.
+- Implementado banner de consentimento de cookies (LGPD/GDPR), com persistência em `localStorage` (chave `cookieConsentMonitorJogos`).
+- Criadas as páginas `privacidade.html` e `termos.html`, linkadas no rodapé.
+- Reescrito integralmente este `README.md`, que estava corrompido (acentuação removida em toda a extensão do arquivo).
+- **Fora de escopo nesta rodada**: o `index.html` (mais de 3.300 linhas) mantém CSS e JavaScript embutidos. A extração para arquivos externos (`style.css`/`script.js`) não foi feita nesta sessão por segurança (arquivo gerado automaticamente pelo `monitor.py`; separar os arquivos exigiria também adaptar o gerador em `monitor.py`, o que fica registrado como pendência para uma rodada dedicada).

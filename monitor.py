@@ -542,12 +542,31 @@ def update_search_history(new_links):
     existing_urls = {item['url']: item for item in existing_links}
     
     added_count = 0
+    today_str = datetime.now().strftime("%d/%m/%Y")
     for link in new_links:
         url = link['url']
         if url not in existing_urls:
+            link['last_seen'] = today_str
             existing_links.insert(0, link)
             added_count += 1
-            
+        else:
+            # Link reencontrado hoje: renova o prazo de exibicao
+            existing_urls[url]['last_seen'] = today_str
+
+    # Remove links que nao reaparecem na busca ha mais de LINK_MAX_AGE_DAYS dias
+    limite = datetime.now() - timedelta(days=LINK_MAX_AGE_DAYS)
+    def ainda_recente(item):
+        try:
+            visto = datetime.strptime(item.get('last_seen') or item.get('discovered_at', ''), "%d/%m/%Y")
+        except ValueError:
+            return False
+        return visto >= limite
+    removidos = len(existing_links)
+    existing_links = [item for item in existing_links if ainda_recente(item)]
+    removidos -= len(existing_links)
+    if removidos:
+        print(f"Indexação Web: Removidos {removidos} links sem reaparecer há mais de {LINK_MAX_AGE_DAYS} dias.")
+
     existing_links = existing_links[:50]
     history['search_links'] = existing_links
     history['last_update'] = datetime.now().isoformat()
@@ -569,6 +588,24 @@ def fetch_url_json(url):
     except Exception as e:
         print(f"Error fetching URL {url}: {e}", file=sys.stderr)
         return None
+
+# Prazo maximo, em dias, para um link da busca web continuar exibido sem ser reencontrado
+LINK_MAX_AGE_DAYS = 7
+
+def parse_end_datetime_utc(value):
+    """Converte a data de termino de uma oferta em datetime UTC; retorna None se nao houver data."""
+    if not value or not isinstance(value, str):
+        return None
+    for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%d"):
+        try:
+            return datetime.strptime(value.strip()[:19], fmt)
+        except ValueError:
+            continue
+    return None
+
+def is_offer_expired(end_dt):
+    """Indica se a oferta ja venceu, comparando com o horario UTC atual."""
+    return end_dt is not None and end_dt < datetime.utcnow()
 
 # Helper to extract correct store slug from Epic Games product elements
 def extract_epic_slug(el):
@@ -640,8 +677,20 @@ def get_luna_games():
                     clean_manual = []
                     for g in manual_games:
                         title_lower = g.get('title', '').lower()
-                        if not any(ex in title_lower for ex in excluded_lower):
-                            clean_manual.append(g)
+                        if any(ex in title_lower for ex in excluded_lower):
+                            continue
+                        # Entrada manual so e exibida com validade explicita ("expira_em": "AAAA-MM-DD")
+                        expira_dt = parse_end_datetime_utc(g.get('expira_em'))
+                        if expira_dt is None:
+                            print(f"  [Sem validade] Omitido jogo manual sem 'expira_em': '{g.get('title')}'")
+                            continue
+                        expira_dt = expira_dt.replace(hour=23, minute=59, second=59)
+                        if is_offer_expired(expira_dt):
+                            print(f"  [Expirado] Omitido jogo manual vencido em {g.get('expira_em')}: '{g.get('title')}'")
+                            continue
+                        g['end_date'] = expira_dt.strftime("%d/%m/%Y")
+                        g['end_iso'] = expira_dt.strftime("%Y-%m-%dT%H:%M:%SZ")
+                        clean_manual.append(g)
                     print(f"Loaded {len(clean_manual)} manual Prime Gaming games from local file (filtered).")
                     games.extend(clean_manual)
         except Exception as e:
@@ -800,6 +849,7 @@ def get_epic_games():
                                 'original_price': original_price,
                                 'platform': 'Epic Games',
                                 'end_date': end_date.strftime("%d/%m/%Y às %H:%M (UTC)"),
+                                'end_iso': end_date.strftime("%Y-%m-%dT%H:%M:%SZ"),
                                 'type': 'Jogo'
                             })
                             break
@@ -885,11 +935,19 @@ def get_gamerpower_giveaways(existing_titles):
             if item.get('type') != 'Game':
                 giveaway_type = 'DLC / Extra'
                 
+            # A API do GamerPower mantem como "Active" sorteios com data de termino ja vencida
+            if str(item.get('status', 'Active')).lower() != 'active':
+                continue
             end_date = item.get('end_date')
+            end_dt = parse_end_datetime_utc(end_date)
+            if is_offer_expired(end_dt):
+                print(f"  [Expirado] Omitido sorteio vencido em {end_date}: '{title}'")
+                continue
             if not end_date or end_date == 'N/A':
                 end_date = "Enquanto durarem os estoques"
-            
+
             giveaways.append({
+                'end_iso': end_dt.strftime("%Y-%m-%dT%H:%M:%SZ") if end_dt else '',
                 'title': title,
                 'description': item.get('description', 'Sem descrição disponível.'),
                 'image': item.get('image') or item.get('thumbnail'),
@@ -914,6 +972,24 @@ def generate_html(current_games, upcoming_games, web_search_links):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monitor de Jogos Grátis</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Monitor de Jogos Grátis: acompanhe em tempo real as ofertas e resgates gratuitos de jogos na Epic Games, Steam, GOG e Itch.io.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yuriluna85.github.io/games-for-free/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Monitor de Jogos Grátis">
+    <meta property="og:description" content="Acompanhe em tempo real as ofertas e resgates gratuitos de jogos na Epic Games, Steam, GOG e Itch.io.">
+    <meta property="og:image" content="favicon.png">
+    <meta property="og:url" content="https://yuriluna85.github.io/games-for-free/">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Favicon Institucional -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1543,11 +1619,122 @@ def generate_html(current_games, upcoming_games, web_search_links):
             max-height: 200px;
             overflow-y: auto;
         }}
+
+        /* ===================== ACESSIBILIDADE (A11y) ===================== */
+        .a11y-bar {{
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-bottom: 1rem;
+        }}
+        .a11y-btn {{
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s, border-color 0.2s;
+        }}
+        .a11y-btn:hover, .a11y-btn:focus {{
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            outline: 2px solid var(--accent-secondary);
+        }}
+        body.high-contrast {{
+            background: #000000 !important;
+            color: #ffffff !important;
+        }}
+        body.high-contrast .card,
+        body.high-contrast header,
+        body.high-contrast footer,
+        body.high-contrast .filters-bar {{
+            background: #000000 !important;
+            color: #ffffff !important;
+            border: 2px solid #ffd700 !important;
+        }}
+        body.high-contrast h1, body.high-contrast h2, body.high-contrast h3,
+        body.high-contrast p, body.high-contrast span, body.high-contrast a {{
+            color: #ffffff !important;
+            text-shadow: none !important;
+        }}
+
+        /* ===================== BANNER DE CONSENTIMENTO DE COOKIES (LGPD/GDPR) ===================== */
+        .cookie-consent-banner {{
+            position: fixed;
+            left: 0; right: 0; bottom: 0;
+            z-index: 2000;
+            background-color: #060810;
+            color: var(--text-primary);
+            padding: 18px 5%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.4);
+            font-family: 'Outfit', sans-serif;
+            border-top: 1px solid var(--border-color);
+        }}
+        .cookie-consent-banner[hidden] {{ display: none; }}
+        .cookie-consent-text {{
+            flex: 1 1 480px;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin: 0;
+            color: var(--text-secondary);
+        }}
+        .cookie-consent-text a {{
+            color: var(--accent-secondary);
+            font-weight: 700;
+            text-decoration: underline;
+        }}
+        .cookie-consent-actions {{ display: flex; gap: 12px; flex-shrink: 0; }}
+        .cookie-consent-btn {{
+            border-radius: 6px;
+            padding: 10px 22px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            cursor: pointer;
+            border: none;
+            background: var(--accent-primary);
+            color: #ffffff;
+        }}
+        .cookie-consent-btn:hover {{ background: var(--accent-secondary); color: #0f111a; }}
+
+        @media (max-width: 640px) {{
+            .cookie-consent-banner {{ flex-direction: column; align-items: stretch; text-align: center; }}
+            .cookie-consent-actions {{ justify-content: center; }}
+        }}
+
+        footer {{
+            text-align: center;
+        }}
+        .footer-links {{
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 8px;
+            flex-wrap: wrap;
+        }}
+        .footer-links a {{
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+        }}
+        .footer-links a:hover {{ color: var(--accent-secondary); }}
     </style>
 </head>
 <body>
 
     <div class="container">
+        <div class="a11y-bar" role="complementary" aria-label="Ferramentas de Acessibilidade">
+            <button class="a11y-btn" id="btn-diminuir-fonte" aria-label="Diminuir tamanho da fonte">A-</button>
+            <button class="a11y-btn" id="btn-aumentar-fonte" aria-label="Aumentar tamanho da fonte">A+</button>
+            <button class="a11y-btn" id="btn-alto-contraste" aria-label="Alternar modo de alto contraste" aria-pressed="false">Alto Contraste</button>
+        </div>
         <header>
             <h1><i class="fa-solid fa-gamepad"></i> Monitor de Jogos Grátis</h1>
             <p class="subtitle">Encontre e resgate as melhores ofertas de jogos gratuitos da atualidade</p>
@@ -1613,7 +1800,7 @@ def generate_html(current_games, upcoming_games, web_search_links):
                 """
 
             html_content += f"""
-                    <div class="card" data-platform="{game['platform'].lower()}" data-title="{game['title'].lower()}" data-type="{game.get('type', 'Jogo').lower()}">
+                    <div class="card" data-platform="{game['platform'].lower()}" data-title="{game['title'].lower()}" data-type="{game.get('type', 'Jogo').lower()}" data-end="{game.get('end_iso', '')}">
                         <div class="image-container">
                             <img src="{image_url}" alt="{game['title']}" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600&auto=format&fit=crop';">
                             <div class="platform-badge {platform_class}">
@@ -1654,7 +1841,7 @@ def generate_html(current_games, upcoming_games, web_search_links):
         html_content += """
                     <div class="empty-state" style="grid-column: 1 / -1;">
                         <i class="fa-solid fa-circle-notch fa-spin"></i>
-                        <p>Nenhum link indexado por busca na web ainda. Aguardando a próxima execução das 13:01.</p>
+                        <p>Nenhum link indexado por busca na web ainda. Aguardando a próxima execução das 13:02.</p>
                     </div>
         """
     else:
@@ -1743,10 +1930,70 @@ def generate_html(current_games, upcoming_games, web_search_links):
 
         <footer>
             <p>Criado por <a href="https://github.com/yuriluna85" target="_blank">Yuri Almeida</a> | <a href="https://github.com/yuriluna85/games-for-free" target="_blank"><i class="fa-brands fa-github"></i> Repositório do Projeto</a> | 2026</p>
+            <div class="footer-links">
+                <a href="privacidade.html">Política de Privacidade</a>
+                <a href="termos.html">Termos de Uso</a>
+            </div>
         </footer>
     </div>
 
+    <!-- BANNER DE CONSENTIMENTO DE COOKIES (LGPD/GDPR) -->
+    <div id="cookie-consent-banner" class="cookie-consent-banner" role="region" aria-label="Aviso de cookies" hidden>
+        <p class="cookie-consent-text">
+            Este site usa armazenamento local do navegador para lembrar suas preferências de acessibilidade e incorpora conteúdo de terceiros (Google Fonts, Font Awesome, imagens de capa das plataformas de jogos). Não usamos rastreamento nem publicidade personalizada. Saiba mais na <a href="privacidade.html">Política de Privacidade</a>.
+        </p>
+        <div class="cookie-consent-actions">
+            <button id="btn-cookie-aceitar" class="cookie-consent-btn" type="button">Entendi</button>
+        </div>
+    </div>
+
     <script>
+        // Acessibilidade (A11y): A+/A- e Alto Contraste, com persistência em localStorage
+        (function inicializarAcessibilidade() {
+            let fontScale = 100;
+            const btnAumentar = document.getElementById('btn-aumentar-fonte');
+            const btnDiminuir = document.getElementById('btn-diminuir-fonte');
+            const btnContraste = document.getElementById('btn-alto-contraste');
+
+            if (localStorage.getItem('highContrastMonitorJogos') === 'true') {
+                document.body.classList.add('high-contrast');
+                if (btnContraste) btnContraste.setAttribute('aria-pressed', 'true');
+            }
+
+            const ajustarFonte = (delta) => {
+                fontScale = Math.min(140, Math.max(90, fontScale + delta));
+                document.documentElement.style.fontSize = `${fontScale}%`;
+            };
+
+            if (btnAumentar) btnAumentar.addEventListener('click', () => ajustarFonte(10));
+            if (btnDiminuir) btnDiminuir.addEventListener('click', () => ajustarFonte(-10));
+
+            if (btnContraste) {
+                btnContraste.addEventListener('click', () => {
+                    const ativo = document.body.classList.toggle('high-contrast');
+                    localStorage.setItem('highContrastMonitorJogos', ativo);
+                    btnContraste.setAttribute('aria-pressed', ativo);
+                });
+            }
+        })();
+
+        // Banner de Consentimento de Cookies (LGPD/GDPR)
+        (function inicializarBannerCookies() {
+            const CHAVE_CONSENTIMENTO = 'cookieConsentMonitorJogos';
+            const banner = document.getElementById('cookie-consent-banner');
+            const btnAceitar = document.getElementById('btn-cookie-aceitar');
+            if (!banner) return;
+            if (localStorage.getItem(CHAVE_CONSENTIMENTO) !== 'true') {
+                banner.hidden = false;
+            }
+            if (btnAceitar) {
+                btnAceitar.addEventListener('click', () => {
+                    localStorage.setItem(CHAVE_CONSENTIMENTO, 'true');
+                    banner.hidden = true;
+                });
+            }
+        })();
+
         let currentFilter = 'all';
         let currentTypeFilter = 'jogo';
 
@@ -1816,8 +2063,19 @@ def generate_html(current_games, upcoming_games, web_search_links):
             });
         }
 
+        // Remove da tela as ofertas que venceram depois da última coleta (a página é estática)
+        function removerOfertasVencidas() {
+            const agora = Date.now();
+            document.querySelectorAll('.card[data-end]').forEach(card => {
+                const fim = Date.parse(card.getAttribute('data-end'));
+                if (!Number.isNaN(fim) && fim < agora) card.remove();
+            });
+        }
+
         // Aplicar filtros inicialmente ao carregar a página
+        removerOfertasVencidas();
         applyFilters();
+        setInterval(removerOfertasVencidas, 60000);
     </script>
 </body>
 </html>
