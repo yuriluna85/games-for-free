@@ -1,3 +1,10 @@
+# Segredos e variáveis de ambiente (NUNCA versionar chaves de API)
+.env
+.env.*
+
+# Prévia local da newsletter (gerada fora do GitHub Actions)
+newsletter_previa.html
+
 # Python
 __pycache__/
 *.py[cod]

@@ -7,6 +7,7 @@ import re
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 import csv
+import newsletter
 
 # Configure standard encoding for outputs
 sys.stdout.reconfigure(encoding='utf-8')
@@ -1830,7 +1831,11 @@ def generate_html(current_games, upcoming_games, web_search_links):
     html_content += """
                 </div>
             </section>
+    """
 
+    html_content += newsletter.montar_bloco_inscricao()
+
+    html_content += """
             <!-- LINKS INDEXADOS VIA WEB SEARCH -->
             <section>
                 <h2 class="section-title"><i class="fa-solid fa-globe"></i> Links Indexados da Web (Google & Bing)</h2>
@@ -2242,7 +2247,11 @@ def main():
     
     # 6. Generate CSV and JSON Metrics
     generate_csv_and_metrics(all_current, epic_upcoming, web_search_links)
-    
+
+    # 7. Newsletter: envio real só no GitHub Actions; localmente gera apenas a prévia
+    enviar_newsletter = os.getenv("GITHUB_ACTIONS") == "true" and "--dry-run-newsletter" not in sys.argv
+    newsletter.processar_newsletter(all_current, enviar=enviar_newsletter)
+
     print("Free Games Monitor execution completed.")
 
 if __name__ == "__main__":

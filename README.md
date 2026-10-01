@@ -52,6 +52,28 @@ e execute `python monitor.py`. O arquivo `.env` está listado no `.gitignore` e 
 
 ---
 
+## Newsletter (Aviso de Jogo Grátis por E-mail)
+
+Visitantes podem se inscrever para receber um e-mail quando o monitor encontra um jogo completo grátis. O site continua estático: a lista de inscritos e o envio ficam na **Brevo**, e o disparo acontece no mesmo workflow diário.
+
+- `newsletter.py` separa os jogos novos (tipo "Jogo"; DLCs, códigos e itens ficam de fora; Prime Gaming entra com aviso de assinatura), monta um único e-mail com as novidades do dia e cria e dispara a campanha pela API v3 da Brevo.
+- `notificados.json` guarda as ofertas já anunciadas (chave: plataforma, título e data de término) por 90 dias. É gerado e commitado só pelo GitHub Actions.
+- Na primeira execução, os jogos atuais são só registrados, sem envio. Com a lista sem inscritos, as novidades também são só registradas.
+- Se a Brevo falhar, o site é atualizado normalmente e as novidades ficam para a próxima execução.
+- Fora do GitHub Actions (por exemplo, rodando o `.bat`), nada é enviado e o `notificados.json` não é alterado: o script grava apenas `newsletter_previa.html`, ignorado pelo Git.
+- O bloco de inscrição só aparece no site quando `BREVO_FORM_URL` está configurada. O formulário da Brevo cuida da confirmação dupla por e-mail.
+
+Configuração no GitHub (`Settings > Secrets and variables > Actions`):
+
+| Tipo | Nome | Conteúdo |
+| :--- | :--- | :--- |
+| Secret | `BREVO_API_KEY` | Chave de API da Brevo (começa com `xkeysib-`) |
+| Secret | `BREVO_SENDER_EMAIL` | E-mail remetente verificado na Brevo |
+| Variable | `BREVO_LIST_ID` | Número da lista "Monitor de Jogos Grátis" (hoje, 3) |
+| Variable | `BREVO_FORM_URL` | Endereço de envio do formulário da Brevo (`https://...sibforms.com/serve/...`) |
+
+---
+
 ## Acessibilidade e Conformidade Legal
 
 - Barra de acessibilidade (`A+`/`A-`/Alto Contraste) no topo da página, com persistência em `localStorage`.
@@ -69,6 +91,13 @@ e execute `python monitor.py`. O arquivo `.env` está listado no `.gitignore` e 
 ---
 
 ## Changelog
+
+### 01/10/2026 (newsletter)
+- Criado `newsletter.py` com a seleção de novidades, o modelo do e-mail, a integração com a API v3 da Brevo e o bloco de inscrição do site. Especificação em `planejamento_newsletter_games_for_free.md`.
+- `monitor.py` passa a inserir o bloco de inscrição no `index.html` e a processar a newsletter ao fim de cada execução.
+- `scrape.yml` recebe `BREVO_API_KEY`, `BREVO_SENDER_EMAIL`, `BREVO_LIST_ID` e `BREVO_FORM_URL` e passa a commitar o `notificados.json`.
+- Política de Privacidade reescrita para a coleta de e-mail (consentimento, Brevo como operadora, estatísticas de envio, cancelamento). Termos de Uso com cláusula da newsletter.
+- `newsletter_previa.html` adicionado ao `.gitignore`.
 
 ### 01/10/2026
 - **Ofertas vencidas deixam de aparecer**:
