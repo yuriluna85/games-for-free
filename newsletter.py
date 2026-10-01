@@ -413,7 +413,7 @@ def montar_bloco_inscricao() -> str:
                         <button type="submit">Quero receber</button>
                     </div>
                     <label class="newsletter-consentimento">
-                        <input type="checkbox" id="newsletter-aceite" name="OPT_IN" value="1" required>
+                        <input type="checkbox" id="newsletter-aceite" required>
                         <span>Aceito receber os avisos por e-mail e li a <a href="privacidade.html">Política de Privacidade</a>. A inscrição só vale depois que eu confirmar pelo link enviado ao meu e-mail.</span>
                     </label>
                     <input type="text" name="email_address_check" value="" class="newsletter-armadilha" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -435,9 +435,18 @@ def montar_bloco_inscricao() -> str:
                             const botao = form.querySelector('button');
                             botao.disabled = true;
                             try {
-                                await fetch(form.action, { method: 'POST', body: new FormData(form), mode: 'no-cors' });
-                                form.reset();
-                                mostrar('Quase lá: abra seu e-mail e clique no link de confirmação. Se não achar, olhe a caixa de spam.', 'ok');
+                                // O endereço da Brevo libera o domínio do site (CORS) e responde em JSON
+                                const resposta = await fetch(form.action, { method: 'POST', body: new URLSearchParams(new FormData(form)) });
+                                const dados = await resposta.json().catch(() => ({}));
+                                if (resposta.ok && dados.success !== false) {
+                                    form.reset();
+                                    mostrar('Quase lá: abra seu e-mail e clique no link de confirmação. Se não achar, olhe a caixa de spam.', 'ok');
+                                } else if (dados.errors && dados.errors.EMAIL) {
+                                    mostrar('Esse e-mail não foi aceito. Confira se está escrito certo.', 'erro');
+                                    email.focus();
+                                } else {
+                                    mostrar('Não foi possível concluir a inscrição agora. Tente de novo em alguns minutos.', 'erro');
+                                }
                             } catch (erro) {
                                 mostrar('Não foi possível enviar agora. Tente de novo em alguns minutos.', 'erro');
                             } finally {
