@@ -1,10 +1,10 @@
 {
-    "last_updated": "2026-10-01T17:19:38.488116",
+    "last_updated": "2026-10-01T17:42:39.948381",
     "metrics": {
         "total_active_free_games": 52,
         "total_upcoming_promotions": 2,
-        "total_indexed_web_search_links": 21,
-        "total_records": 75
+        "total_indexed_web_search_links": 22,
+        "total_records": 76
     },
     "platform_distribution": {
         "Epic Games": 4,

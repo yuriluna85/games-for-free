@@ -1,6 +1,13 @@
 {
     "search_links": [
         {
+            "title": "Baixe e jogue jogos para PC, mods, DLCs e muito mais",
+            "url": "https://store.epicgames.com/pt-BR",
+            "source": "Serper (Google)",
+            "discovered_at": "01/10/2026",
+            "last_seen": "01/10/2026"
+        },
+        {
             "title": "Jogos de PC para download",
             "url": "https://www.ea.com/pt-br/games/library/pc-download",
             "source": "Serper (Google)",
@@ -148,5 +155,5 @@
             "last_seen": "01/10/2026"
         }
     ],
-    "last_update": "2026-10-01T17:19:38.486329"
+    "last_update": "2026-10-01T17:42:39.946744"
 }

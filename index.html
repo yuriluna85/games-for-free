@@ -772,7 +772,7 @@
             <p class="subtitle">Encontre e resgate as melhores ofertas de jogos gratuitos da atualidade</p>
             <div class="last-update">
                 <i class="fa-solid fa-arrows-rotate"></i>
-                Última atualização: <span>01/10/2026 às 17:19:38</span>
+                Última atualização: <span>01/10/2026 às 17:42:39</span>
             </div>
         </header>
 
@@ -2220,11 +2220,138 @@ Requer 6 GB de espaço livre</div>
                 </div>
             </section>
     
+            <!-- NEWSLETTER -->
+            <section class="newsletter-box" aria-labelledby="newsletter-titulo">
+                <style>
+                    .newsletter-box {
+                        background: rgba(30, 33, 50, 0.55);
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        border-radius: 16px;
+                        padding: 2rem;
+                        margin-bottom: 4rem;
+                        display: grid;
+                        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+                        gap: 2rem;
+                        align-items: center;
+                    }
+                    .newsletter-box h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.6rem; }
+                    .newsletter-box p { color: #c3c7d1; line-height: 1.6; }
+                    .newsletter-form { display: grid; gap: 0.9rem; }
+                    .newsletter-form label { font-weight: 600; font-size: 0.95rem; }
+                    .newsletter-linha { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+                    .newsletter-form input[type="email"] {
+                        flex: 1 1 220px;
+                        min-width: 0;
+                        background: #0b0d14;
+                        color: #f3f4f6;
+                        border: 1px solid rgba(255, 255, 255, 0.25);
+                        border-radius: 8px;
+                        padding: 0.8rem 1rem;
+                        font: inherit;
+                    }
+                    .newsletter-form button {
+                        background: #5b2fd6;
+                        color: #ffffff;
+                        border: none;
+                        border-radius: 8px;
+                        padding: 0.8rem 1.4rem;
+                        font: inherit;
+                        font-weight: 700;
+                        cursor: pointer;
+                    }
+                    .newsletter-form button:hover { background: #4a22b8; }
+                    .newsletter-form input:focus-visible,
+                    .newsletter-form button:focus-visible,
+                    .newsletter-consentimento input:focus-visible {
+                        outline: 3px solid #00e5ff;
+                        outline-offset: 2px;
+                    }
+                    .newsletter-consentimento { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.85rem; color: #c3c7d1; line-height: 1.5; }
+                    .newsletter-consentimento input { margin-top: 0.2rem; width: 18px; height: 18px; flex-shrink: 0; }
+                    .newsletter-consentimento a { color: #00e5ff; }
+                    .newsletter-status { min-height: 1.4em; font-size: 0.9rem; font-weight: 600; }
+                    .newsletter-status.ok { color: #6ee7a8; }
+                    .newsletter-status.erro { color: #ffb4b4; }
+                    .newsletter-armadilha { position: absolute; left: -9999px; }
+                    @media (max-width: 760px) {
+                        .newsletter-box { grid-template-columns: 1fr; padding: 1.4rem; gap: 1.2rem; }
+                    }
+                </style>
+                <div>
+                    <h2 id="newsletter-titulo"><i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i> Aviso de jogo grátis por e-mail</h2>
+                    <p>Quando aparecer um jogo completo de graça, mandamos um e-mail no mesmo dia. Só jogos completos, sem DLCs nem códigos de itens, e no máximo um e-mail por dia. Para cancelar, é um clique no próprio e-mail.</p>
+                </div>
+                <form class="newsletter-form" id="newsletter-form" action="https://0611cff2.sibforms.com/serve/MUIFALs9klJgfpjPEt90_mq1CgOO20njhw-lN9xfKUS4l2yO_tuiTsHBTwjCilu9eDWs9NNw40xqYX7mHLSSb7ac_fDW_A9zLu3RgspqbMiedhupjKOofrcjIcAVa_wvIKOc2yoLGXfoixCNHrCkCUrbpbXBO3JeJGwndp9su7XM3bwfwibrHmuedM9WLTPokI6eS9OX_cMyZLr-XA==" method="POST" novalidate>
+                    <label for="newsletter-email">Seu e-mail</label>
+                    <div class="newsletter-linha">
+                        <input type="email" id="newsletter-email" name="EMAIL" autocomplete="email" required placeholder="nome@exemplo.com">
+                        <button type="submit">Quero receber</button>
+                    </div>
+                    <label class="newsletter-consentimento">
+                        <input type="checkbox" id="newsletter-aceite" required>
+                        <span>Aceito receber os avisos por e-mail e li a <a href="privacidade.html">Política de Privacidade</a>. A inscrição só vale depois que eu confirmar pelo link enviado ao meu e-mail.</span>
+                    </label>
+                    <input type="text" name="email_address_check" value="" class="newsletter-armadilha" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <input type="hidden" name="locale" value="pt">
+                    <p class="newsletter-status" id="newsletter-status" role="status" aria-live="polite"></p>
+                </form>
+                <script>
+                    (function inicializarNewsletter() {
+                        const form = document.getElementById('newsletter-form');
+                        const email = document.getElementById('newsletter-email');
+                        const aceite = document.getElementById('newsletter-aceite');
+                        const status = document.getElementById('newsletter-status');
+                        if (!form) return;
+                        const mostrar = (texto, tipo) => { status.textContent = texto; status.className = 'newsletter-status ' + tipo; };
+                        form.addEventListener('submit', async (evento) => {
+                            evento.preventDefault();
+                            if (!email.value || !email.checkValidity()) { mostrar('Digite um e-mail válido.', 'erro'); email.focus(); return; }
+                            if (!aceite.checked) { mostrar('Marque a caixa de aceite para continuar.', 'erro'); aceite.focus(); return; }
+                            const botao = form.querySelector('button');
+                            botao.disabled = true;
+                            try {
+                                // O endereço da Brevo libera o domínio do site (CORS) e responde em JSON
+                                const resposta = await fetch(form.action, { method: 'POST', body: new URLSearchParams(new FormData(form)) });
+                                const dados = await resposta.json().catch(() => ({}));
+                                if (resposta.ok && dados.success !== false) {
+                                    form.reset();
+                                    mostrar('Quase lá: abra seu e-mail e clique no link de confirmação. Se não achar, olhe a caixa de spam.', 'ok');
+                                } else if (dados.errors && dados.errors.EMAIL) {
+                                    mostrar('Esse e-mail não foi aceito. Confira se está escrito certo.', 'erro');
+                                    email.focus();
+                                } else {
+                                    mostrar('Não foi possível concluir a inscrição agora. Tente de novo em alguns minutos.', 'erro');
+                                }
+                            } catch (erro) {
+                                mostrar('Não foi possível enviar agora. Tente de novo em alguns minutos.', 'erro');
+                            } finally {
+                                botao.disabled = false;
+                            }
+                        });
+                    })();
+                </script>
+            </section>
+
             <!-- LINKS INDEXADOS VIA WEB SEARCH -->
             <section>
                 <h2 class="section-title"><i class="fa-solid fa-globe"></i> Links Indexados da Web (Google & Bing)</h2>
                 <div class="web-links-list">
     
+                    <div class="web-link-card">
+                        <div class="web-link-details">
+                            <div class="web-link-title" title="Baixe e jogue jogos para PC, mods, DLCs e muito mais">Baixe e jogue jogos para PC, mods, DLCs e muito mais</div>
+                            <div class="web-link-meta">
+                                <span class="source-badge google">
+                                    <i class="fa-solid fa-magnifying-glass"></i> Serper (Google)
+                                </span>
+                                <span><i class="fa-solid fa-calendar-days"></i> Indexado: 01/10/2026</span>
+                            </div>
+                        </div>
+                        <a href="https://store.epicgames.com/pt-BR" target="_blank" class="web-link-btn">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Acessar
+                        </a>
+                    </div>
+            
                     <div class="web-link-card">
                         <div class="web-link-details">
                             <div class="web-link-title" title="Jogos de PC para download">Jogos de PC para download</div>
