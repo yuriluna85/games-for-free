@@ -1,0 +1,85 @@
+{
+  "versao": 1,
+  "ofertas": {
+    "epic games|buried stars|08/10/2026 às 15:00 (UTC)": {
+      "titulo": "BURIED STARS",
+      "plataforma": "Epic Games",
+      "anunciado_em": "2026-10-01"
+    },
+    "epic games|system shock 2: 25th anniversary remaster|08/10/2026 às 15:00 (UTC)": {
+      "titulo": "System Shock 2: 25th Anniversary Remaster",
+      "plataforma": "Epic Games",
+      "anunciado_em": "2026-10-01"
+    },
+    "prime gaming (amazon)|wall world 2|Verifique no site": {
+      "titulo": "Wall World 2",
+      "plataforma": "Prime Gaming (Amazon)",
+      "anunciado_em": "2026-10-01"
+    },
+    "prime gaming (epic)|botany manor|Verifique no site": {
+      "titulo": "Botany Manor",
+      "plataforma": "Prime Gaming (Epic)",
+      "anunciado_em": "2026-10-01"
+    },
+    "prime gaming (epic)|drop duchy|Verifique no site": {
+      "titulo": "Drop Duchy",
+      "plataforma": "Prime Gaming (Epic)",
+      "anunciado_em": "2026-10-01"
+    },
+    "prime gaming (epic)|five nights at freddy's: into the pit|Verifique no site": {
+      "titulo": "Five Nights at Freddy's: Into the Pit",
+      "plataforma": "Prime Gaming (Epic)",
+      "anunciado_em": "2026-10-01"
+    },
+    "prime gaming (epic)|high on life|Verifique no site": {
+      "titulo": "High on Life",
+      "plataforma": "Prime Gaming (Epic)",
+      "anunciado_em": "2026-10-01"
+    },
+    "prime gaming (epic)|hue|Verifique no site": {
+      "titulo": "Hue",
+      "plataforma": "Prime Gaming (Epic)",
+      "anunciado_em": "2026-10-01"
+    },
+    "prime gaming (epic)|just die already|Verifique no site": {
+      "titulo": "Just Die Already",
+      "plataforma": "Prime Gaming (Epic)",
+      "anunciado_em": "2026-10-01"
+    },
+    "prime gaming (epic)|rims racing|Verifique no site": {
+      "titulo": "Rims Racing",
+      "plataforma": "Prime Gaming (Epic)",
+      "anunciado_em": "2026-10-01"
+    },
+    "prime gaming (epic)|war hospital|Verifique no site": {
+      "titulo": "War Hospital",
+      "plataforma": "Prime Gaming (Epic)",
+      "anunciado_em": "2026-10-01"
+    },
+    "prime gaming (gog)|doom|Verifique no site": {
+      "titulo": "DOOM",
+      "plataforma": "Prime Gaming (GOG)",
+      "anunciado_em": "2026-10-01"
+    },
+    "prime gaming (gog)|doom + doom ii|Verifique no site": {
+      "titulo": "DOOM + DOOM II",
+      "plataforma": "Prime Gaming (GOG)",
+      "anunciado_em": "2026-10-01"
+    },
+    "prime gaming (legacy)|the da vinci cryptex|Verifique no site": {
+      "titulo": "The Da Vinci Cryptex",
+      "plataforma": "Prime Gaming (Legacy)",
+      "anunciado_em": "2026-10-01"
+    },
+    "prime gaming (microsoft)|doom eternal|Verifique no site": {
+      "titulo": "DOOM Eternal",
+      "plataforma": "Prime Gaming (Microsoft)",
+      "anunciado_em": "2026-10-01"
+    },
+    "steam|dwarven realms (steam) key giveaway|Enquanto durarem os estoques": {
+      "titulo": "Dwarven Realms (Steam) Key Giveaway",
+      "plataforma": "Steam",
+      "anunciado_em": "2026-10-01"
+    }
+  }
+}

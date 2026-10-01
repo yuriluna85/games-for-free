@@ -1,6 +1,13 @@
 {
     "search_links": [
         {
+            "title": "Jogos de PC para download",
+            "url": "https://www.ea.com/pt-br/games/library/pc-download",
+            "source": "Serper (Google)",
+            "discovered_at": "01/10/2026",
+            "last_seen": "01/10/2026"
+        },
+        {
             "title": "15 jogos grátis para PC que todo gamer precisa baixar",
             "url": "https://www.techtudo.com.br/listas/2024/09/15-jogos-gratis-para-pc-que-todo-gamer-precisa-baixar-edjogos.ghtml",
             "source": "Serper (Google)",
@@ -141,5 +148,5 @@
             "last_seen": "01/10/2026"
         }
     ],
-    "last_update": "2026-10-01T16:07:33.881020"
+    "last_update": "2026-10-01T17:19:38.486329"
 }
