@@ -2,8 +2,9 @@ name: Monitor de Jogos Grátis Scraper
 
 on:
   schedule:
-    # Roda diariamente às 16:01 UTC (que equivale a 13:01 no horário de Brasília - UTC-3)
-    - cron: '1 16 * * *'
+    # Roda diariamente às 16:02 UTC (que equivale a 13:02 no horário de Brasília - UTC-3)
+    # O GitHub não garante o horário exato: em horários de pico a execução pode atrasar.
+    - cron: '2 16 * * *'
   workflow_dispatch: # Permite execução manual pelo painel do GitHub
 
 permissions:
@@ -44,7 +45,7 @@ jobs:
           git add index.html games.json games_data.csv games_metrics.json prime_games.json requirements_cache.json
           
           if ! git diff --cached --quiet; then
-            git commit -m "Auto-update: Jogos indexados em $(date +'%d/%m/%Y %H:%M')"
+            git commit -m "Auto-update: Jogos indexados em $(TZ=America/Sao_Paulo date +'%d/%m/%Y %H:%M') (Brasília)"
             git pull --rebase origin main
             git push origin main
           else
