@@ -510,5 +510,13 @@
     "luna_url_rims racing": "https://luna.amazon.com/claims/rims-racing-epic/dp/amzn1.pg.item.2cf2cac0-6b4d-4b5e-9064-2005dad4ede7",
     "luna_url_wall world 2": "https://luna.amazon.com/claims/wall-world-2-aga/dp/amzn1.pg.item.11e467f2-b0e3-4a1e-9dee-4cd723e92ee9",
     "luna_url_doom": "https://luna.amazon.com/claims/doom-doom-ii-gog/dp/amzn1.pg.item.db1d5024-9037-4d32-9543-37a9577e7d86",
-    "luna_url_five nights at freddy's: into the pit": null
+    "https://www.gamerpower.com/open/bounty-train-gog-giveaway": {
+        "resolved_url": "https://www.gog.com/en/game/bounty_train"
+    },
+    "https://www.gamerpower.com/open/rotwood-drakin-armoury-pack-steam-giveaway": {
+        "resolved_url": "https://store.steampowered.com/app/5067220/Rotwood_Drakin_Armoury_Pack/",
+        "requirements": "Mínimos:\nRequer um sistema operativo e processador de 64 bits"
+    },
+    "5067220": "Mínimos:\nRequer um sistema operativo e processador de 64 bits",
+    "luna_url_five nights at freddy's: into the pit": "https://luna.amazon.com/claims/five-nights-at-freddys-into-the-pit-epic/dp/amzn1.pg.item.9d2ad65c-0963-4e2d-93e6-75ad2a4bfc87"
 }
