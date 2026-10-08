@@ -1,4 +1,3 @@
-import html
 import urllib.request
 import urllib.parse
 import json
@@ -888,58 +887,6 @@ def get_epic_games():
     return current_free, upcoming_free
 
 # Fetch from GamerPower API
-GOG_PRECO_MAXIMO = 20
-GOG_LIMITE_OFERTAS = 20
-
-
-def get_gog_deals(limite=GOG_LIMITE_OFERTAS, preco_maximo=GOG_PRECO_MAXIMO):
-    """Busca no catalogo publico da GOG os jogos em desconto abaixo do preco maximo (em reais).
-
-    Retorna lista vazia se a API falhar; a pagina mostra um aviso nesse caso.
-    O parametro locale=pt-BR zera o resultado do catalogo, por isso usa-se en-US.
-    """
-    consulta = urllib.parse.urlencode({
-        'limit': limite,
-        'productType': 'in:game',
-        'page': 1,
-        'countryCode': 'BR',
-        'locale': 'en-US',
-        'currencyCode': 'BRL',
-        'discounted': 'eq:true',
-        'order': 'desc:trending',
-        'price': f'between:0.01,{preco_maximo}',
-    }, safe=':,')
-    dados = fetch_url_json(f"https://catalog.gog.com/v1/catalog?{consulta}")
-    if not dados or not isinstance(dados.get('products'), list):
-        print("Aviso: catalogo da GOG indisponivel ou em formato inesperado.", file=sys.stderr)
-        return []
-
-    ofertas = []
-    for produto in dados['products'][:limite]:
-        try:
-            preco = produto['price']
-            generos = ', '.join(g['name'] for g in produto.get('genres', [])[:3])
-            desenvolvedoras = ', '.join(produto.get('developers', [])[:2])
-            partes = []
-            if generos:
-                partes.append(f"Gêneros: {generos}.")
-            if desenvolvedoras:
-                partes.append(f"Desenvolvedora: {desenvolvedoras}.")
-            ofertas.append({
-                'title': produto['title'],
-                'description': ' '.join(partes) or 'Jogo em oferta na GOG.',
-                'image': produto.get('coverHorizontal') or produto.get('coverVertical') or '',
-                'url': produto['storeLink'],
-                'preco_base': preco['base'],
-                'preco_final': preco['final'],
-                'desconto': preco.get('discount', ''),
-                'platform': 'GOG',
-                'type': 'Oferta',
-            })
-        except (KeyError, TypeError) as erro:
-            print(f"Aviso: item da GOG ignorado ({erro}).", file=sys.stderr)
-    return ofertas
-
 def get_gamerpower_giveaways(existing_titles):
     url = "https://www.gamerpower.com/api/giveaways?platform=pc"
     data = fetch_url_json(url)
@@ -1019,7 +966,7 @@ def get_gamerpower_giveaways(existing_titles):
     return giveaways
 
 # Generate static HTML file
-def generate_html(current_games, upcoming_games, web_search_links, gog_deals=None):
+def generate_html(current_games, upcoming_games, web_search_links):
     now_str = datetime.now().strftime("%d/%m/%Y às %H:%M:%S")
     
     html_content = f"""<!DOCTYPE html>
@@ -1888,49 +1835,6 @@ def generate_html(current_games, upcoming_games, web_search_links, gog_deals=Non
             </section>
     """
 
-    # OFERTAS DA GOG (ate R$ 20), exibidas junto da categoria "GOG"
-    html_content += f"""
-            <section>
-                <h2 class="section-title"><i class="fa-solid fa-tags"></i> Ofertas na GOG (até R$ {GOG_PRECO_MAXIMO},00)</h2>
-                <p class="description" style="margin-bottom: 1rem;">Jogos com desconto na GOG, em ordem de popularidade. Os preços são os da loja no momento da coleta.</p>
-                <div class="grid" id="gog-grid">
-    """
-    if not gog_deals:
-        html_content += """
-                    <div class="empty-state" style="grid-column: 1 / -1;">
-                        <i class="fa-solid fa-circle-info"></i>
-                        <p>Não foi possível carregar as ofertas da GOG nesta coleta. Elas voltam na próxima atualização.</p>
-                    </div>
-        """
-    else:
-        for oferta in gog_deals:
-            titulo = html.escape(oferta['title'])
-            imagem = html.escape(oferta['image'] or 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=600&auto=format&fit=crop', quote=True)
-            html_content += f"""
-                    <div class="card" data-platform="gog" data-title="{html.escape(oferta['title'].lower(), quote=True)}" data-type="jogo oferta">
-                        <div class="image-container">
-                            <img src="{imagem}" alt="{titulo}" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600&auto=format&fit=crop';">
-                            <div class="platform-badge gog"><i class="fa-solid fa-g"></i> GOG</div>
-                            <div class="type-badge">{html.escape(oferta['desconto'])}</div>
-                        </div>
-                        <div class="content">
-                            <h3 class="title">{titulo}</h3>
-                            <p class="description">{html.escape(oferta['description'])}</p>
-                            <div class="meta-info">
-                                <div class="price">
-                                    <span class="original-price">{html.escape(oferta['preco_base'])}</span> <span class="price-badge">{html.escape(oferta['preco_final'])}</span>
-                                </div>
-                            </div>
-                            <a href="{html.escape(oferta['url'], quote=True)}" target="_blank" rel="noopener" class="action-button" style="margin-top: 1rem;">
-                                <i class="fa-solid fa-tag"></i> Ver oferta
-                            </a>
-                        </div>
-                    </div>
-            """
-    html_content += """
-                </div>
-            </section>
-    """
     html_content += newsletter.montar_bloco_inscricao()
 
     html_content += """
@@ -2361,10 +2265,6 @@ def main():
     luna_games = get_luna_games()
     print(f"Found {len(luna_games)} Prime Gaming claimable games.")
     
-    print(f"Fetching GOG deals under R$ {GOG_PRECO_MAXIMO},00...")
-    gog_deals = get_gog_deals()
-    print(f"Found {len(gog_deals)} GOG deals.")
-
     # 3. Combine active games
     all_current = epic_current + other_games + luna_games
     
@@ -2394,7 +2294,7 @@ def main():
     web_search_links = update_search_history(new_web_links)
     
     # 5. Generate HTML
-    generate_html(all_current, epic_upcoming, web_search_links, gog_deals)
+    generate_html(all_current, epic_upcoming, web_search_links)
     
     # 6. Generate CSV and JSON Metrics
     generate_csv_and_metrics(all_current, epic_upcoming, web_search_links)
