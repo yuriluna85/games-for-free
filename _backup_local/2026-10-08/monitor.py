@@ -876,8 +876,6 @@ def get_epic_games():
                                 'platform': 'Epic Games',
                                 'start_date': start_date.strftime("%d/%m/%Y às %H:%M (UTC)"),
                                 'end_date': end_date.strftime("%d/%m/%Y às %H:%M (UTC)"),
-                                'start_iso': start_date.strftime("%Y-%m-%dT%H:%M:%SZ"),
-                                'end_iso': end_date.strftime("%Y-%m-%dT%H:%M:%SZ"),
                                 'type': 'Jogo'
                             })
                             break
@@ -1906,7 +1904,7 @@ def generate_html(current_games, upcoming_games, web_search_links):
                 """
 
             html_content += f"""
-                    <div class="card" data-platform="{game['platform'].lower()}" data-title="{game['title'].lower()}" data-type="{game.get('type', 'Jogo').lower()}" data-start="{game.get('start_iso', '')}" data-end="{game.get('end_iso', '')}" data-url="{game['url']}" data-price="{game.get('original_price', '')}" data-end-label="{game['end_date']}">
+                    <div class="card" data-platform="{game['platform'].lower()}" data-title="{game['title'].lower()}" data-type="{game.get('type', 'Jogo').lower()}">
                         <div class="image-container">
                             <img src="{image_url}" alt="{game['title']}" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600&auto=format&fit=crop';">
                             <div class="platform-badge {platform_class}">
@@ -2079,59 +2077,10 @@ def generate_html(current_games, upcoming_games, web_search_links):
             });
         }
 
-        // Move para "Disponíveis Agora" as ofertas que começaram depois da última coleta (a página é estática)
-        function promoverOfertasIniciadas() {
-            const agora = Date.now();
-            const ativos = document.getElementById('active-grid');
-            if (!ativos) return;
-            document.querySelectorAll('#upcoming-grid .card[data-start]').forEach(card => {
-                const inicio = Date.parse(card.getAttribute('data-start'));
-                const fim = Date.parse(card.getAttribute('data-end'));
-                if (Number.isNaN(inicio) || inicio > agora || (!Number.isNaN(fim) && fim < agora)) return;
-
-                const meta = card.querySelector('.meta-info');
-                if (meta) {
-                    meta.removeAttribute('style');
-                    meta.textContent = '';
-                    const preco = document.createElement('div');
-                    preco.className = 'price';
-                    const original = document.createElement('span');
-                    original.className = 'original-price';
-                    original.textContent = card.getAttribute('data-price') || '';
-                    const gratis = document.createElement('span');
-                    gratis.className = 'price-badge';
-                    gratis.textContent = 'Grátis';
-                    preco.append(original, ' ', gratis);
-                    const duracao = document.createElement('div');
-                    duracao.className = 'duration';
-                    duracao.title = 'Disponível até';
-                    const rotulo = document.createElement('span');
-                    rotulo.textContent = card.getAttribute('data-end-label') || '';
-                    duracao.append(rotulo);
-                    meta.append(preco, duracao);
-                }
-                const botao = card.querySelector('button.action-button.upcoming');
-                if (botao) {
-                    const link = document.createElement('a');
-                    link.href = card.getAttribute('data-url') || '#';
-                    link.target = '_blank';
-                    link.rel = 'noopener';
-                    link.className = 'action-button';
-                    link.style.marginTop = '1rem';
-                    link.textContent = 'Resgatar Jogo';
-                    botao.replaceWith(link);
-                }
-                const vazio = ativos.querySelector('.empty-state');
-                if (vazio) vazio.remove();
-                ativos.appendChild(card);
-            });
-        }
-
         // Aplicar filtros inicialmente ao carregar a página
-        promoverOfertasIniciadas();
         removerOfertasVencidas();
         applyFilters();
-        setInterval(function () { promoverOfertasIniciadas(); removerOfertasVencidas(); }, 60000);
+        setInterval(removerOfertasVencidas, 60000);
     </script>
 </body>
 </html>

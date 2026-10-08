@@ -5,9 +5,6 @@ on:
     # Roda diariamente às 16:02 UTC (que equivale a 13:02 no horário de Brasília - UTC-3)
     # O GitHub não garante o horário exato: em horários de pico a execução pode atrasar.
     - cron: '2 16 * * *'
-    # A Epic troca os jogos grátis às quintas, 15:00 UTC. Duas execuções extras reduzem o atraso do agendador do GitHub.
-    - cron: '12 15 * * 4'
-    - cron: '47 15 * * 4'
   workflow_dispatch: # Permite execução manual pelo painel do GitHub
 
 permissions:
