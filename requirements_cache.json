@@ -370,8 +370,6 @@
     "https://www.gamerpower.com/open/aniimo-gift-pack-key-giveaway": {
         "resolved_url": "https://na.alienwarearena.com/ucf/show/2176243/boards/contest-and-giveaways-global/Giveaway/aniimo-game-pack-key-giveaway"
     },
-    "luna_url_conarium": null,
-    "luna_url_warbreeds": null,
     "luna_url_doom": "https://luna.amazon.com/claims/doom-gog/dp/amzn1.pg.item.b095156c-1207-49f0-801a-75ac03b74def",
     "luna_url_five nights at freddy's: into the pit": "https://luna.amazon.com/claims/five-nights-at-freddys-into-the-pit-epic/dp/amzn1.pg.item.9d2ad65c-0963-4e2d-93e6-75ad2a4bfc87",
     "luna_url_hue": "https://luna.amazon.com/claims/hue-epic/dp/amzn1.pg.item.d7de294d-c66d-4445-824d-ec9292fa1acb",
@@ -382,5 +380,7 @@
     "luna_url_wall world 2": "https://luna.amazon.com/claims/wall-world-2-aga/dp/amzn1.pg.item.11e467f2-b0e3-4a1e-9dee-4cd723e92ee9",
     "luna_url_botany manor": "https://luna.amazon.com/claims/botany-manor-epic/dp/amzn1.pg.item.fe9fbd08-590e-4d6d-9a94-f22f4548c09d",
     "luna_url_doom + doom ii": "https://luna.amazon.com/claims/doom-doom-ii-gog/dp/amzn1.pg.item.db1d5024-9037-4d32-9543-37a9577e7d86",
-    "luna_url_drop duchy": "https://luna.amazon.com/claims/drop-duchy-epic/dp/amzn1.pg.item.2cb13abe-d709-4d5c-8d65-35bdc91d3b4d"
+    "luna_url_drop duchy": "https://luna.amazon.com/claims/drop-duchy-epic/dp/amzn1.pg.item.2cb13abe-d709-4d5c-8d65-35bdc91d3b4d",
+    "luna_url_conarium": null,
+    "luna_url_warbreeds": null
 }
