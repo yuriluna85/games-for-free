@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yuriluna85.github.io/games-for-free/sitemap.xml
