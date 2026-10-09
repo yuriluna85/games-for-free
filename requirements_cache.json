@@ -382,5 +382,13 @@
     "luna_url_doom + doom ii": "https://luna.amazon.com/claims/doom-doom-ii-gog/dp/amzn1.pg.item.db1d5024-9037-4d32-9543-37a9577e7d86",
     "luna_url_drop duchy": "https://luna.amazon.com/claims/drop-duchy-epic/dp/amzn1.pg.item.2cb13abe-d709-4d5c-8d65-35bdc91d3b4d",
     "luna_url_conarium": "https://luna.amazon.com/claims/conarium-gog/dp/amzn1.pg.item.82e258e7-827e-46e0-8228-25e9720b48b4?ingress=amzn&ref_=SM_Conarium_S01_FGWP_CRWN",
-    "luna_url_warbreeds": null
+    "https://www.gamerpower.com/open/meltdown-playtest-steam-key-giveaway": {
+        "resolved_url": "https://na.alienwarearena.com/ucf/show/2176356/boards/contest-and-giveaways-global/Giveaway/meltdown-playtest-key-giveaway"
+    },
+    "https://www.gamerpower.com/open/fireside-feelings-steam-giveaway": {
+        "resolved_url": "https://store.steampowered.com/app/2990600/Fireside_Feelings/",
+        "requirements": "Mínimos:\nRequer um sistema operativo e processador de 64 bits\nSistema Operativo:\nWindows 10\nProcessador:\nx64 architecture\nMemória:\n2 GB de RAM\nPlaca gráfica:\nGraphic Card handling OpenGL 3.3\nEspaço no disco:\nRequer 800 MB de espaço livre"
+    },
+    "2990600": "Mínimos:\nRequer um sistema operativo e processador de 64 bits\nSistema Operativo:\nWindows 10\nProcessador:\nx64 architecture\nMemória:\n2 GB de RAM\nPlaca gráfica:\nGraphic Card handling OpenGL 3.3\nEspaço no disco:\nRequer 800 MB de espaço livre",
+    "luna_url_warbreeds": "https://luna.amazon.com/claims/warbreeds-gog/dp/amzn1.pg.item.886d058d-6e68-4f53-8e58-3044de3e6bb4"
 }
