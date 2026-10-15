@@ -1,6 +1,13 @@
 {
     "search_links": [
         {
+            "title": "Save 60% on Gravity Circuit on Steam",
+            "url": "https://store.steampowered.com/app/858710/_",
+            "source": "Serper (Google)",
+            "discovered_at": "15/10/2026",
+            "last_seen": "15/10/2026"
+        },
+        {
             "title": "Lista de Jogos Grátis (Steam, Epic Games, Uplay, Origin e ...",
             "url": "https://www.nerdmaldito.com/2020/04/lista-de-jogos-gratis.html",
             "source": "Serper (Google)",
@@ -89,7 +96,7 @@
             "url": "https://www.reddit.com/r/ShouldIbuythisgame/comments/1k7mua5/best_free_steam_games_just_getting_into_pc_gaming",
             "source": "Serper (Google)",
             "discovered_at": "08/10/2026",
-            "last_seen": "14/10/2026"
+            "last_seen": "15/10/2026"
         },
         {
             "title": "Jogos Grátis BR",
@@ -152,14 +159,14 @@
             "url": "https://store.epicgames.com/news/star-wars-knights-of-the-old-republic-i-and-ii-available-for-free-on-the-epic-games-store-on-mobile",
             "source": "Serper (Google)",
             "discovered_at": "08/10/2026",
-            "last_seen": "14/10/2026"
+            "last_seen": "15/10/2026"
         },
         {
             "title": "Como faço para resgatar jogos grátis na EGS ...",
             "url": "https://www.epicgames.com/help/epic-games-store-c-32735058/tutorials-c-31292734/como-faco-para-resgatar-jogos-gratis-na-egs-para-dispositivos-moveis-a16031181",
             "source": "Serper (Google)",
             "discovered_at": "08/10/2026",
-            "last_seen": "13/10/2026"
+            "last_seen": "15/10/2026"
         },
         {
             "title": "Epic Games Store | Baixe e jogue jogos para PC, mods, DLCs ...",
@@ -225,5 +232,5 @@
             "last_seen": "15/10/2026"
         }
     ],
-    "last_update": "2026-10-15T19:29:34.144366"
+    "last_update": "2026-10-15T19:50:47.870494"
 }
