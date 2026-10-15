@@ -1,6 +1,20 @@
 {
     "search_links": [
         {
+            "title": "Lista de Jogos Grátis (Steam, Epic Games, Uplay, Origin e ...",
+            "url": "https://www.nerdmaldito.com/2020/04/lista-de-jogos-gratis.html",
+            "source": "Serper (Google)",
+            "discovered_at": "15/10/2026",
+            "last_seen": "15/10/2026"
+        },
+        {
+            "title": "Steamで100% OFF：Happy's Humble Burger Farm",
+            "url": "https://store.steampowered.com/app/1433340/Happys_Humble_Burger_Farm",
+            "source": "Serper (Google)",
+            "discovered_at": "15/10/2026",
+            "last_seen": "15/10/2026"
+        },
+        {
             "title": "Os melhores jogos gratuitos para PC e consolas",
             "url": "https://www.instant-gaming.com/pt/explorar/generos/free-to-play",
             "source": "Serper (Google)",
@@ -96,7 +110,7 @@
             "url": "https://store.steampowered.com/app/6100/Eets",
             "source": "Serper (Google)",
             "discovered_at": "08/10/2026",
-            "last_seen": "10/10/2026"
+            "last_seen": "15/10/2026"
         },
         {
             "title": "Baixe jogos grátis para Windows: FPS, estratégia, RPGs",
@@ -194,7 +208,7 @@
             "url": "https://store.epicgames.com/news/the-perfect-pc-games-to-play-over-the-winter-holiday-break",
             "source": "Serper (Google)",
             "discovered_at": "23/06/2026",
-            "last_seen": "13/10/2026"
+            "last_seen": "15/10/2026"
         },
         {
             "title": "Revisão do ano de 2025 da Epic Games Store",
@@ -211,5 +225,5 @@
             "last_seen": "15/10/2026"
         }
     ],
-    "last_update": "2026-10-15T19:07:25.961396"
+    "last_update": "2026-10-15T19:29:34.144366"
 }
