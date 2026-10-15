@@ -395,5 +395,18 @@
         "resolved_url": "https://store.steampowered.com/app/5007040/Voidtrain__Big_Catch/",
         "requirements": "Mínimos:\nRequer um sistema operativo e processador de 64 bits"
     },
-    "5007040": "Mínimos:\nRequer um sistema operativo e processador de 64 bits"
+    "5007040": "Mínimos:\nRequer um sistema operativo e processador de 64 bits",
+    "https://www.gamerpower.com/open/squad-weapon-skins-recon-team-pack-steam-giveaway": {
+        "resolved_url": "https://store.steampowered.com/app/4841320/Squad_Weapon_Skins__Recon_Team_Pack/",
+        "requirements": null
+    },
+    "4841320": null,
+    "https://www.gamerpower.com/open/agent-a-a-puzzle-in-disguise-epic-games-giveaway": {
+        "resolved_url": "https://www.gamerpower.com/open/agent-a-a-puzzle-in-disguise-epic-games-giveaway"
+    },
+    "https://www.gamerpower.com/open/bad-cheese-epic-games-giveaway": {
+        "resolved_url": "https://www.gamerpower.com/open/bad-cheese-epic-games-giveaway"
+    },
+    "luna_url_vampire: the masquerade - swansong": null,
+    "luna_url_caravan sandwitch": null
 }
