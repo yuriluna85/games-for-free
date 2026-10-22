@@ -414,5 +414,13 @@
     "luna_url_vampire: the masquerade - swansong": "https://luna.amazon.com/claims/vampire-the-masquerade-swansong-epic/dp/amzn1.pg.item.7885fee3-7dda-40c5-8642-596bb1f4a9b3",
     "https://www.gamerpower.com/open/gethigh-exe-epic-games-giveaway": {
         "resolved_url": "https://www.gamerpower.com/open/gethigh-exe-epic-games-giveaway"
-    }
+    },
+    "https://www.gamerpower.com/open/home": {
+        "resolved_url": "https://www.gamerpower.com/open/home"
+    },
+    "https://www.gamerpower.com/open/terraspace-epic-games-giveaway": {
+        "resolved_url": "https://www.gamerpower.com/open/terraspace-epic-games-giveaway"
+    },
+    "luna_url_ad infinitum": null,
+    "luna_url_time travel: escape room game": null
 }
