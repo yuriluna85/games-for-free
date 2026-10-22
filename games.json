@@ -1,6 +1,13 @@
 {
     "search_links": [
         {
+            "title": "Steam Curator: Jogos gratis brasil",
+            "url": "https://store.steampowered.com/curator/6874381-Jogos-gratis-brasil",
+            "source": "Serper (Google)",
+            "discovered_at": "22/10/2026",
+            "last_seen": "22/10/2026"
+        },
+        {
             "title": "Jogos de PC para download",
             "url": "https://www.ea.com/pt-br/games/library/pc-download",
             "source": "Serper (Google)",
@@ -26,7 +33,7 @@
             "url": "https://www.reddit.com/r/jeuxvideo/comments/1s2femm/quelquun_a_des_jeux_gratuits_a_me_conseiller_pour",
             "source": "Serper (Google)",
             "discovered_at": "18/10/2026",
-            "last_seen": "21/10/2026"
+            "last_seen": "22/10/2026"
         },
         {
             "title": "Steam Curator: Só Jogos Gratis",
@@ -176,5 +183,5 @@
             "last_seen": "22/10/2026"
         }
     ],
-    "last_update": "2026-10-22T19:13:06.891401"
+    "last_update": "2026-10-22T19:34:39.588815"
 }
