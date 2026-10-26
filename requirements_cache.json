@@ -425,5 +425,10 @@
     "luna_url_time travel: escape room game": "https://luna.amazon.com/claims/time-travel-escape-room-game-legacy/dp/amzn1.pg.item.c3af790f-8ce0-42b2-8c16-ebecb97303f5?ingress=amzn&ref_=SM_TimeTravelEscapeRoomGame_S01_FGWP_CRWN",
     "https://www.gamerpower.com/open/mafia-hotel-epic-games-giveaway": {
         "resolved_url": "https://www.gamerpower.com/open/mafia-hotel-epic-games-giveaway"
-    }
+    },
+    "https://www.gamerpower.com/open/v-rising-haunted-nights-castle-pack-steam-giveaway": {
+        "resolved_url": "https://store.steampowered.com/app/2169180/V_Rising_Haunted_Nights_Castle_Pack/",
+        "requirements": "Mínimos:\nRequer um sistema operativo e processador de 64 bits\nSistema Operativo:\nWindows 10 64 bit\nProcessador:\nIntel® Core™ i5\nMemória:\n8 GB de RAM\nPlaca gráfica:\nNVIDIA GeForce GTX 770 or equivalent\nDirectX:\nVersão 11\nEspaço no disco:\nRequer 7 GB de espaço livre\nNotas adicionais:\nMinimum System Requirements might change in the future"
+    },
+    "2169180": "Mínimos:\nRequer um sistema operativo e processador de 64 bits\nSistema Operativo:\nWindows 10 64 bit\nProcessador:\nIntel® Core™ i5\nMemória:\n8 GB de RAM\nPlaca gráfica:\nNVIDIA GeForce GTX 770 or equivalent\nDirectX:\nVersão 11\nEspaço no disco:\nRequer 7 GB de espaço livre\nNotas adicionais:\nMinimum System Requirements might change in the future"
 }
