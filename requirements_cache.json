@@ -430,5 +430,20 @@
         "resolved_url": "https://store.steampowered.com/app/2169180/V_Rising_Haunted_Nights_Castle_Pack/",
         "requirements": "Mínimos:\nRequer um sistema operativo e processador de 64 bits\nSistema Operativo:\nWindows 10 64 bit\nProcessador:\nIntel® Core™ i5\nMemória:\n8 GB de RAM\nPlaca gráfica:\nNVIDIA GeForce GTX 770 or equivalent\nDirectX:\nVersão 11\nEspaço no disco:\nRequer 7 GB de espaço livre\nNotas adicionais:\nMinimum System Requirements might change in the future"
     },
-    "2169180": "Mínimos:\nRequer um sistema operativo e processador de 64 bits\nSistema Operativo:\nWindows 10 64 bit\nProcessador:\nIntel® Core™ i5\nMemória:\n8 GB de RAM\nPlaca gráfica:\nNVIDIA GeForce GTX 770 or equivalent\nDirectX:\nVersão 11\nEspaço no disco:\nRequer 7 GB de espaço livre\nNotas adicionais:\nMinimum System Requirements might change in the future"
+    "2169180": "Mínimos:\nRequer um sistema operativo e processador de 64 bits\nSistema Operativo:\nWindows 10 64 bit\nProcessador:\nIntel® Core™ i5\nMemória:\n8 GB de RAM\nPlaca gráfica:\nNVIDIA GeForce GTX 770 or equivalent\nDirectX:\nVersão 11\nEspaço no disco:\nRequer 7 GB de espaço livre\nNotas adicionais:\nMinimum System Requirements might change in the future",
+    "https://www.gamerpower.com/open/hexologic-steam-giveaway": {
+        "resolved_url": "https://store.steampowered.com/app/785890/Hexologic/",
+        "requirements": "Mínimos:\nSistema Operativo *:\nWindows 7\nProcessador:\n2,4 GHz\nMemória:\n2 GB de RAM\nPlaca gráfica:\n512MB\nDirectX:\nVersão 9.0\nEspaço no disco:\nRequer 300 MB de espaço livre\nPlaca de som:\nStereo"
+    },
+    "785890": "Mínimos:\nSistema Operativo *:\nWindows 7\nProcessador:\n2,4 GHz\nMemória:\n2 GB de RAM\nPlaca gráfica:\n512MB\nDirectX:\nVersão 9.0\nEspaço no disco:\nRequer 300 MB de espaço livre\nPlaca de som:\nStereo",
+    "https://www.gamerpower.com/open/v-rising-sinister-evolution-pack-steam-key-giveaway": {
+        "resolved_url": "https://na.alienwarearena.com/ucf/show/2176477/boards/contest-and-giveaways-global/Giveaway/v-rising-sinister-evolution-cosmetic-pack-dlc-key-giveaway"
+    },
+    "https://www.gamerpower.com/open/hunting-simulator-3-classic-american-hunter-pack-steam-giveaway": {
+        "resolved_url": "https://store.steampowered.com/app/4693960/Hunting_Simulator_3_Classic_American_Hunter_Pack/",
+        "requirements": "Mínimos:\nRequer um sistema operativo e processador de 64 bits"
+    },
+    "4693960": "Mínimos:\nRequer um sistema operativo e processador de 64 bits",
+    "luna_url_trash goblin": null,
+    "luna_url_kiborg": null
 }

@@ -190,6 +190,26 @@
       "titulo": "MAFIA HOTEL (Epic Games) Giveaway",
       "plataforma": "Epic Games",
       "anunciado_em": "2026-10-25"
+    },
+    "epic games|sorry we're closed|05/11/2026 às 16:00 (UTC)": {
+      "titulo": "Sorry We're Closed",
+      "plataforma": "Epic Games",
+      "anunciado_em": "2026-10-29"
+    },
+    "prime gaming (amazon)|kiborg|Verifique no site": {
+      "titulo": "Kiborg",
+      "plataforma": "Prime Gaming (Amazon)",
+      "anunciado_em": "2026-10-29"
+    },
+    "prime gaming (epic)|trash goblin|Verifique no site": {
+      "titulo": "Trash Goblin",
+      "plataforma": "Prime Gaming (Epic)",
+      "anunciado_em": "2026-10-29"
+    },
+    "steam|hexologic (steam) giveaway|2026-10-31 23:59:00": {
+      "titulo": "Hexologic (Steam) Giveaway",
+      "plataforma": "Steam",
+      "anunciado_em": "2026-10-29"
     }
   }
 }
