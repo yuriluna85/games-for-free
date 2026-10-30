@@ -444,6 +444,14 @@
         "requirements": "Mínimos:\nRequer um sistema operativo e processador de 64 bits"
     },
     "4693960": "Mínimos:\nRequer um sistema operativo e processador de 64 bits",
-    "luna_url_trash goblin": null,
-    "luna_url_kiborg": "https://luna.amazon.com/claims/kiborg-aga/dp/amzn1.pg.item.6a6eac09-8806-4c39-95a2-c7cf131f89fc?ingress=amzn&ref_=SM_Kiborg_S01_FGWP_CRWN"
+    "luna_url_kiborg": "https://luna.amazon.com/claims/kiborg-aga/dp/amzn1.pg.item.6a6eac09-8806-4c39-95a2-c7cf131f89fc?ingress=amzn&ref_=SM_Kiborg_S01_FGWP_CRWN",
+    "https://www.gamerpower.com/open/asleep-act-1-steam-giveaway": {
+        "resolved_url": "https://store.steampowered.com/app/1583850/Asleep_Act_1/",
+        "requirements": "Mínimos:\nRequer um sistema operativo e processador de 64 bits\nSistema Operativo *:\nWindows 7 or later\nProcessador:\nIntel Core i3 M380\nMemória:\n1 GB de RAM\nPlaca gráfica:\nIntel HD 4000\nDirectX:\nVersão 10\nEspaço no disco:\nRequer 1 GB de espaço livre\nCompatibilidade com R.V.:\nNon compatible"
+    },
+    "1583850": "Mínimos:\nRequer um sistema operativo e processador de 64 bits\nSistema Operativo *:\nWindows 7 or later\nProcessador:\nIntel Core i3 M380\nMemória:\n1 GB de RAM\nPlaca gráfica:\nIntel HD 4000\nDirectX:\nVersão 10\nEspaço no disco:\nRequer 1 GB de espaço livre\nCompatibilidade com R.V.:\nNon compatible",
+    "https://www.gamerpower.com/open/a-new-beginning-final-cut-gog-giveaway": {
+        "resolved_url": "https://www.gog.com/en/game/a_new_beginning"
+    },
+    "luna_url_trash goblin": "https://luna.amazon.com/claims/trash-goblin-epic/dp/amzn1.pg.item.1892b601-09dc-470b-9d62-7feac63376a3"
 }
