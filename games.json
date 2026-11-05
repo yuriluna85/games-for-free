@@ -1,6 +1,13 @@
 {
     "search_links": [
         {
+            "title": "Recommendations and Ranking in Fortnite and Fall Guys",
+            "url": "https://legal.epicgames.com/epicgames/recommendations",
+            "source": "Google/Bing",
+            "discovered_at": "05/11/2026",
+            "last_seen": "05/11/2026"
+        },
+        {
             "title": "5 jogos grátis para curtir o fim de semana no PC, consoles ...",
             "url": "https://www.estadao.com.br/tecmundo/voxel/5-jogos-gratis-para-curtir-o-fim-de-semana-no-pc-consoles-e-mobile-24",
             "source": "Serper (Google)",
@@ -152,7 +159,7 @@
             "url": "https://www.reddit.com/r/jeuxvideo/comments/1s2femm/quelquun_a_des_jeux_gratuits_a_me_conseiller_pour",
             "source": "Serper (Google)",
             "discovered_at": "18/10/2026",
-            "last_seen": "04/11/2026"
+            "last_seen": "05/11/2026"
         },
         {
             "title": "Steam Curator: Só Jogos Gratis",
@@ -267,5 +274,5 @@
             "last_seen": "05/11/2026"
         }
     ],
-    "last_update": "2026-11-05T21:28:22.055601"
+    "last_update": "2026-11-05T21:36:50.407636"
 }
