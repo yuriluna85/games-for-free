@@ -1,6 +1,13 @@
 {
     "search_links": [
         {
+            "title": "Nuuvem | A maior loja oficial de jogos da América Latina",
+            "url": "https://www.nuuvem.com/br-pt/catalog/platforms/pc/price/free",
+            "source": "Serper (Google)",
+            "discovered_at": "17/11/2026",
+            "last_seen": "17/11/2026"
+        },
+        {
             "title": "[BIG Festival 2021 🎮] Licenciamento de jogos",
             "url": "https://dev.epicgames.com/community/learning/tutorials/yV4B/epic-for-indies-big-festival-2021-licenciamento-de-jogos",
             "source": "Serper (Google)",
@@ -75,7 +82,7 @@
             "url": "https://www.estadao.com.br/tecmundo/voxel/5-jogos-gratis-para-curtir-o-fim-de-semana-no-pc-consoles-e-mobile-24",
             "source": "Serper (Google)",
             "discovered_at": "05/11/2026",
-            "last_seen": "15/11/2026"
+            "last_seen": "17/11/2026"
         },
         {
             "title": "Steamで100% OFF：Pony Island",
@@ -204,5 +211,5 @@
             "last_seen": "17/11/2026"
         }
     ],
-    "last_update": "2026-11-17T00:09:31.724482"
+    "last_update": "2026-11-17T23:27:53.354017"
 }
